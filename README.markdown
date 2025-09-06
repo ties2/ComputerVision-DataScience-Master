@@ -101,10 +101,7 @@ This repository is a work in progress, and contributions are welcome! If you hav
 
 ## 📬 Contact
 Feel free to reach out with questions or feedback:
-- GitHub Issues: [Create an issue](https://github.com/your-username/your-repo-name/issues)
-- Email: [your-email@example.com](mailto:your-email@example.com)
+- Email: [your-email@example.com](mailto:nirvana.elahi@outlook.com)
 
 ## 🙏 Acknowledgments
 This repository is built from my educational journey and inspired by countless open-source resources, professors, and peers. Thank you to the computer vision and data science communities for their contributions!
-
-Happy learning! 🚀
