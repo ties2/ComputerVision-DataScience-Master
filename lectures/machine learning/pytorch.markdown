@@ -82,6 +82,7 @@ class DeepNet(nn.Module):
     def forward(self, x):
         return self.layer(x)
 
+```
 ## PyTorch Basics
 
 Tensors: Core data structure in PyTorch, similar to NumPy arrays but optimized for GPU acceleration.
