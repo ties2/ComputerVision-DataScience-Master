@@ -15,6 +15,7 @@ Examples: Game playing, Robotics
 
 
 ---
+
 ## Key Tasks in Machine Learning
 
 ![classification and regression](https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/regression.png)
@@ -26,7 +27,9 @@ Example: Identifying whether an email is spam or not.
 Regression: Predicting continuous numerical values.
 Example: Forecasting house prices based on features like size and location.
 
+Note: Both of them use supervised learning method
 
+**Classification** predicts discrete categories (e.g., spam vs. not spam), while **regression** predicts continuous values (e.g., house prices).
 
 PyTorch Basics
 
