@@ -61,6 +61,26 @@ class SimpleNN(nn.Module):
         x = self.fc2(x)
         return x
 ```
+---
+
+## Deep Learning vs. Machine Learning
+
+- **Machine Learning (ML)**: Broad field of algorithms (e.g., linear regression, SVMs) for learning from data. Includes supervised, unsupervised, and reinforcement learning.
+- **Deep Learning (DL)**: Subset of ML using multi-layered neural networks to model complex patterns in large datasets (e.g., images, text).
+- **Differences**:
+  - DL uses deep neural networks; ML includes simpler models.
+  - DL needs large data and compute power; ML works with smaller datasets.
+  - DL automates feature learning; ML often requires manual feature engineering.
+
+**Example Deep Learning Model in PyTorch**:
+```python
+import torch.nn as nn
+class DeepNet(nn.Module):
+    def __init__(self):
+        super(DeepNet, self).__init__()
+        self.layer = nn.Linear(10, 2)  # Simple neural network
+    def forward(self, x):
+        return self.layer(x)
 
 ## PyTorch Basics
 
