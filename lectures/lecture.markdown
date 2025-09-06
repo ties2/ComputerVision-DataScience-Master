@@ -4,9 +4,11 @@ Lecture Materials: Computer Vision and Data Science
 
 
 Welcome to the Lecture Materials section of the Computer Vision and Data Science Learning Hub! This directory contains kick-off presentations, slides, and supplementary resources from my educational journey in computer vision, machine learning, and data science. These materials are designed to provide theoretical insights, practical examples, and a structured learning path for beginners and advanced learners alike.
-🎯 Purpose
+
+##  🎯 Purpose
 The lecture materials in this directory complement the project repositories and code examples in the Projects section. Here, you’ll find presentations and notes covering key concepts, methodologies, and tasks to deepen your understanding of computer vision and data science.
-📚 Lecture Content
+
+##  📚 Lecture Content
 Below is an overview of the lecture materials, organized by topic. Each section links to specific resources (e.g., slides, PDFs, or notebooks) stored in this lectures/ directory or external repositories where applicable. These materials are drawn from coursework, seminars, and workshops, providing a foundation for the practical projects.
 Fundamentals
 
@@ -89,10 +91,8 @@ Submit a pull request with a clear description of your changes.
 
 📬 Contact
 Questions or feedback? Reach out:
-
-GitHub Issues: Create an issue
 Email: nirvana.elahi@outlook.com
 
-🙏 Acknowledgments
-These lecture materials are compiled from my coursework, inspired by professors, peers, and the open-source community. Thank you for supporting this learning resource!
+
+
 
