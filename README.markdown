@@ -68,7 +68,6 @@ The repository is organized into key areas of study, with materials sourced from
 
 ## 📂 Repository Structure
 - **[lectures](https://github.com/ties2/ComputerVision-DataScience-Master/tree/main/lectures)**: Contains kick-off presentations and extra teaching materials.
-- **notebooks**: Jupyter notebooks with code examples and tutorials.
 - **[projects](https://github.com/ties2/ComputerVision-DataScience-Master/tree/main/project)**: Practical projects implementing pipelines and tasks.
 - **[resources](https://github.com/ties2/ComputerVision-DataScience-Master/tree/main/resources)**: Links to external teaching materials, papers, and datasets.
 - **[docs](https://github.com/ties2/ComputerVision-DataScience-Master/tree/main/docs)**: Detailed notes and documentation for each topic.
