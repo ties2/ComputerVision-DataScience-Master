@@ -83,6 +83,28 @@ class DeepNet(nn.Module):
         return self.layer(x)
 
 ```
+---
+## PyTorch Tensors
+
+A **PyTorch tensor** is a multi-dimensional array for efficient numerical computations in machine learning, similar to NumPy arrays but with GPU support and gradient tracking.
+
+- **Features**:
+  - Multi-dimensional (scalars, vectors, matrices, etc.).
+  - Supports GPU acceleration (e.g., CUDA).
+  - Tracks gradients for backpropagation with `requires_grad=True`.
+
+**Example**:
+```python
+import torch
+# Create a 2D tensor
+tensor = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)
+# Enable gradient tracking
+tensor.requires_grad_(True)
+# Perform operation
+result = tensor * 2
+```
+---
+
 ## PyTorch Basics
 
 Tensors: Core data structure in PyTorch, similar to NumPy arrays but optimized for GPU acceleration.
