@@ -47,8 +47,8 @@ Optimizer: Updates weights (e.g., SGD, Adam).
 
 Example: A simple PyTorch neural network for classification:
 
-```markdown
-```python
+
+``` python
 import torch.nn as nn
 class SimpleNN(nn.Module):
     def __init__(self):
