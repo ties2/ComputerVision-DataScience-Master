@@ -1,4 +1,4 @@
-PyTorch Learning Notes
+## PyTorch Learning Notes
 This document summarizes key concepts and notes for learning PyTorch, a popular open-source machine learning framework.
 Machine Learning Methods
 
@@ -14,8 +14,10 @@ Reinforcement Learning: An agent learns by interacting with an environment, rece
 Examples: Game playing, Robotics
 
 
+---
+## Key Tasks in Machine Learning
 
-Key Tasks in Machine Learning
+![classification and regression](https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/regression.png)
 
 Classification: Predicting discrete labels or categories for input data.
 Example: Identifying whether an email is spam or not.
