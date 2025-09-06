@@ -2,6 +2,8 @@
 
 Welcome to my GitHub repository, a comprehensive resource for anyone looking to dive into **Computer Vision** and **Data Science**! This repository is a collection of my notes, code, projects, and resources gathered during my education in these fields. Whether you're a beginner or an advanced learner, this repository aims to provide structured, accessible, and practical content to help you master key concepts and techniques.
 
+![Computer vision and Data science](https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/CV.png)
+
 ## 🎯 Purpose
 This repository serves as a centralized hub for learning and exploring topics in **Computer Vision**, **Machine Learning**, **Deep Learning**, and related areas. It includes theoretical explanations, practical code examples, and pipelines to help you understand and apply concepts in real-world scenarios. My goal is to make this a valuable resource for students, researchers, and professionals.
 
