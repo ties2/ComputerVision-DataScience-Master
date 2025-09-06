@@ -12,7 +12,7 @@ to machine learning algorithms.
 📚 Project Repositories
 Below is a list of projects, each hosted in its own GitHub repository:
 
-*  [Computer-vision-yolo8-project](https://github.com/ties2/Computer-vision-yolo8-project)
+* [Computer-vision-yolo8-project](https://github.com/ties2/Computer-vision-yolo8-project)
 
 
 
