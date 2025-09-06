@@ -1,16 +1,19 @@
 Project List: Computer Vision and Data Science
-Welcome to the Projects section of the Computer Vision and Data Science Learning Hub! This file provides a curated list of GitHub repositories, each dedicated to a specific area of study or task in computer vision and data science. These projects contain code, notebooks, datasets, and documentation to help you learn and apply concepts from my educational journey. Whether you're exploring foundational topics or diving into advanced pipelines, these repositories are designed to be practical and accessible.
+Welcome to the Projects section of the Computer Vision and Data Science Learning Hub! 
+This file provides a curated list of GitHub repositories, each dedicated to a specific area of study or task in computer vision and data science.
+These projects contain code, notebooks, datasets, and documentation to help you learn and apply concepts from my educational journey.
+Whether you're exploring foundational topics or diving into advanced pipelines, these repositories are designed to be practical and accessible.
+FundamentalsDive into the core building blocks of computer vision, including Linear Algebra, Image Features, Image Filtering, Annotation, Validation, 
+Data Exploration, Dimensionality Reduction, and Image Transforms.
 
-  
-
+Mathematics for Machine LearningExplore essential mathematical concepts like linear algebra, calculus, and probability, with practical applications 
+to machine learning algorithms.
 
 📚 Project Repositories
-Below is a list of projects, each hosted in its own GitHub repository. Click the links to explore detailed content, including tutorials, code examples, and resources.
-Fundamentals
+Below is a list of projects, each hosted in its own GitHub repository:
 
-FundamentalsDive into the core building blocks of computer vision, including Linear Algebra, Image Features, Image Filtering, Annotation, Validation, Data Exploration, Dimensionality Reduction, and Image Transforms.
+##![Computer-vision-yolo8-project](https://github.com/ties2/Computer-vision-yolo8-project)
 
-Mathematics for Machine LearningExplore essential mathematical concepts like linear algebra, calculus, and probability, with practical applications to machine learning algorithms.
 
 
 Scientific Programming
