@@ -104,6 +104,28 @@ tensor.requires_grad_(True)
 result = tensor * 2
 ```
 ---
+## Autograd in PyTorch
+
+**Autograd** is PyTorch's automatic differentiation system that computes gradients for backpropagation, enabling neural network training.
+
+- **Features**:
+  - Tracks operations on tensors with `requires_grad=True`.
+  - Builds a dynamic computational graph for automatic gradient calculation.
+  - Used with optimizers to update model parameters.
+
+**Example**:
+```python
+import torch
+# Create tensor with gradient tracking
+x = torch.tensor([2.0], requires_grad=True)
+# Define a computation
+y = x**2 + 3*x + 1
+# Compute gradients
+y.backward()
+# Access gradient
+print(x.grad)  # Output: 7.0 (dy/dx = 2x + 3, evaluated at x=2)
+```
+---
 
 ## PyTorch Basics
 
