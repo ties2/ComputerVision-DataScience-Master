@@ -126,7 +126,59 @@ y.backward()
 print(x.grad)  # Output: 7.0 (dy/dx = 2x + 3, evaluated at x=2)
 ```
 ---
+## PyTorch `optim` Module
 
+The `torch.optim` module provides optimizers to update model parameters by minimizing the loss using gradients from `autograd`.
+
+- **Key Optimizers**:
+  - `SGD`: Stochastic Gradient Descent.
+  - `Adam`: Adaptive optimizer, widely used in deep learning.
+- **Usage**: Initialize with model parameters, compute loss, backpropagate, and update weights.
+
+**Example**:
+```python
+import torch
+import torch.nn as nn
+import torch.optim as optim
+model = nn.Linear(10, 2)
+optimizer = optim.Adam(model.parameters(), lr=0.001)
+# In training loop
+loss = torch.tensor(0.5)  # Example loss
+optimizer.zero_grad()     # Clear gradients
+loss.backward()           # Compute gradients
+optimizer.step()          # Update weights
+```
+---
+## PyTorch DataLoader
+
+The torch.utils.data.DataLoader handles efficient data loading, batching, shuffling, and parallel processing for training.
+
+Features:
+
+Batches data for efficient training.
+Shuffles data to improve generalization.
+Supports multi-threaded loading with num_workers.
+
+
+Works with Dataset classes (e.g., TensorDataset).
+
+Example:
+
+```python
+from torch.utils.data import DataLoader, TensorDataset
+import torch
+# Sample data
+x = torch.randn(100, 10)
+y = torch.randint(0, 2, (100,))
+dataset = TensorDataset(x, y)
+dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
+# Iterate in training loop
+for batch_x, batch_y in dataloader:
+    # Process batch
+    pass
+```
+
+---
 ## PyTorch Basics
 
 Tensors: Core data structure in PyTorch, similar to NumPy arrays but optimized for GPU acceleration.
