@@ -31,7 +31,38 @@ Note: Both of them use supervised learning method
 
 **Classification** predicts discrete categories (e.g., spam vs. not spam), while **regression** predicts continuous values (e.g., house prices).
 
-PyTorch Basics
+---
+## Neural Networks
+
+Neural Networks are machine learning models inspired by the human brain, consisting of interconnected layers of nodes (neurons). They process input data through weighted connections, applying activation functions to capture complex patterns. In PyTorch, neural networks are built using torch.nn.Module, enabling flexible architectures for tasks like classification and regression.
+
+Key Components:
+
+Input Layer: Receives raw data.
+Hidden Layers: Extract features through transformations.
+Output Layer: Produces predictions.
+Activation Functions: (e.g., ReLU, Sigmoid) introduce non-linearity.
+Loss Function: Measures prediction error.
+Optimizer: Updates weights (e.g., SGD, Adam).
+
+Example: A simple PyTorch neural network for classification:
+
+```markdown
+```python
+import torch.nn as nn
+class SimpleNN(nn.Module):
+    def __init__(self):
+        super(SimpleNN, self).__init__()
+        self.fc1 = nn.Linear(10, 5)  # Input: 10 features, Output: 5
+        self.relu = nn.ReLU()
+        self.fc2 = nn.Linear(5, 2)   # Output: 2 classes
+    def forward(self, x):
+        x = self.relu(self.fc1(x))
+        x = self.fc2(x)
+        return x
+
+
+## PyTorch Basics
 
 Tensors: Core data structure in PyTorch, similar to NumPy arrays but optimized for GPU acceleration.
 Example: torch.tensor([1, 2, 3])
@@ -43,6 +74,7 @@ Example: x.requires_grad_(True) to track computations.
 
 Neural Networks: Built using torch.nn.Module, allowing flexible model design.
 Example: Defining a simple feedforward network with nn.Linear.
+
 
 
 
@@ -60,8 +92,4 @@ Train the model with a training loop, computing gradients and updating weights.
 
 
 
-Resources
 
-Official PyTorch Documentation: pytorch.org
-PyTorch Tutorials: pytorch.org/tutorials
-GitHub Repository for PyTorch Examples: github.com/pytorch/examples
