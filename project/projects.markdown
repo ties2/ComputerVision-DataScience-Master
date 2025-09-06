@@ -103,6 +103,6 @@ Submit a pull request with a clear description of your changes.
 Have questions or feedback? Reach out:
 
 GitHub Issues: Create an issue
-Email: your-email@example.com
+Email: nirvana.elahi@outlook.com
 
-Happy learning and exploring! 
+
