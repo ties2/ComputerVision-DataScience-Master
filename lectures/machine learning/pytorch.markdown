@@ -97,8 +97,6 @@ Neural Networks: Built using torch.nn.Module, allowing flexible model design.
 Example: Defining a simple feedforward network with nn.Linear.
 
 
-
-
 Getting Started with PyTorch
 
 Installation:pip install torch torchvision
