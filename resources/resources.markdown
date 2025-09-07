@@ -1,4 +1,4 @@
-Resources: Computer Vision and Data Science
+Online Resources: Computer Vision and Data Science
 
   
 
@@ -72,6 +72,127 @@ Specim Spectral Imaging ResourcesIndustry resources on hyperspectral imaging.
 Learning Methodologies
 
 Learning Methodology and Statistical Models:
-[Introduction to Machine Learning (YouTube)](https://www.youtube.com/playlist?list=PLoROMvodv4rNhWFedLKdE
+Introduction to Machine Learning (YouTube)Google’s machine learning crash course.
+scikit-learn DocumentationOfficial guide to statistical models and machine learning.
 
 
+Linear Models and Neural Networks:
+Neural Networks from Scratch (YouTube)Series by Sentdex on building neural networks.
+
+
+Convolutional Neural Networks (CNNs):
+CS231n: CNNs for Visual Recognition (YouTube)Stanford’s course lectures on CNNs.
+
+
+Temporal Neural Networks:
+LSTM and RNN Tutorial (YouTube)Video explaining recurrent neural networks.
+
+
+Hyperparameter Tuning:
+Hyperparameter Tuning with Optuna (YouTube)Tutorial on using Optuna for optimization.
+Optuna RepositoryOpen-source library for hyperparameter optimization.
+
+
+Synthetic Data and Advanced Architectures:
+Synthetic Data Generation (YouTube)Tutorial on generating synthetic datasets.
+Hugging Face TransformersRepository for advanced neural network architectures.
+
+
+
+Tasks (Pipelines)
+
+Pipeline Introduction and My First Pipeline:
+Building ML Pipelines with TensorFlow (YouTube)Google’s tutorial on TFX pipelines.
+
+
+Classification:
+Image Classification with PyTorch (YouTube)Tutorial on building classification models.
+
+
+Segmentation:
+Semantic Segmentation with DeepLab (YouTube)Tutorial on segmentation with TensorFlow.
+DeepLab RepositoryOfficial repository for DeepLab models.
+
+
+Object Detection:
+YOLO Object Detection Tutorial (YouTube)Practical guide to YOLO implementation.
+YOLOv5 RepositoryOpen-source YOLOv5 implementation.
+
+
+Unsupervised Learning and Anomaly Detection:
+Unsupervised Learning Explained (YouTube)StatQuest video on clustering and autoencoders.
+
+
+Explainable AI:
+Explainable AI with SHAP (YouTube)Tutorial on using SHAP for model interpretability.
+SHAP RepositoryOpen-source library for explainable AI.
+
+
+
+Ethics and Professional Skills
+
+Ethics:
+AI Ethics Course (YouTube)Lectures on ethical AI from Fast.ai.
+AI Ethics PrinciplesWebsite on ethical AI guidelines.
+
+
+Scientific Writing:
+How to Write a Research Paper (YouTube)Guide to scientific writing for beginners.
+Overleaf LaTeX TutorialsTutorials for writing papers with LaTeX.
+
+
+
+Miscellaneous and Future Directions
+
+Reinforcement Learning:
+Deep Reinforcement Learning Course (YouTube)DeepMind’s lectures on reinforcement learning.
+OpenAI Gym RepositoryOpen-source library for reinforcement learning environments.
+
+
+Big Data:
+Big Data with Apache Spark (YouTube)Tutorial on big data processing with Spark.
+Apache Spark DocumentationOfficial Spark documentation.
+
+
+Data-centric AI:
+Data-centric AI Workshop (YouTube)Andrew Ng’s talk on data-centric AI.
+Data-centric AI CommunityResources and community for data-centric AI practices.
+
+
+
+🚀 How to Use These Resources
+
+Access Online Content:
+
+Click the links to watch YouTube videos, visit websites, or explore GitHub repositories.
+Some resources may require free registration (e.g., Coursera, Kaggle).
+
+
+Pair with Other Materials:
+
+Combine these online resources with project repositories for hands-on practice.
+Use lecture materials for theoretical context and external documents for in-depth reading.
+
+
+Explore Local Resources:
+
+Check the resources/ folder for additional datasets or files stored in this repository.
+
+
+
+💡 Contributing
+Have a great YouTube video, website, or repository to add? Contributions are welcome!
+
+Fork the main repository.
+Update resources/online-resources.md with new links.
+Submit a pull request with a clear description of your additions.
+
+📬 Contact
+Questions or feedback? Reach out:
+
+GitHub Issues: Create an issue
+Email: your-email@example.com
+
+🙏 Acknowledgments
+These resources are curated from the open-source community, academic institutions, and industry experts. Thank you to all who share knowledge to advance computer vision and data science!
+Happy learning! 🚀
