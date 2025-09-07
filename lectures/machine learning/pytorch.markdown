@@ -206,5 +206,8 @@ Choose an optimizer (e.g., torch.optim.SGD or torch.optim.Adam).
 Train the model with a training loop, computing gradients and updating weights.
 
 
+Some exercise for pytorch:
+
+[link](https://github.com/ties2/ComputerVision-DataScience-Master/tree/main/lectures/Scientific%20Programming)
 
 
