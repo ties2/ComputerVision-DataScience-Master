@@ -1,14 +1,19 @@
-Online Resources: Computer Vision and Data Science
+Online Resources:
+
+<p align="center">
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/resources/resource.png" alt="Computer Vision Logo" width="500" />
+</p>
 
   
-
-
 Welcome to the Online Resources section of the Computer Vision and Data Science Learning Hub! This file curates a collection of YouTube videos, educational websites, GitHub repositories, and other online materials to support your learning in computer vision, machine learning, and data science. These resources complement the project repositories in project/projects.md, lecture materials in lectures/lectures.md, and external documents in docs/resources.md, offering accessible and engaging content for learners at all levels.
-🎯 Purpose
+---
+## 🎯 Purpose
 This file provides links to online resources, including video tutorials, interactive courses, open-source repositories, and community-driven content, organized by topic. Use these to deepen your understanding, explore practical examples, and stay updated with the latest in computer vision and data science.
+
 📚 Online Resources by Topic
 Below is a categorized list of online resources, including YouTube videos, websites, and GitHub repositories. Each topic links to materials that enhance your study of computer vision and data science.
-Fundamentals
+
+### Fundamentals
 
 Linear Algebra:
 3Blue1Brown: Essence of Linear Algebra (YouTube)A visually intuitive series explaining linear algebra concepts.
@@ -36,18 +41,18 @@ scikit-learn Dimensionality ReductionOfficial documentation for PCA and t-SNE in
 
 
 
-Mathematics for Machine Learning
+### Mathematics for Machine Learning
 
 Mathematics for Machine Learning Course (YouTube)Imperial College London’s free course on math for machine learning.
 Coursera: Mathematics for Machine LearningComprehensive online specialization with video lectures and exercises.
 
-Scientific Programming
+### Scientific Programming
 
 Python for Data Science (YouTube)FreeCodeCamp’s tutorial series on Python for data science.
 Awesome Python RepositoryCurated list of Python libraries and tools for scientific programming.
 Jupyter Notebook TutorialsInteractive tutorials for using Jupyter Notebooks.
 
-Hardware and 3D
+### Hardware and 3D
 
 Computing Hardware:
 GPU vs CPU for Deep Learning (YouTube)Video explaining hardware choices for machine learning.
@@ -69,7 +74,7 @@ Specim Spectral Imaging ResourcesIndustry resources on hyperspectral imaging.
 
 
 
-Learning Methodologies
+### Learning Methodologies
 
 Learning Methodology and Statistical Models:
 Introduction to Machine Learning (YouTube)Google’s machine learning crash course.
@@ -99,7 +104,7 @@ Hugging Face TransformersRepository for advanced neural network architectures.
 
 
 
-Tasks (Pipelines)
+### Tasks (Pipelines)
 
 Pipeline Introduction and My First Pipeline:
 Building ML Pipelines with TensorFlow (YouTube)Google’s tutorial on TFX pipelines.
@@ -129,7 +134,7 @@ SHAP RepositoryOpen-source library for explainable AI.
 
 
 
-Ethics and Professional Skills
+### Ethics and Professional Skills
 
 Ethics:
 AI Ethics Course (YouTube)Lectures on ethical AI from Fast.ai.
@@ -142,7 +147,7 @@ Overleaf LaTeX TutorialsTutorials for writing papers with LaTeX.
 
 
 
-Miscellaneous and Future Directions
+### Miscellaneous and Future Directions
 
 Reinforcement Learning:
 Deep Reinforcement Learning Course (YouTube)DeepMind’s lectures on reinforcement learning.
@@ -157,27 +162,19 @@ Apache Spark DocumentationOfficial Spark documentation.
 Data-centric AI:
 Data-centric AI Workshop (YouTube)Andrew Ng’s talk on data-centric AI.
 Data-centric AI CommunityResources and community for data-centric AI practices.
+---
 
+List of other Useful Sites:
 
+| Site       | Info                  |
+| ------------- | ---------------------------- |
+| [Gartner](https://www.gartner.com/en)  | The 2025 Hype Cycle for GenAI Highlights Critical Innovations modified* files |
+| [pytorch](https://docs.pytorch.org/tutorials/intro.html) |  tutorials cover fundamental concepts, basic operations|
 
-🚀 How to Use These Resources
-
-Access Online Content:
-
-Click the links to watch YouTube videos, visit websites, or explore GitHub repositories.
-Some resources may require free registration (e.g., Coursera, Kaggle).
-
-
-Pair with Other Materials:
+* Pair with Other Materials:
 
 Combine these online resources with project repositories for hands-on practice.
 Use lecture materials for theoretical context and external documents for in-depth reading.
-
-
-Explore Local Resources:
-
-Check the resources/ folder for additional datasets or files stored in this repository.
-
 
 
 💡 Contributing
@@ -191,8 +188,4 @@ Submit a pull request with a clear description of your additions.
 Questions or feedback? Reach out:
 
 GitHub Issues: Create an issue
-Email: your-email@example.com
-
-🙏 Acknowledgments
-These resources are curated from the open-source community, academic institutions, and industry experts. Thank you to all who share knowledge to advance computer vision and data science!
-Happy learning! 🚀
+Email: nirvana.elahi@outlook.com
