@@ -18,9 +18,15 @@ Image Filtering: NotesMethods for processing and enhancing images.
 Annotation, Validation, and Data Exploration: Kick-off PresentationBest practices for preparing and exploring datasets.
 Dimensionality Reduction and Image Transforms: SlidesTechniques for reducing data complexity and transforming images.
 
+---
+
 Mathematics for Machine Learning
 
 Mathematics Overview: SlidesLinear algebra, calculus, and probability tailored for machine learning applications.
+
+[Exercise Equations]() 
+
+---
 
 Scientific Programming
 
@@ -62,6 +68,8 @@ Reinforcement Learning: PresentationLearning through interaction with environmen
 Big Data: SlidesHandling and analyzing large-scale datasets.
 Data-centric AI: Kick-off SlidesImproving data quality for better machine learning outcomes.
 
+---
+
 🚀 How to Use These Materials
 
 Access Lecture Files:
@@ -79,7 +87,6 @@ For example, after reviewing the Convolutional Neural Networks slides, check out
 Supplementary Resources:
 
 Find additional datasets, papers, and tutorials in the resources/ folder of the main repository.
-
 
 
 💡 Contributing

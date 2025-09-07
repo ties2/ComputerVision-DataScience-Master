@@ -68,10 +68,7 @@ Each repository includes a README.md with instructions, code, and resources spec
 
 Clone a Repository:
 
-Example for cloning the Fundamentals project:git clone https://github.com/your-username/computer-vision-fundamentals.git
-
-
-
+Example for cloning the Fundamentals project:git clone https://github.com/ties2/computer-vision-fundamentals.git
 
 Install Dependencies:
 
