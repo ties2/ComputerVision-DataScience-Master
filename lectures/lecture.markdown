@@ -12,11 +12,16 @@ The lecture materials in this directory complement the project repositories and 
 Below is an overview of the lecture materials, organized by topic. Each section links to specific resources (e.g., slides, PDFs, or notebooks) stored in this lectures/ directory or external repositories where applicable. These materials are drawn from coursework, seminars, and workshops, providing a foundation for the practical projects.
 Fundamentals
 
-Linear Algebra: SlidesCore mathematical concepts for machine learning and computer vision.
-Image Features: PresentationTechniques for extracting and analyzing features from images.
-Image Filtering: NotesMethods for processing and enhancing images.
-Annotation, Validation, and Data Exploration: Kick-off PresentationBest practices for preparing and exploring datasets.
-Dimensionality Reduction and Image Transforms: SlidesTechniques for reducing data complexity and transforming images.
+* Linear Algebra: SlidesCore mathematical concepts for machine learning and computer vision.
+* Image Features: PresentationTechniques for extracting and analyzing features from images.
+* Image Filtering: NotesMethods for processing and enhancing images.
+* Annotation, Validation, and Data Exploration: Kick-off PresentationBest practices for preparing and exploring datasets.
+* Dimensionality Reduction and Image Transforms: SlidesTechniques for reducing data complexity and transforming images.
+
+* [Data exploration](https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/data%20exploration.markdown)
+
+* [Exercise Data exploration]()
+
 
 ---
 
@@ -24,13 +29,19 @@ Mathematics for Machine Learning
 
 Mathematics Overview: SlidesLinear algebra, calculus, and probability tailored for machine learning applications.
 
-[Exercise Equations]() 
+* [Exercise Equations](https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/mathematics/equations.ipynb) 
 
 ---
 
 Scientific Programming
 
 Tools and Best Practices: PresentationUsing Python, NumPy, OpenCV, PyTorch, and TensorFlow for scientific computing.
+
+* [PyTorch](https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/pytorch.markdown)
+
+* [Exercise Pytorch](https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/Scientific%20Programming/pytorch.ipynb)
+
+
 
 Hardware and 3D
 
