@@ -31,6 +31,13 @@ Mathematics Overview: SlidesLinear algebra, calculus, and probability tailored f
 
 * [Exercise Equations](https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/mathematics/equations.ipynb) 
 
+### Linear algebra
+* [Exercise linear_algebra](https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/mathematics/linear_algebra.ipynb)
+
+* [Exercise analytic_geometry](https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/mathematics/analytic_geometry.ipynb)
+
+* [Exercise matrix_decompositions](https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/mathematics/matrix_decompositions.ipynb)
+
 ---
 
 Scientific Programming
