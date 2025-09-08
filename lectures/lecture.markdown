@@ -12,7 +12,7 @@ The lecture materials in this directory complement the project repositories and 
 Below is an overview of the lecture materials, organized by topic. Each section links to specific resources (e.g., slides, PDFs, or notebooks) stored in this lectures/ directory or external repositories where applicable. These materials are drawn from coursework, seminars, and workshops, providing a foundation for the practical projects.
 Fundamentals
 
-* Linear Algebra: SlidesCore mathematical concepts for machine learning and computer vision.
+* [Linear Algebra](https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/mathematics/Linear%20Algebra.markdown): SlidesCore mathematical concepts for machine learning and computer vision.
 * Image Features: PresentationTechniques for extracting and analyzing features from images.
 * Image Filtering: NotesMethods for processing and enhancing images.
 * Annotation, Validation, and Data Exploration: Kick-off PresentationBest practices for preparing and exploring datasets.
