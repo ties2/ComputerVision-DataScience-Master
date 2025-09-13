@@ -7,7 +7,7 @@ chap 2: No
 chap 3: No
 start date: September 12, 2025
 
-chap 1 : (17- ? page)
+chap 1 : (17- 46 page)
 
 - Understand the concept of a digital image.
 - Have a broad overview of the historical under-
@@ -131,3 +131,13 @@ Image pattern classification in computer vision involves categorizing images bas
 ## 1.5 COMPONENTS OF AN IMAGE PROCESSING SYSTEM
 
 Two subsystems are required to acquire digital images. The first is a physical sensor that responds to the energy radiated by the object we wish to image. The second, called a digitizer, is a device for converting the output of the physical sensing device into digital form. For instance, in a digital video camera, the sensors (CCD chips) produce an electrical output proportional to light intensity. The digitizer converts these outputs to digital data
+
+**Components of a general-purpose image processing system**
+
+- computer
+- mass storage
+- image displays
+- hardcopy
+- Specialized image processing hardware
+- Image processing software
+- Image sensors
