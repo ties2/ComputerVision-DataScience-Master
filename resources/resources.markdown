@@ -172,6 +172,10 @@ List of other Useful Sites:
 | [pytorch](https://docs.pytorch.org/tutorials/intro.html) |  tutorials cover fundamental concepts, basic operations|
 | [Stanford university](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv) | Introduction to Convolutional Neural Networks for Visual Recognition | 
 | [image-net](https://www.image-net.org/index.php) | image database organized |
+| [openCV](https://opencv.org) | OpenCV is open source, contains over 2500 algorithms |
+| [HALCON](https://www.mvtec.com/products/halcon/) | powerful software for your machine vision application |
+
+
 
 * Pair with Other Materials:
 
