@@ -174,7 +174,8 @@ List of other Useful Sites:
 | [image-net](https://www.image-net.org/index.php) | image database organized |
 | [openCV](https://opencv.org) | OpenCV is open source, contains over 2500 algorithms |
 | [HALCON](https://www.mvtec.com/products/halcon/) | powerful software for your machine vision application |
-| [libvips] (https://www.libvips.org)| A fast image processing library with low memory needs |
+| [libvips](https://www.libvips.org) | A fast image processing library with low memory needs |
+| [Stanford University CS229](https://www.youtube.com/watch?v=jGwO_UgTS7I&list=PLRQmQC3wIq9wl4WtUEA1PJoqw14ouro9m) | Machine Learning 
 
 
 * Pair with Other Materials:
