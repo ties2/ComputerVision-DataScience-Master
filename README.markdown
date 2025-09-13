@@ -79,7 +79,7 @@ The repository is organized into key areas of study, with materials sourced from
 ## 🚀 Getting Started
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/ties2/ComputerVision-DataScience-Master.git
    ```
 2. **Install Dependencies**:
    Most code examples use Python. Install required libraries:
@@ -92,7 +92,6 @@ The repository is organized into key areas of study, with materials sourced from
    - Dive into specific topics like **Convolutional Neural Networks** or **Object Detection** for advanced learning.
 
 ## 🔗 Resources
-- Links to teaching materials are available in the [Topic Overview](resources/topic-overview.md).
 - Additional resources, including datasets and research papers, are in the `/resources/` folder.
 - Check the `/lectures/` folder for kick-off presentations and supplementary materials.
 
