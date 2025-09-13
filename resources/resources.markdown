@@ -170,7 +170,8 @@ List of other Useful Sites:
 | ------------- | ---------------------------- |
 | [Gartner](https://www.gartner.com/en)  | The 2025 Hype Cycle for GenAI Highlights Critical Innovations modified* files |
 | [pytorch](https://docs.pytorch.org/tutorials/intro.html) |  tutorials cover fundamental concepts, basic operations|
-| [Stanford university](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv) | Introduction to Convolutional Neural Networks for Visual Recognition
+| [Stanford university](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv) | Introduction to Convolutional Neural Networks for Visual Recognition | 
+| [image-net](https://www.image-net.org/index.php) | image database organized |
 
 * Pair with Other Materials:
 
