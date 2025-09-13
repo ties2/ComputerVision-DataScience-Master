@@ -175,7 +175,11 @@ List of other Useful Sites:
 | [openCV](https://opencv.org) | OpenCV is open source, contains over 2500 algorithms |
 | [HALCON](https://www.mvtec.com/products/halcon/) | powerful software for your machine vision application |
 | [libvips](https://www.libvips.org) | A fast image processing library with low memory needs |
-| [Stanford University CS229](https://www.youtube.com/watch?v=jGwO_UgTS7I&list=PLRQmQC3wIq9wl4WtUEA1PJoqw14ouro9m) | Machine Learning 
+| [Stanford University CS229](https://www.youtube.com/watch?v=jGwO_UgTS7I&list=PLRQmQC3wIq9wl4WtUEA1PJoqw14ouro9m) | Machine Learning |
+| [PyTorch](https://pytorch.org) | optimized tensor library for deep learning using GPUs and CPUs | 
+| [TensorFlow](https://www.tensorflow.org/tutorials) | TensorFlow serves as a core platform and library for machine learning. TensorFlow's APIs use Keras to allow users to make their own machine-learning models|
+| [Scikit-learn](https://scikit-learn.org/stable/) | open source project and one of the most used machine learning (ML) libraries toda |
+| [MATLAB](https://nl.mathworks.com/products/matlab.html) | uses include data analysis, algorithm development, modeling and simulation, and application development across various scientific and engineering fields like aerospace, automotive, robotics, and communications |
 
 
 * Pair with Other Materials:
