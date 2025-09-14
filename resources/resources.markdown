@@ -164,7 +164,7 @@ Data-centric AI Workshop (YouTube)Andrew Ng’s talk on data-centric AI.
 Data-centric AI CommunityResources and community for data-centric AI practices.
 ---
 
-List of other Useful Sites:
+## List of other Useful Sites:
 
 | Site       | Info                  |
 | ------------- | ---------------------------- |
@@ -185,8 +185,11 @@ List of other Useful Sites:
 | [Stanford University CS231](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv) | Deep Learning Software |
 
 
+## List of other Useful videos:
 
-
+| title       | Info                  |
+| ------------- | ---------------------------- |
+| [ML Foundations for AI Engineers (in 34 Minutes)](https://www.youtube.com/watch?v=BUTjcAjfMgY)  | review fundementals topics, good for beginner|
 
 * Pair with Other Materials:
 
