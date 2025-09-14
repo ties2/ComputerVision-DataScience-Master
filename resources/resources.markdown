@@ -180,7 +180,7 @@ List of other Useful Sites:
 | [TensorFlow](https://www.tensorflow.org/tutorials) | TensorFlow serves as a core platform and library for machine learning. TensorFlow's APIs use Keras to allow users to make their own machine-learning models|
 | [Scikit-learn](https://scikit-learn.org/stable/) | open source project and one of the most used machine learning (ML) libraries toda |
 | [MATLAB](https://nl.mathworks.com/products/matlab.html) | uses include data analysis, algorithm development, modeling and simulation, and application development across various scientific and engineering fields like aerospace, automotive, robotics, and communications |
-
+| [kdnuggets](https://www.kdnuggets.com) | leading site on Data Science, Machine Learning, AI and Analytics | 
 
 * Pair with Other Materials:
 
