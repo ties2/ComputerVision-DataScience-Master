@@ -15,7 +15,7 @@ Fundamentals
 * [Linear Algebra](https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/mathematics/Linear%20Algebra.markdown): SlidesCore mathematical concepts for machine learning and computer vision.
 * Image Features: PresentationTechniques for extracting and analyzing features from images.
 * Image Filtering: NotesMethods for processing and enhancing images.
-* Annotation, Validation, and Data Exploration: Kick-off PresentationBest practices for preparing and exploring datasets.
+*[validation](): Annotation, Validation, and Data Exploration: Kick-off PresentationBest practices for preparing and exploring datasets.
 * Dimensionality Reduction and Image Transforms: SlidesTechniques for reducing data complexity and transforming images.
 
 * [Data exploration](https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/data%20exploration.markdown)
