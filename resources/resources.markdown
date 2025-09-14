@@ -181,6 +181,12 @@ List of other Useful Sites:
 | [Scikit-learn](https://scikit-learn.org/stable/) | open source project and one of the most used machine learning (ML) libraries toda |
 | [MATLAB](https://nl.mathworks.com/products/matlab.html) | uses include data analysis, algorithm development, modeling and simulation, and application development across various scientific and engineering fields like aerospace, automotive, robotics, and communications |
 | [kdnuggets](https://www.kdnuggets.com) | leading site on Data Science, Machine Learning, AI and Analytics | 
+| [Stanford University CS230](https://cs230.stanford.edu/lecture/) | Deep Learning Project Strategy | 
+| [Stanford University CS231](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv) | Deep Learning Software |
+
+
+
+
 
 * Pair with Other Materials:
 
