@@ -183,6 +183,10 @@ Data-centric AI CommunityResources and community for data-centric AI practices.
 | [kdnuggets](https://www.kdnuggets.com) | leading site on Data Science, Machine Learning, AI and Analytics | 
 | [Stanford University CS230](https://cs230.stanford.edu/lecture/) | Deep Learning Project Strategy | 
 | [Stanford University CS231](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv) | Deep Learning Software |
+| [HackerRank](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbXQ3TjZkNHlxOWxNRXlBeXlwVVZjN0FBVlVpZ3xBQ3Jtc0tudmlmcWNIM3JHbGxsRko4Q1UySHZGb08yaGV1VG1QM2traXd6eVhrM050OGs1bUt4aElRb0dIeU1tY1hjMXlOT1hMS3MyNzNEMFhQUzRYc0RXWFJtQ0RFT1Y1OG4zYWJrazBBZzNWT2hIRmhYXzl6aw&q=https%3A%2F%2Fwww.hackerrank.com%2F&v=6fx4sflgxv4) | The Developer Skills Platform |
+|[Leetcode](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbWVqVjA3cG9JdzlVbU53RXpYMGZwU1RZX0VWQXxBQ3Jtc0tsWE81YThiUW9QRHI5anhDUTFVU3ZUdF9pTVE3OUlJbXQtNkF1TDJwNUdJOUw1TjFXbGN2WlNRRGEtYnBMQ1loQklpdWZDNXRfa04tNjRsVzlSSlk3TDFwdVpudWhVQ3NtRUI1Q25fajZaYzh6bjRhdw&q=https%3A%2F%2Fleetcode.com%2F&v=6fx4sflgxv4) | prepare for technical interviews |
+|[Rust Programming Book](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbDg5bl81c3B2Z19hZEE3dVo0akJkR0JtUHVnUXxBQ3Jtc0tuT3VOaWtENTBjTmw0RnY5cTlnYU44T3B2NE5JTzNHaWJ6RUV1Q3Q3LTF3TFF1aGNvaUE5aEgxMGQySDJDR1IzUG0taTR4eEl1RjkwRWF2STdxby1fdV9ORjlzSHpmQndISE81UVIxWWh1Z0w5RjJlcw&q=https%3A%2F%2Fdoc.rust-lang.org%2Fbook%2F&v=6fx4sflgxv4) | 
+|
 
 
 ## List of other Useful videos:
@@ -190,6 +194,7 @@ Data-centric AI CommunityResources and community for data-centric AI practices.
 | title       | Info                  |
 | ------------- | ---------------------------- |
 | [ML Foundations for AI Engineers (in 34 Minutes)](https://www.youtube.com/watch?v=BUTjcAjfMgY)  | review fundementals topics, good for beginner|
+|[StatQuest with Josh Starmer](https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw/featured/featured) | Statistics, Machine Learning, Data Science, and AI |
 
 * Pair with Other Materials:
 
