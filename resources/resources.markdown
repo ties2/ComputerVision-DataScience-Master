@@ -186,7 +186,7 @@ Data-centric AI CommunityResources and community for data-centric AI practices.
 | [HackerRank](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbXQ3TjZkNHlxOWxNRXlBeXlwVVZjN0FBVlVpZ3xBQ3Jtc0tudmlmcWNIM3JHbGxsRko4Q1UySHZGb08yaGV1VG1QM2traXd6eVhrM050OGs1bUt4aElRb0dIeU1tY1hjMXlOT1hMS3MyNzNEMFhQUzRYc0RXWFJtQ0RFT1Y1OG4zYWJrazBBZzNWT2hIRmhYXzl6aw&q=https%3A%2F%2Fwww.hackerrank.com%2F&v=6fx4sflgxv4) | The Developer Skills Platform |
 |[Leetcode](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbWVqVjA3cG9JdzlVbU53RXpYMGZwU1RZX0VWQXxBQ3Jtc0tsWE81YThiUW9QRHI5anhDUTFVU3ZUdF9pTVE3OUlJbXQtNkF1TDJwNUdJOUw1TjFXbGN2WlNRRGEtYnBMQ1loQklpdWZDNXRfa04tNjRsVzlSSlk3TDFwdVpudWhVQ3NtRUI1Q25fajZaYzh6bjRhdw&q=https%3A%2F%2Fleetcode.com%2F&v=6fx4sflgxv4) | prepare for technical interviews |
 |[Rust Programming Book](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbDg5bl81c3B2Z19hZEE3dVo0akJkR0JtUHVnUXxBQ3Jtc0tuT3VOaWtENTBjTmw0RnY5cTlnYU44T3B2NE5JTzNHaWJ6RUV1Q3Q3LTF3TFF1aGNvaUE5aEgxMGQySDJDR1IzUG0taTR4eEl1RjkwRWF2STdxby1fdV9ORjlzSHpmQndISE81UVIxWWh1Z0w5RjJlcw&q=https%3A%2F%2Fdoc.rust-lang.org%2Fbook%2F&v=6fx4sflgxv4) | 
-|
+| [Data Science: Building Machine Learning Models - October 2025](https://pll.harvard.edu/course/data-science-building-machine-learning-models/2025-10) | online course |
 
 
 ## List of other Useful videos:
