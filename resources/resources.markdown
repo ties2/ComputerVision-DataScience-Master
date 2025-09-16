@@ -187,6 +187,9 @@ Data-centric AI CommunityResources and community for data-centric AI practices.
 |[Leetcode](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbWVqVjA3cG9JdzlVbU53RXpYMGZwU1RZX0VWQXxBQ3Jtc0tsWE81YThiUW9QRHI5anhDUTFVU3ZUdF9pTVE3OUlJbXQtNkF1TDJwNUdJOUw1TjFXbGN2WlNRRGEtYnBMQ1loQklpdWZDNXRfa04tNjRsVzlSSlk3TDFwdVpudWhVQ3NtRUI1Q25fajZaYzh6bjRhdw&q=https%3A%2F%2Fleetcode.com%2F&v=6fx4sflgxv4) | prepare for technical interviews |
 |[Rust Programming Book](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbDg5bl81c3B2Z19hZEE3dVo0akJkR0JtUHVnUXxBQ3Jtc0tuT3VOaWtENTBjTmw0RnY5cTlnYU44T3B2NE5JTzNHaWJ6RUV1Q3Q3LTF3TFF1aGNvaUE5aEgxMGQySDJDR1IzUG0taTR4eEl1RjkwRWF2STdxby1fdV9ORjlzSHpmQndISE81UVIxWWh1Z0w5RjJlcw&q=https%3A%2F%2Fdoc.rust-lang.org%2Fbook%2F&v=6fx4sflgxv4) | 
 | [Data Science: Building Machine Learning Models - October 2025](https://pll.harvard.edu/course/data-science-building-machine-learning-models/2025-10) | online course |
+| [Introduction to Data Science with Python](https://pll.harvard.edu/course/introduction-data-science-python) | online course |
+| [Generative AI for Everyone](https://www.coursera.org/learn/generative-ai-for-everyone) | online course |
+|
 
 
 ## List of other Useful videos:
@@ -195,6 +198,27 @@ Data-centric AI CommunityResources and community for data-centric AI practices.
 | ------------- | ---------------------------- |
 | [ML Foundations for AI Engineers (in 34 Minutes)](https://www.youtube.com/watch?v=BUTjcAjfMgY)  | review fundementals topics, good for beginner|
 |[StatQuest with Josh Starmer](https://www.youtube.com/channel/UCtYLUTtgS3k1Fg4y5tAhLbw/featured/featured) | Statistics, Machine Learning, Data Science, and AI |
+| [Machine Learning for Everybody](https://www.youtube.com/watch?v=i_LwzRVP7bg) | earn Machine Learning in a way that is accessible to absolute beginners | 
+
+
+## List of sample projects:
+
+| title       | Info                  |
+| ------------- | ---------------------------- |
+| [Supervised learning (classification/MAGIC)](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbHVJR3A5dWhES2swWGtjbFlJWW1MVXVoQ1Zjd3xBQ3Jtc0trZll6Y25iMDVseWZ1VnB6Z2xTcjFUUWg2Tm0xYkljVzNud0hJb19VazhtdHJRRVEtQjFqdGk5RmRkQnVsLUxDMEVWTlJpWFJKbjlCc0RLanMtRTZ0ejRndWNFZUxobHlpbjZuN2RKaVhKbVpocG9LMA&q=https%3A%2F%2Fcolab.research.google.com%2Fdrive%2F16w3TDn_tAku17mum98EWTmjaLHAJcsk0%3Fusp%3Dsharing&v=i_LwzRVP7bg)  | project |
+| [Supervised learning (regression/bikes)](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbXBJeGlhaWJEV09Tb1RFSDBnZWl2UHJFWWFMd3xBQ3Jtc0tsODNKcHRxRWRyTmlZdzFOd0xiNk55N3BWTnZ6cFpqczBWSC1YaGZCSTkxWEhFQWxJUUVEXzdQYUQxaEFkMEtjakVXbUd0b3RIbnp2M2RWY1l3UDR1UFhLSUFBbTdrRV9BUUc4eGZoMUNpdk1ubENmbw&q=https%3A%2F%2Fcolab.research.google.com%2Fdrive%2F1m3oQ9b0oYOT-DXEy0JCdgWPLGllHMb4V%3Fusp%3Dsharing&v=i_LwzRVP7bg) | project |
+| [Unsupervised learning (seeds)](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkt1OTBxSzNXQU1MaTNYZjBiRWJna2tWTDNKd3xBQ3Jtc0treHVUdDBrWFBvM2JhajltWWNuTFJIbnA4UEFqNi1QU3FfVGdMQV94RHI5WkZIWEtlT1RXczU1LTFJdUUwRV92elh0UXd3Z0VlS0puVW14N3p3d05jOHgtVHRocmNDdnJmMTRObXpIY0ZnMjV3V3dlYw&q=https%3A%2F%2Fcolab.research.google.com%2Fdrive%2F1zw_6ZnFPCCh6mWDAd_VBMZB4VkC3ys2q%3Fusp%3Dsharing&v=i_LwzRVP7bg) | project |
+
+
+
+🔗 Supervised learning (regression/bikes): https://colab.research.google.com/dri...
+🔗 Unsupervised learning (seeds): https://colab.research.google.com/dri...
+🔗 Dataets (add a note that for the bikes dataset, they may have to open the downloaded csv file and remove special characters)
+🔗 MAGIC dataset: https://archive.ics.uci.edu/ml/datase...
+🔗 Bikes dataset: https://archive.ics.uci.edu/ml/datase...
+🔗 Seeds/wheat dataset: https://archive.ics.uci.edu/ml/datase...
+
+
 
 * Pair with Other Materials:
 
