@@ -1015,3 +1015,141 @@ print(f"Shape: {concatenated_dim1.shape}")
 print("-" * 30)
 ```
 
+### output
+```
+--- Example 1: 1D Tensors ---
+Tensor 1: tensor([1, 2, 3])
+Tensor 2: tensor([4, 5, 6])
+
+Concatenated 1D Tensor:
+tensor([1, 2, 3, 4, 5, 6])
+Shape: torch.Size([6])
+
+--- Example 2: 2D Tensors ---
+Tensor 1 (2x3):
+tensor([[1, 2, 3],
+        [4, 5, 6]])
+Tensor 2 (2x3):
+tensor([[ 7,  8,  9],
+        [10, 11, 12]])
+
+Concatenated along dim=0 (stacks vertically):
+tensor([[ 1,  2,  3],
+        [ 4,  5,  6],
+        [ 7,  8,  9],
+        [10, 11, 12]])
+Shape: torch.Size([4, 3])
+
+Concatenated along dim=1 (joins horizontally):
+tensor([[ 1,  2,  3,  7,  8,  9],
+        [ 4,  5,  6, 10, 11, 12]])
+Shape: torch.Size([2, 6])
+```
+---
+## torch.tile()
+
+This function is used to repeat a tensor along specified dimensions. I'll create a new file to demonstrate its usage.
+
+```
+# This script demonstrates the use of torch.tile() for repeating tensors.
+
+import torch
+
+# --- Example 1: Tiling a 1D tensor ---
+# Create a 1D tensor
+original_tensor = torch.tensor([1, 2, 3])
+print("--- Example 1: Tiling a 1D Tensor ---")
+print(f"Original Tensor: {original_tensor}")
+print(f"Original Shape: {original_tensor.shape}\n")
+
+# Tile the tensor once along its single dimension.
+# This is equivalent to just getting the original tensor.
+tiled_tensor_1 = torch.tile(original_tensor, (1,))
+print(f"Tiled with dims=(1,): {tiled_tensor_1}")
+print(f"New Shape: {tiled_tensor_1.shape}\n")
+
+# Tile the tensor 3 times along its single dimension.
+# The result will be a 1D tensor with 3x the original length.
+tiled_tensor_3 = torch.tile(original_tensor, (3,))
+print(f"Tiled with dims=(3,): {tiled_tensor_3}")
+print(f"New Shape: {tiled_tensor_3.shape}\n")
+print("-" * 30)
+
+# --- Example 2: Tiling a 2D tensor ---
+# Create a 2D tensor
+original_2d_tensor = torch.tensor([[1, 2], [3, 4]])
+print("--- Example 2: Tiling a 2D Tensor ---")
+print(f"Original 2D Tensor:\n{original_2d_tensor}")
+print(f"Original Shape: {original_2d_tensor.shape}\n")
+
+# Tile the tensor once in the row dimension and 3 times in the column dimension.
+# The `dims` tuple must match the number of dimensions in the original tensor.
+# (num_row_repeats, num_col_repeats)
+tiled_2d_1x3 = torch.tile(original_2d_tensor, (1, 3))
+print(f"Tiled with dims=(1, 3):\n{tiled_2d_1x3}")
+print(f"New Shape: {tiled_2d_1x3.shape}\n")
+
+# Tile the tensor 2 times in the row dimension and 1 time in the column dimension.
+tiled_2d_2x1 = torch.tile(original_2d_tensor, (2, 1))
+print(f"Tiled with dims=(2, 1):\n{tiled_2d_2x1}")
+print(f"New Shape: {tiled_2d_2x1.shape}\n")
+
+# Tile the tensor 2 times in the row dimension and 3 times in the column dimension.
+tiled_2d_2x3 = torch.tile(original_2d_tensor, (2, 3))
+print(f"Tiled with dims=(2, 3):\n{tiled_2d_2x3}")
+print(f"New Shape: {tiled_2d_2x3.shape}")
+print("-" * 30)
+
+# --- Example 3: Tiling with Broadcasting ---
+# When the `dims` tuple has more elements than the tensor's dimensions,
+# the original tensor is implicitly treated as if it had new leading dimensions
+# of size 1.
+print("--- Example 3: Tiling with Broadcasting ---")
+print(f"Original 2D Tensor:\n{original_2d_tensor}")
+print(f"Original Shape: {original_2d_tensor.shape}\n")
+
+# The dims tuple (3, 2, 1) has 3 elements.
+# The 2D tensor is first treated as a 3D tensor of shape (1, 2, 2)
+# and then tiled accordingly.
+tiled_broadcast = torch.tile(original_2d_tensor, (3, 2, 1))
+print(f"Tiled with dims=(3, 2, 1):\n{tiled_broadcast}")
+print(f"New Shape: {tiled_broadcast.shape}")
+```
+### sample output"
+
+```
+--- Example 1: Tiling a 1D Tensor ---
+Original Tensor: tensor([1, 2, 3])
+Original Shape: torch.Size([3])
+
+Tiled with dims=(1,): tensor([1, 2, 3])
+New Shape: torch.Size([3])
+
+Tiled with dims=(3,): tensor([1, 2, 3, 1, 2, 3, 1, 2, 3])
+New Shape: torch.Size([9])
+
+--- Example 2: Tiling a 2D Tensor ---
+Original 2D Tensor:
+tensor([[1, 2],
+        [3, 4]])
+Original Shape: torch.Size([2, 2])
+
+Tiled with dims=(1, 3):
+tensor([[1, 2, 1, 2, 1, 2],
+        [3, 4, 3, 4, 3, 4]])
+New Shape: torch.Size([2, 6])
+
+Tiled with dims=(2, 1):
+tensor([[1, 2],
+        [3, 4],
+        [1, 2],
+        [3, 4]])
+New Shape: torch.Size([4, 2])
+
+Tiled with dims=(2, 3):
+tensor([[1, 2, 1, 2, 1, 2],
+        [3, 4, 3, 4, 3, 4],
+        [1, 2, 1, 2, 1, 2],
+        [3, 4, 3, 4, 3, 4]])
+New Shape: torch.Size([4, 6])
+```
