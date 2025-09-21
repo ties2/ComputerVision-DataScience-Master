@@ -190,7 +190,7 @@ Data-centric AI CommunityResources and community for data-centric AI practices.
 | [Introduction to Data Science with Python](https://pll.harvard.edu/course/introduction-data-science-python) | online course |
 | [Generative AI for Everyone](https://www.coursera.org/learn/generative-ai-for-everyone) | online course |
 | [UCI](https://archive.ics.uci.edu)| UC Irvine Machine Learning Repository |
-
+| [ONNX](https://onnx.ai) | open format built to represent machine learning models |
 
 
 ## List of other Useful videos:
