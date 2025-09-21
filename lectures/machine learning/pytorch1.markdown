@@ -496,3 +496,81 @@ To work with string data in PyTorch, you first need to convert it into a numeric
 - `t = torch.randint(low, high, size)`: Creates a tensor with **random integers** between `low` (inclusive) and `high`(exclusive).
 - `t = torch.randint_like(x, high)`: Creates a new tensor with the **same size** as `x`, filled with random integers between 0 and `high` (exclusive).
 - `t = torch.randperm(n)`: Creates a 1D tensor with a **random permutation** of integers from 0 to `n-1`.
+
+## Example:
+```
+import torch
+
+t1= torch.linspace(1,5,5)
+
+print(t1,t.dtype)
+print("----------------------------------------") 
+t= torch.empty(1,2)
+
+print(t1,t.size())
+print("----------------------------------------") 
+t2= torch.ones(3,2,5)
+
+print(t2,t.size())
+print("----------------------------------------") 
+
+t3= torch.tensor([[1,2,3],[4,5,6]])
+a= torch.ones_like(t3)
+print(t3,t3.size())
+print(a,a.size())
+print("----------------------------------------") 
+n=5
+t= torch.randperm(n)
+t
+```
+output:
+```
+tensor([1., 2., 3., 4., 5.]) torch.int64
+----------------------------------------
+tensor([1., 2., 3., 4., 5.]) torch.Size([1, 2])
+----------------------------------------
+tensor([[[1., 1., 1., 1., 1.],
+         [1., 1., 1., 1., 1.]],
+
+        [[1., 1., 1., 1., 1.],
+         [1., 1., 1., 1., 1.]],
+
+        [[1., 1., 1., 1., 1.],
+         [1., 1., 1., 1., 1.]]]) torch.Size([1, 2])
+----------------------------------------
+tensor([[1, 2, 3],
+        [4, 5, 6]]) torch.Size([2, 3])
+tensor([[1, 1, 1],
+        [1, 1, 1]]) torch.Size([2, 3])
+----------------------------------------
+tensor([0, 2, 1, 4, 3])
+```
+```
+import torch
+
+from matplotlib import pyplot as plt
+
+t= torch.randn(2,100)
+
+print(t.size())
+
+plt.plot(t[0,:],t[1,:],'ob')
+
+plt.show()
+```
+```
+t= torch.randn(2,5)
+
+print(t.size())
+
+print(t)
+
+ind= torch.randperm(t.size(1))
+
+print(ind)
+
+sel= t[:,ind[:2]]
+
+print(sel)
+
+```
