@@ -189,7 +189,8 @@ Data-centric AI CommunityResources and community for data-centric AI practices.
 | [Data Science: Building Machine Learning Models - October 2025](https://pll.harvard.edu/course/data-science-building-machine-learning-models/2025-10) | online course |
 | [Introduction to Data Science with Python](https://pll.harvard.edu/course/introduction-data-science-python) | online course |
 | [Generative AI for Everyone](https://www.coursera.org/learn/generative-ai-for-everyone) | online course |
-|
+| [UCI](https://archive.ics.uci.edu)| UC Irvine Machine Learning Repository |
+
 
 
 ## List of other Useful videos:
