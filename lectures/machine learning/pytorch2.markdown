@@ -210,6 +210,22 @@ print("--- Example 1: Reshaping a Contiguous Tensor ---")
 contiguous_tensor = torch.arange(6).reshape(2, 3)
 demonstrate_reshape(contiguous_tensor)
 
+"""
+--- Example 1: Reshaping a Contiguous Tensor ---
+Original Tensor:
+tensor([[0, 1, 2],
+        [3, 4, 5]])
+Original Shape: torch.Size([2, 3])
+Is Contiguous: True
+
+Reshaped Tensor:
+tensor([[0, 1],
+        [2, 3],
+        [4, 5]])
+New Shape: torch.Size([3, 2])
+Is Contiguous: True
+"""
+
 # --- Example 2: The effect of transpose() on contiguity ---
 print("--- Example 2: Reshaping a Transposed (Non-Contiguous) Tensor ---")
 # First, create a tensor and transpose it.
@@ -231,6 +247,23 @@ print(f"New Shape: {reshaped_from_transposed.shape}")
 print(f"Is Contiguous: {reshaped_from_transposed.is_contiguous()}\n")
 print("-" * 30)
 
+"""
+--- Example 2: Reshaping a Transposed (Non-Contiguous) Tensor ---
+Tensor after transpose(0, 1):
+tensor([[0, 3],
+        [1, 4],
+        [2, 5]])
+Shape: torch.Size([3, 2])
+Is Contiguous: False
+
+Attempting to reshape the non-contiguous tensor...
+Reshaped tensor from transposed one:
+tensor([[0, 3, 1],
+        [4, 2, 5]])
+New Shape: torch.Size([2, 3])
+Is Contiguous: True
+"""
+
 # --- Example 3: Making a tensor contiguous explicitly ---
 print("--- Example 3: Using .contiguous() before reshape() ---")
 # For clarity and performance, it's often best to make a tensor contiguous yourself.
@@ -240,6 +273,34 @@ tensor_to_reshape = contiguous_tensor.transpose(0, 1).contiguous()
 print(f"Original tensor (transposed then contiguous):\n{tensor_to_reshape}")
 print(f"Shape: {tensor_to_reshape.shape}")
 print(f"Is Contiguous: {tensor_to_reshape.is_contiguous()}\n")
+
+"""
+--- Example 3: Using .contiguous() before reshape() ---
+Original tensor (transposed then contiguous):
+tensor([[0, 3],
+        [1, 4],
+        [2, 5]])
+Shape: torch.Size([3, 2])
+Is Contiguous: True
+
+Tensor after .contiguous().reshape(2, 3):
+tensor([[0, 3, 1],
+        [4, 2, 5]])
+New Shape: torch.Size([2, 3])
+Is Contiguous: True
+
+--- Special Case: Using -1 in reshape() ---
+Original 3D tensor:
+tensor([[[ 0,  1,  2],
+         [ 3,  4,  5]],
+
+        [[ 6,  7,  8],
+         [ 9, 10, 11]]])
+Original Shape: torch.Size([2, 2, 3])
+Flattened tensor using reshape(-1):
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11])
+New Shape: torch.Size([12])
+"""
 
 # Now reshape() is guaranteed to be a fast, zero-copy operation.
 explicit_reshaped = tensor_to_reshape.reshape(2, 3)
@@ -259,3 +320,78 @@ print(f"Flattened tensor using reshape(-1):\n{flattened_tensor}")
 print(f"New Shape: {flattened_tensor.shape}")
 ```
 
+## ravel
+
+torch.ravel() is a PyTorch function used to flatten a tensor into a one-dimensional tensor. It returns a new tensor that contains all the elements of the original tensor in row-major order. The function is essentially an alias for torch.flatten() and is very similar to using tensor.reshape(-1). A key aspect of ravel() is its behavior regarding memory contiguity: it will return a view of the original tensor if the data is contiguous, and a new copy if it's not.
+
+```
+# This script demonstrates the use of torch.ravel() to flatten a tensor
+# and explores how it handles contiguous and non-contiguous data.
+
+import torch
+
+# --- Part 1: Ravel on a contiguous tensor ---
+# A simple tensor created with arange() is contiguous by default.
+print("--- Example 1: Ravel on a Contiguous Tensor ---")
+contiguous_tensor = torch.arange(12).reshape(3, 4)
+print(f"Original Tensor (contiguous):\n{contiguous_tensor}")
+print(f"Original Shape: {contiguous_tensor.shape}")
+print(f"Is Contiguous: {contiguous_tensor.is_contiguous()}\n")
+
+# Use ravel() to flatten the tensor. Since it's contiguous,
+# this operation returns a view (no data is copied).
+raveled_tensor = torch.ravel(contiguous_tensor)
+print(f"Raveled Tensor:\n{raveled_tensor}")
+print(f"Raveled Shape: {raveled_tensor.shape}\n")
+
+# You can see they share the same memory by modifying one.
+raveled_tensor[0] = 99
+print("Original Tensor after modifying raveled_tensor:")
+print(contiguous_tensor)
+print("-" * 30)
+
+
+# --- Part 2: Ravel on a non-contiguous tensor ---
+# We can make a tensor non-contiguous by using an operation like transpose().
+print("--- Example 2: Ravel on a Non-Contiguous Tensor ---")
+non_contiguous_tensor = contiguous_tensor.transpose(0, 1)
+print(f"Transposed Tensor (now non-contiguous):\n{non_contiguous_tensor}")
+print(f"Shape: {non_contiguous_tensor.shape}")
+print(f"Is Contiguous: {non_contiguous_tensor.is_contiguous()}\n")
+
+# When ravel() is used on a non-contiguous tensor, a copy of the data is made
+# to arrange it contiguously in memory.
+raveled_non_contiguous = torch.ravel(non_contiguous_tensor)
+print(f"Raveled Non-Contiguous Tensor:\n{raveled_non_contiguous}")
+print(f"Raveled Shape: {raveled_non_contiguous.shape}\n")
+
+# Modifying the new raveled tensor now does NOT affect the original.
+raveled_non_contiguous[0] = 100
+print("Transposed Tensor after modifying its raveled version:")
+print(non_contiguous_tensor)
+print("-" * 30)
+
+# --- Part 3: Comparison with other flattening methods ---
+print("--- Example 3: Comparison with reshape(-1) and flatten() ---")
+tensor_to_compare = torch.arange(6).reshape(2, 3)
+
+# reshape(-1) is the most common and concise way to flatten a tensor.
+reshaped_flat = tensor_to_compare.reshape(-1)
+print(f"Using tensor.reshape(-1):\n{reshaped_flat}")
+
+# flatten() is a more descriptive name for the operation and is functionally
+# identical to ravel().
+flattened_tensor = torch.flatten(tensor_to_compare)
+print(f"Using torch.flatten():\n{flattened_tensor}")
+
+# For a 2D tensor, the .T attribute is a quick way to transpose.
+transposed_T = tensor_to_compare.T
+print(f"Using tensor.T (transposed):\n{transposed_T}")
+
+```
+
+## contiguous and non-contiguous
+
+In PyTorch, a tensor's data is stored in a one-dimensional block of memory. A tensor is "contiguous" if the order of its elements in memory matches the order you would get if you read the tensor's elements in a row-by-row, column-by-column fashion.
+
+When you perform an operation like transpose() or permute(), the tensor's dimensions are reordered, but the underlying data in memory is not necessarily moved. This creates a "non-contiguous" tensor, where the logical order of elements no longer matches their physical order in memory.
