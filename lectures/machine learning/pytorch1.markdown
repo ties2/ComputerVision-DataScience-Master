@@ -574,3 +574,25 @@ sel= t[:,ind[:2]]
 print(sel)
 
 ```
+output: 
+torch.Size([2, 5])
+tensor([[ 0.5783, -1.8835,  0.4670,  0.8298,  0.3463],
+        [-0.8672,  0.1153,  1.0043,  0.7203,  1.7941]])
+tensor([2, 1, 3, 0, 4])
+tensor([[ 0.4670, -1.8835],
+        [ 1.0043,  0.1153]])
+
+## use flip 
+```
+# Original tensor
+original_tensor = torch.tensor([4, -8, 5, 3, -2, 1])
+print(f"Original Tensor: {original_tensor}\n")
+
+# Flip the tensor along the only dimension (dimension 0)
+flipped_tensor = torch.flip(original_tensor, dims=[0])
+print(f"Flipped Tensor: {flipped_tensor}")
+```
+output:
+Original Tensor: tensor([ 4, -8,  5,  3, -2,  1])
+
+Flipped Tensor: tensor([ 1, -2,  3,  5, -8,  4])
