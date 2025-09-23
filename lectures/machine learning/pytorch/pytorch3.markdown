@@ -106,3 +106,123 @@ tensor([[ 3,  4,  5],
 
 
 # work with Data
+
+## read data with numpy
+
+```
+dataset = np.loadtxt('pima-indians-diabetes.csv', delimiter=',')
+```
+## read data and make dataframe with panda
+```
+import pandas as pd
+
+#dataset = np.loadtxt('pima-indians-diabetes.csv', delimiter=',')
+
+dic= {'length':[12,15,11,14,9,13],
+      'width':[5,8,7,8,4,10],
+      'intensity':[155,88,210,154,160,145],
+      'label':[1,1,1,2,2,2]
+}
+
+df= pd.DataFrame(dic)
+print(df)
+print(df.head(3))
+print(df.tail(2))
+
+print(df.columns)
+
+col=df.columns
+lenV=df.loc[:,col[0]].values
+print(lenV)
+
+wV=df.loc[:,col[1]].values
+print(wV)
+
+inV=df.loc[:,col[2]].values
+print(inV)
+```
+### output
+```
+   length  width  intensity  label
+0      12      5        155      1
+1      15      8         88      1
+2      11      7        210      1
+3      14      8        154      2
+4       9      4        160      2
+5      13     10        145      2
+   length  width  intensity  label
+0      12      5        155      1
+1      15      8         88      1
+2      11      7        210      1
+   length  width  intensity  label
+4       9      4        160      2
+5      13     10        145      2
+Index(['length', 'width', 'intensity', 'label'], dtype='object')
+[12 15 11 14  9 13]
+[ 5  8  7  8  4 10]
+[155  88 210 154 160 145]
+```
+now convert df to numpy array
+```
+a=df.loc[:,col[0]].to_numpy()
+print(a)
+
+b=df.loc[:,col[1]].to_numpy()
+print(b)
+
+c=df.loc[:,col[2]].to_numpy()
+print(c)
+
+print(df)
+
+df.iloc[1,:]=[2,5,6,8]
+print(df)
+print("---------------------------------")
+df.iloc[3]=20
+print(df)
+```
+### output
+```
+[12 15 11 14  9 13]
+[ 5  8  7  8  4 10]
+[155  88 210 154 160 145]
+   length  width  intensity  label
+0      12      5        155      1
+1      15      8         88      1
+2      11      7        210      1
+3      14      8        154      2
+4       9      4        160      2
+5      13     10        145      2
+   length  width  intensity  label
+0      12      5        155      1
+1       2      5          6      8
+2      11      7        210      1
+3      14      8        154      2
+4       9      4        160      2
+5      13     10        145      2
+---------------------------------
+   length  width  intensity  label
+0      12      5        155      1
+1       2      5          6      8
+2      11      7        210      1
+3      20     20         20     20
+4       9      4        160      2
+5      13     10        145      2
+```
+### Note: set header=none if first raw doesn't related to name 
+
+## read data with pandas
+
+```
+print("----read data with pandas----")
+filename=r'/content/dataset-uci1.xlsx'
+df= pd.read_excel(filename)
+df
+# print(df.head(10))
+```
+## convert to tensor
+```
+data= torch.from_numpy(data).type(torch.float32)
+
+label= torch.from_numpy(label).type(torch.float32)
+``` 
