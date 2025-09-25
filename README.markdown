@@ -70,13 +70,13 @@ The repository is organized into key areas of study, with materials sourced from
 - **Big Data**: Handling and analyzing large-scale datasets.
 - **Data-centric AI**: Focusing on data quality and preparation for better models.
 
-## 📂 Repository Structure
+## Repository Structure
 - **[lectures](https://github.com/ties2/ComputerVision-DataScience-Master/tree/main/lectures)**: Contains kick-off presentations and extra teaching materials.
 - **[projects](https://github.com/ties2/ComputerVision-DataScience-Master/tree/main/project)**: Practical projects implementing pipelines and tasks.
 - **[resources](https://github.com/ties2/ComputerVision-DataScience-Master/tree/main/resources)**: Links to external teaching materials, papers, and datasets.
 - **[docs](https://github.com/ties2/ComputerVision-DataScience-Master/tree/main/docs)**: Detailed notes and documentation for each topic.
 
-## 🚀 Getting Started
+## Getting Started
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/ties2/ComputerVision-DataScience-Master.git
@@ -91,19 +91,19 @@ The repository is organized into key areas of study, with materials sourced from
    - Check out **My First Pipeline** for a beginner-friendly project.
    - Dive into specific topics like **Convolutional Neural Networks** or **Object Detection** for advanced learning.
 
-## 🔗 Resources
+## Resources
 - Additional resources, including datasets and research papers, are in the `/resources/` folder.
 - Check the `/lectures/` folder for kick-off presentations and supplementary materials.
 
-## 💡 Contributing
+## Contributing
 This repository is a work in progress, and contributions are welcome! If you have suggestions, additional resources, or code improvements:
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature-branch`).
 3. Submit a pull request with a clear description of your changes.
 
-## 📬 Contact
+## Contact
 Feel free to reach out with questions or feedback:
 - Email: [nirvana.elahi@outlook.com](mailto:nirvana.elahi@outlook.com)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 This repository is built from my educational journey and inspired by countless open-source resources, professors, and peers. Thank you to the computer vision and data science communities for their contributions!
