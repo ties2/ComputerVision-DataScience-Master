@@ -305,4 +305,38 @@ df[col].dtypes
 df[col].head()
 ```
 
+Since the data is real valued, we should replace all the null values with mean of each column
 
+```
+for i in col:
+    df[i] = df[i].fillna(df[i].mean())
+```
+```
+# plotting a boxplot
+plt.figure(figsize=(5,5))
+sns.boxplot(data=df)
+plt.xticks(rotation='vertical')
+plt.show()
+```
+
+## Handling Outliers
+
+Outliers are extreme values that stand out greatly from the overall pattern of values in a dataset.
+It is necessary to handle outliers because they affect the model's distribution and ultimately the model's accuracy.
+We can use boxplot to get an idea of the outliers present in the dataset.
+The box represents the interquartile range (IQR), with the median indicated by a line inside the box.
+Any points outside the whiskers are considered potential outliers
+
+```
+# plotting a boxplot
+plt.figure(figsize=(5,5))
+sns.boxplot(data=df)
+plt.xticks(rotation='vertical')
+plt.show()
+```
+
+### To handle outliers we can follow three steps:
+
+Trimming or removing outliers permanently.
+Quantile based flooring and capping.
+Replacing them with mean and median.
