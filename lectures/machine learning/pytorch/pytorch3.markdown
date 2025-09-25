@@ -233,3 +233,69 @@ label= torch.from_numpy(label).type(torch.float32)
 The SciPy library is a powerful, open-source Python library for scientific and technical computing. It's built on top of NumPy, which provides the foundation for working with multidimensional arrays, and it offers a vast collection of algorithms and tools for a wide range of scientific and engineering tasks.
 
 SciPy is often used alongside other libraries like Matplotlib for plotting and Pandas for data manipulation, creating a comprehensive environment for data analysis and scientific research in Python.
+
+for read data of .mat we use module io of this library 
+
+```
+import torch
+from scipy import io
+filename=r'/content/opp_hl.mat'
+ds= io.loadmat(filename)
+ds.keys()
+
+```
+### output
+
+```
+dict_keys(['__header__', '__version__', '__globals__', 'data_opp_hl']) ,
+```
+```
+filename=r'/content/opp_hl.mat'
+dic={'features':data,'target':label}
+io.savemat(filename,dic)
+#also we can save by pytorch : torch.save (dic,filename)
+ds= io.loadmat(filename)
+ds.keys()
+data= ds['features']
+label= ds['target']
+data = torch.from_numpy(data).type(torch.FloatTensor)
+label = torch.from_numpy(label).type(torch.LongTensor)
+```
+---
+## Example:
+
+reading dataset [air quality](https://www.kaggle.com/code/prakharjadaun/how-to-approach-a-dataset-eda-learn-with-me)
+with pandas and then seprate data and output and put in two seprate array. draw output and put data in tensor
+```
+# reading the dataset
+
+import pandas as pd
+df = pd.read_csv('/content/AirQuality.csv',sep=";", decimal=",",header=0)
+df.head()
+
+
+# shape of our dataset
+# df.shape
+print("No of rows in dataset:",df.shape[0])
+print("No of columns in dataset:",df.shape[1])
+
+# getting the dtypes of the all columns
+df.dtypes
+
+# getting the numerical estimates of all the numerical column
+df.describe()
+df.info()
+
+# checking null values in our dataset
+df.isna().sum()
+```
+
+```
+# visualizing the na values using heatmap
+sns.heatmap(df.isna(),yticklabels=False,cmap='crest')
+plt.show()
+
+```
+
+
+
