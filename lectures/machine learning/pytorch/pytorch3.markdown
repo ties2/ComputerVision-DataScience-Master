@@ -226,3 +226,10 @@ data= torch.from_numpy(data).type(torch.float32)
 
 label= torch.from_numpy(label).type(torch.float32)
 ``` 
+## read .mat data 
+
+### SciPy
+
+The SciPy library is a powerful, open-source Python library for scientific and technical computing. It's built on top of NumPy, which provides the foundation for working with multidimensional arrays, and it offers a vast collection of algorithms and tools for a wide range of scientific and engineering tasks.
+
+SciPy is often used alongside other libraries like Matplotlib for plotting and Pandas for data manipulation, creating a comprehensive environment for data analysis and scientific research in Python.
