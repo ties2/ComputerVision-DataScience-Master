@@ -296,6 +296,13 @@ sns.heatmap(df.isna(),yticklabels=False,cmap='crest')
 plt.show()
 
 ```
-
+```
+# getting the datatypes of all the columns having null values
+# first storing all the column names in a list having null values
+col = ['CO(GT)', 'PT08.S1(CO)', 'C6H6(GT)','PT08.S2(NMHC)', 'NOx(GT)', 'PT08.S3(NOx)', 'NO2(GT)', 'PT08.S4(NO2)','PT08.S5(O3)', 'T', 'RH', 'AH']
+df = df[col]
+df[col].dtypes
+df[col].head()
+```
 
 
