@@ -155,3 +155,14 @@ datasets.make_circles(...): This function creates data points arranged in two co
 * shuffle=True (The Action) When set to True, it randomly rearranges the order of the data points before any operation (like splitting the data into training and testing sets, or generating the data, as with make_circles).
 
 * random_state=0 (The Reproducibility Switch)What it does: This sets the seed for the random number generator used by the function 
+
+```
+plt.scatter(data[:,0],data[:,1],c=target)
+```
+visual generated data
+
+* plt.scatter:	Matplotlib (Plotting)	The core function that draws points (dots) on a 2D graph.
+* data[:, 0]:	NumPy/SciPy Data	Selects all rows (:) and the first column (0) of your features array. This is the X-axis coordinate for every point.
+* data[:, 1]:	NumPy/SciPy Data	Selects all rows (:) and the second column (1) of your features array. This is the Y-axis coordinate for every point.
+* c=target:	Plotting Parameter	Specifies the color (c) of each point. Since target contains 0s and 1s (one value for each circle), Matplotlib automatically assigns two different colors to visually separate the classes.
+
