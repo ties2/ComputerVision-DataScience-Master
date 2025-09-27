@@ -197,3 +197,22 @@ class CustomDataset(Dataset):
    pass
   def __getitem__(self,index):
    pass
+```
+
+* dataset is an abstract class which responsile for load data from resource and doing preporesseing and change to tensor.
+
+Note:
+
+* Abstract Class
+Role: Defines a contract or blueprint. It specifies what methods derived classes must implement, but it doesn't provide a complete implementation itself.
+
+Key Feature: You cannot create an instance (object) of an abstract class. It exists only to be inherited from.
+
+Use Case: Establishing a common interface for a group of related classes (e.g., a base Animal class defining an abstract make_sound() method).
+
+* Utility Class
+Role: Holds a collection of static methods (or functions) that perform common, reusable operations, usually on data provided as arguments.
+
+Key Feature: It has no internal state (no self.attribute). You typically never create an instance of a utility class; you just call its methods directly using the class name.
+
+Use Case: Grouping helpful, generic tools (e.g., a MathUtils class with static methods like calculate_distance or format_currency).
