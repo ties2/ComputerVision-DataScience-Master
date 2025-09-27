@@ -187,6 +187,14 @@ Multiprocessing: It uses multiple worker threads to load data in the background,
 The Partnership
 You instantiate the Dataset once to structure all your data, and then you wrap that Dataset in a DataLoader to handle the batching and feeding process during training
 
+benefits of dataloader:
+* let user load data parallel
+* data augmentation
+* flexibility
+* shuffling
+
+ 
+
 ```
 from torch.utils.data import Dataset,DataLoader
 
