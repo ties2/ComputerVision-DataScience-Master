@@ -101,6 +101,31 @@ shelf = Bookcase(["The Martian", "Dune", "1984"])
 print(len(shelf))
 # Output: 3
 ```
+### __len__(self): Sizing an Object
+This method allows your object to have a measurable size, adhering to the "Sizing Protocol."
+
+Role: Must return an integer representing the length or size of the object.
+
+Purpose: Allows you to use the built-in len() function on your custom objects.
+
+Triggered by: len(my_object)
+
+Example:
+```
+class Bookcase:
+    def __init__(self, book_list):
+        self.books = book_list
+
+    # This method runs automatically when we call len() on a Bookcase object.
+    def __len__(self):
+        return len(self.books)
+
+shelf = Bookcase(["The Martian", "Dune", "1984"])
+print(len(shelf))
+# Output: 3
+```
+
+
 Other Essential Dunder Methods
 Many other magic methods allow you to implement different Python protocols:
 
