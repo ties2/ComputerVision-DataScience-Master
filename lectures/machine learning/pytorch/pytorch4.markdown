@@ -166,3 +166,19 @@ visual generated data
 * data[:, 1]:	NumPy/SciPy Data	Selects all rows (:) and the second column (1) of your features array. This is the Y-axis coordinate for every point.
 * c=target:	Plotting Parameter	Specifies the color (c) of each point. Since target contains 0s and 1s (one value for each circle), Matplotlib automatically assigns two different colors to visually separate the classes.
 
+## regression in sklearn 
+
+```
+from sklearn import datasets
+import torch 
+
+data,target=datasets.make_circles(n_samples=1000,noise=0.2,factor=0.2,random_state=0,shuffle=True)
+print(data.shape)
+print(target.shape)
+plt.scatter(data[:,0],data[:,1],c=target)
+plt.show()
+x_tensor= torch.from_numpy(data).float()
+y_tensor= torch.from_numpy(target).long()
+print(x_tensor.shape)
+print(y_tensor.shape)
+````

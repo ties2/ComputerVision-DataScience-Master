@@ -33,5 +33,10 @@ print(filename)
 ### output:
 ['/content/S040.txt',..., '/content/sample_data']
 
+or for subfolder:
+pathname='/content/*/*'
+filename= glob.glob(pathname+'/*')
+print(filename)
 
-
+### output:
+['/content/s/S040.txt',..., '/content/sample_data']
