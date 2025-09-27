@@ -157,3 +157,43 @@ Many other magic methods allow you to implement different Python protocols:
 | __setitem__(self, key, value)	| Container Assignment	| my_object[key] = value |	Allows assignment to an index or key.
 | __add__(self, other) |	Numeric Addition	| obj1 + obj2	| Defines how the + operator behaves for your object.
 | __eq__(self, other) |	Comparison |	obj1 == obj2 |	Defines what it means for two custom objects to be equal. |
+
+----
+## dataset and dataloaders 
+This is a core concept in PyTorch for efficiently managing and feeding data into your machine learning models. They work in tandem: the Dataset handles what the data is, and the DataLoader handles how it's delivered.
+
+1. Dataset (The Data Source)
+The Dataset is the class responsible for holding your data samples and their corresponding labels. Think of it as the storage locker for your entire dataset.
+
+Every custom PyTorch Dataset you create must implement two special (dunder) methods:
+
+__len__: Returns the total number of samples in the dataset.
+
+__getitem__: Returns a single data sample and its label when given an index (e.g., my_dataset[5]).
+
+The Dataset ensures that you can access any item in your data by index.
+
+2. DataLoader (The Delivery Utility)
+The DataLoader is an iterable wrapper around your Dataset. It transforms the static dataset into an efficient, dynamic stream of data ready for model training. Think of it as the assembly line that prepares batches of data.
+
+It provides critical functionality needed for training:
+
+Batching: It groups individual samples from the Dataset into manageable mini-batches (e.g., 32 or 64 samples at a time) for efficient processing by the GPU.
+
+Shuffling: It randomizes the order of the data between training epochs to prevent the model from learning the sequence of the data.
+
+Multiprocessing: It uses multiple worker threads to load data in the background, preventing your GPU from sitting idle while waiting for the next batch (a common bottleneck).
+
+The Partnership
+You instantiate the Dataset once to structure all your data, and then you wrap that Dataset in a DataLoader to handle the batching and feeding process during training
+
+```
+from torch.utils.data import Dataset,DataLoader
+
+class CustomDataset(Dataset):
+  def __init__(self,<arguments>):
+   pass
+  def __len__(self):
+   pass
+  def __getitem__(self,index):
+   pass
