@@ -124,7 +124,27 @@ shelf = Bookcase(["The Martian", "Dune", "1984"])
 print(len(shelf))
 # Output: 3
 ```
+### __getitem__
 
+Example:
+```
+class SimpleContainer:
+    """A container that allows access by index."""
+    def __init__(self, data_list):
+        self.data = data_list
+
+    # This method runs automatically when square brackets are used.
+    def __getitem__(self, index):
+        # The key is the index used inside the square brackets.
+        return self.data[index]
+
+my_data = SimpleContainer(['Apple', 'Banana', 'Cherry', 'Date'])
+
+# This line calls my_data.__getitem__(2)
+print(my_data[2])
+
+# Output: Cherry
+```
 
 Other Essential Dunder Methods
 Many other magic methods allow you to implement different Python protocols:
