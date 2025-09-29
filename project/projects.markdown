@@ -34,11 +34,11 @@ to machine learning algorithms.
 📚 Project Repositories
 Below is a list of projects, each hosted in its own GitHub repository:
 
-| title | category | info | 
-| ---------- | -------- | ----------
-| [Computer-vision-yolo8-project](https://github.com/ties2/Computer-vision-yolo8-project) | computer vision | 
+| title | info | 
+| ---------- | ----------
+| [Computer-vision-yolo8-project](https://github.com/ties2/Computer-vision-yolo8-project) | computer vision project| 
+| [Adult_Income_Prediction_NN](https://github.com/ties2/Adult_Income) | NN project | 
 
-| [Adult_Income_Prediction_NN]()
 
 
 Scientific Programming
