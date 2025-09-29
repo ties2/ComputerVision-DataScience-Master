@@ -261,3 +261,43 @@ plt.show()
 <p align="center">
   <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/MNIST%20sample%20digit.png" alt="Computer Vision Logo" width="300" />
 </p>
+
+## customized dataset
+
+```
+#dataset EEN ( has two file s and z and each of them has some *.txt files)
+
+import torch
+from torch.utils.data import Dataset,DataLoader
+import glob
+import pandas as pd
+
+class CustomDataset(Dataset):
+  def __init__(self,pathname,transforms=None,target_transform=None):
+    self.file_names= glob.glob(pathname+'/*/*.txt') # Modified glob pattern
+    self.class_map= {'S':0,'Z':1} # Changed keys to uppercase
+    self.transforms=transforms
+    self.target_transform=target_transform
+
+  def __len__(self):
+    return len(self.file_names)
+
+  def __getitem__(self,index):
+    filename= self.file_names[index]
+    df= pd.read_csv(filename,header=None)
+    chr=filename.split('/')[-1][0] # Modified split character
+
+    sample=df.iloc[:,0].to_numpy()
+    label=self.class_map[chr]
+    if self.transforms:
+      sample=self.transforms(sample)
+    if self.target_transform:
+      label=self.target_transform(label)
+    return sample,label
+
+pathname='content'
+ds=CustomDataset(pathname,transforms=None, target_transform=None)
+len(ds)
+sampl,label= ds[1]
+print(sampl,label)
+```
