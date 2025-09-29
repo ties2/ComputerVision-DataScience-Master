@@ -368,6 +368,15 @@ Custom Datasets: Libraries like PyTorch or TensorFlow often expect datasets in a
 second method:
 ```
 from torch.utils.data import TensorDataset
+data = [[1, 3], [2, 6], [1, 2]]  # Feature matrix (3 samples, 2 features each)
+target = [0, 1, 0]               # Corresponding labels
+data = torch.tensor(data, dtype=torch.float32)
+target = torch.tensor(target, dtype=torch.long)
+ds1=TensorDataset(data,target)
+sampl,target= ds1[2]
+print(sampl,target)
 
-ds=TensorDataset(data,target)
 ```
+output:
+
+tensor([5., 6.]) tensor(0)
