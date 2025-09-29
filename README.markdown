@@ -4,7 +4,7 @@ Welcome to my GitHub repository, a comprehensive resource for anyone looking to 
 
 
 <p align="center">
-  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/CV.png" alt="Computer Vision Logo" width="300" />
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/CV.png" alt="Computer Vision Logo" width="300" />
 </p>
 
 
