@@ -1,10 +1,32 @@
-Project List: Computer Vision and Data Science
+# Project List: Computer Vision and Data Science
+
 Welcome to the Projects section of the Computer Vision and Data Science Learning Hub! 
 This file provides a curated list of GitHub repositories, each dedicated to a specific area of study or task in computer vision and data science.
-These projects contain code, notebooks, datasets, and documentation to help you learn and apply concepts from my educational journey.
+These projects contain code, notebooks, datasets, and documentation to help you learn and apply concepts from educational journey.
+
 Whether you're exploring foundational topics or diving into advanced pipelines, these repositories are designed to be practical and accessible.
 FundamentalsDive into the core building blocks of computer vision, including Linear Algebra, Image Features, Image Filtering, Annotation, Validation, 
 Data Exploration, Dimensionality Reduction, and Image Transforms.
+
+* Beginner Level (Core Skills)
+
+Focus: Data wrangling, visualization, basic ML algorithms, statistical analysis.
+Skills: Python, Pandas, NumPy, Matplotlib, Scikit-learn, A/B testing.
+
+* Intermediate Level (ML and Deep Learning)
+
+Focus: Classification, regression, neural networks, NLP, recommendation systems.
+Skills: TensorFlow/Keras, PyTorch, NLP libraries (NLTK, SpaCy), recommendation algorithms.
+
+* Advanced Level (Real-Time and Scalable Systems):
+
+Focus: Real-time systems, MLOps, distributed systems, reinforcement learning, AutoML.
+Skills: OpenCV, MLflow, Kubernetes, Ray, reinforcement learning frameworks.
+
+* Specialized/Research-Oriented: 
+
+Focus: Language models, generative AI.
+Skills: Transformers, Hugging Face, GANs.
 
 Mathematics for Machine LearningExplore essential mathematical concepts like linear algebra, calculus, and probability, with practical applications 
 to machine learning algorithms.
@@ -12,8 +34,11 @@ to machine learning algorithms.
 📚 Project Repositories
 Below is a list of projects, each hosted in its own GitHub repository:
 
-* [Computer-vision-yolo8-project](https://github.com/ties2/Computer-vision-yolo8-project)
+| title | category | info | 
+| ---------- | -------- | ----------
+| [Computer-vision-yolo8-project](https://github.com/ties2/Computer-vision-yolo8-project) | computer vision | 
 
+| [Adult_Income_Prediction_NN]()
 
 
 Scientific Programming
@@ -58,7 +83,7 @@ Big DataTackle large-scale data processing and analysis techniques.
 Data-centric AIFocus on improving data quality and preparation for better machine learning outcomes.
 
 
-🚀 How to Use These Projects
+How to Use These Projects
 
 Visit a Repository:
 
