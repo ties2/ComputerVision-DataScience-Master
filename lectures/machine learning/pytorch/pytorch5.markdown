@@ -224,3 +224,35 @@ Role: Holds a collection of static methods (or functions) that perform common, r
 Key Feature: It has no internal state (no self.attribute). You typically never create an instance of a utility class; you just call its methods directly using the class name.
 
 Use Case: Grouping helpful, generic tools (e.g., a MathUtils class with static methods like calculate_distance or format_currency).
+
+---
+## pytorch dataset
+
+# try MNIST dataset as a sample
+it is image dataset include handwriting sample of digits.
+```
+import torch
+from torchvision import datasets,transforms
+from torchvision.transforms import ToTensor
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+train_ds= datasets.MNIST(root='content/data',train=True,download=True,transform=ToTensor(),target_transform=None)
+test_ds= datasets.MNIST(root='content/data',train=False,download=True,transform=ToTensor(),target_transform=None)
+len(test_ds)
+
+for i in range(10):
+
+  sample,label=train_ds[i]
+
+  plt.subplot(2,5,i+1)
+
+  plt.imshow(sample.squeeze(), cmap='gray')
+
+  plt.title(label,fontsize=15)
+
+plt.tight_layout()
+
+plt.show()
+
+```
