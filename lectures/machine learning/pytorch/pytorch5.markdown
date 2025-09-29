@@ -256,3 +256,8 @@ plt.tight_layout()
 plt.show()
 
 ```
+### output
+
+<p align="center">
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/MNIST%20sample%20digit.png" alt="Computer Vision Logo" width="300" />
+</p>
