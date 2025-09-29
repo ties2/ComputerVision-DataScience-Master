@@ -364,3 +364,10 @@ Common Use Cases
 Data Preparation: This format is useful for iterating over data and labels together, especially in custom loops for training machine learning models or for shuffling datasets.
 Shuffling: When paired with random.shuffle(ds), it ensures that features and labels remain aligned while randomizing the order of samples.
 Custom Datasets: Libraries like PyTorch or TensorFlow often expect datasets in a format where inputs and outputs are paired, and list(zip(data, target)) is a simple way to achieve this.
+
+second method:
+```
+from torch.utils.data import TensorDataset
+
+ds=TensorDataset(data,target)
+```
