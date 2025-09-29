@@ -262,7 +262,9 @@ plt.show()
   <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/MNIST%20sample%20digit.png" alt="Computer Vision Logo" width="300" />
 </p>
 
-## customized dataset
+## customized dataset,dataloaders
+
+Example:
 
 ```
 #dataset EEN ( has two file s and z and each of them has some *.txt files)
@@ -299,5 +301,43 @@ pathname='content'
 ds=CustomDataset(pathname,transforms=None, target_transform=None)
 len(ds)
 sampl,label= ds[1]
+print(sampl,label)
+```
+Example:
+```
+import torch
+from torch.utils.data import Dataset,DataLoader
+import glob
+import pandas as pd
+
+class CustomDataset(Dataset):
+  def __init__(self,pathname,transforms=None,target_transform=None):
+    df= pd.read_excel(pathname)
+    data=df.iloc[:,:-1].to_numpy()
+    label=df.iloc[:,-1].to_numpy()
+    self.data=data
+    self.target=label
+    self.transforms=transforms
+    self.target_transform=target_transform
+
+   
+
+  def __len__(self):
+    return len(self.target)
+
+  def __getitem__(self,index):
+    sample= self.data[index]
+    label=self.target[index]
+    if self.transforms:
+      sample=self.transforms(sample)
+    if self.target_transform:
+      label=self.target_transform(label)
+    return sample,label
+    
+
+pathname='content/iris.xlsx'
+ds=CustomDataset(pathname,transforms=None, target_transform=None)
+len(ds)
+sampl,label= ds[11]
 print(sampl,label)
 ```
