@@ -419,3 +419,56 @@ triple = Multiplier(3)
 print(double(10)) # Output: 20
 print(triple(10)) # Output: 30
 ```
+Example to define class totensor and use call method
+
+```
+import torch
+import numpy as np
+
+class ToTensor:
+    """
+    A callable class that converts input data (list or NumPy array)
+    into a PyTorch float tensor using the __call__ method.
+    """
+    def __init__(self):
+        # The constructor does nothing here, as the state is simple (no attributes needed).
+        pass
+
+    # This method is automatically executed when the object instance is called like a function.
+    def __call__(self, data):
+        """Converts the input data into a PyTorch tensor."""
+        print(f"Input Type received: {type(data)}")
+        
+        # Convert to tensor and ensure it's a float type (common for model input)
+        tensor_output = torch.tensor(data, dtype=torch.float32)
+        
+        print(f"Output Tensor Shape: {tensor_output.shape}")
+        return tensor_output
+
+# --- Demonstration ---
+
+# 1. Create an instance of the class
+data_converter = ToTensor()
+
+# 2. Prepare sample data (NumPy array)
+sample_data = np.array([[1.0, 2.0], [3.0, 4.0]])
+
+print("\n--- Calling the object like a function ---")
+
+# 3. Call the instance directly to execute the __call__ method
+tensor_result = data_converter(sample_data)
+
+print("\nResulting Tensor:")
+print(tensor_result)
+
+```
+Output:
+
+
+--- Calling the object like a function ---
+Input Type received: <class 'numpy.ndarray'>
+Output Tensor Shape: torch.Size([2, 2])
+
+Resulting Tensor:
+tensor([[1., 2.],
+        [3., 4.]])
