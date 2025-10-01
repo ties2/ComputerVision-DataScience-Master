@@ -472,3 +472,34 @@ Output Tensor Shape: torch.Size([2, 2])
 Resulting Tensor:
 tensor([[1., 2.],
         [3., 4.]])
+
+---
+## Normalization
+
+Normalization can be effective in handling data that contains outliers.
+On the other hand, normalization can increase the speed of convergence in neural networks.
+However, it is better to evaluate your model once without normalization and once with normalization and choose the mode that performs best.
+
+Normalization is a data preprocessing technique that adjusts the scale of numerical features in a dataset to fit within a common, defined range.
+
+1. What is Normalization?
+It's the process of rescaling data so that the value of every feature lies between 0 and 1.
+
+ 
+2. Why is it Necessary?
+The main goal is to prevent features with naturally large numerical ranges from dominating the learning process.
+
+Imagine a model trying to learn from two features:
+
+Annual Income: (e.g., 20,000 to 200,000)
+
+Age: (e.g., 20 to 60)
+
+Without normalization, the Income feature's massive numerical range would have a much greater influence on the model's loss function and gradient calculations, making the model insensitive to changes in Age. Normalization ensures all features contribute proportionally.
+
+3. Normalization vs. Standardization
+While often used interchangeably, there's a subtle difference:
+
+Normalization (Min-Max Scaling): Rescales data to be strictly between a minimum and maximum value, typically [0,1].
+
+Standardization (Z-Score): Rescales data so it has a mean of 0 and a standard deviation of 1. This is generally preferred for algorithms that assume a normal distribution.
