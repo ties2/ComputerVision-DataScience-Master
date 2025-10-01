@@ -380,3 +380,42 @@ print(sampl,target)
 output:
 
 tensor([5., 6.]) tensor(0)
+
+---
+
+## call
+The __call__ method in Python is a special dunder method that allows an instance of a class to be treated like a function.
+
+It makes your objects "callable."
+
+__call__(self, ...)
+Role: Makes an object instance callable.
+
+Triggered By: Using parentheses () on an object instance.
+
+Purpose:
+
+Simplification: Allows complex objects to have a primary action, making the API cleaner (e.g., instead of optimizer.step(), you might just call optimizer()).
+
+State Management: It allows you to run a function that remembers and uses the state (attributes) stored inside the object instance.
+
+PyTorch Modules: In PyTorch, every custom neural network model must inherit from nn.Module. When you run output = model(input_data), you are actually calling the model's inherited __call__ method, which in turn executes the forward() method you defined.
+
+Simple Example:
+```
+class Multiplier:
+    def __init__(self, factor):
+        self.factor = factor # State saved in the object
+
+    # This runs when you call the object instance like a function
+    def __call__(self, x):
+        return x * self.factor
+
+# 1. Create the callable object (state is set to 5)
+double = Multiplier(2)
+triple = Multiplier(3)
+
+# 2. Call the object (This executes the __call__ method)
+print(double(10)) # Output: 20
+print(triple(10)) # Output: 30
+```
