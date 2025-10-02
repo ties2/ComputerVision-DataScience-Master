@@ -324,7 +324,7 @@ Operations: Basic image manipulations, like adding or subtracting two images, ar
 
 
 <p align="center">
-  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/docs/summary/digital%20image/1_linear_algebra_results.png" alt="Computer Vision Logo" width="300" />
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/docs/summary/digital%20image/1_linear_algebra_results.png" alt="Computer Vision Logo" width="500" />
 </p>
 
 
@@ -339,7 +339,7 @@ Logical Operations (AND, OR, NOT, XOR): Crucial for masking, bit-plane slicing, 
 
 
 <p align="center">
-  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/CV.png" alt="Computer Vision Logo" width="300" />
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/docs/summary/digital%20image/2_set_logical_ops.png" alt="Computer Vision Logo" width="500" />
 </p>
 
 
@@ -353,7 +353,7 @@ Laplacian: The second-order derivative used for image sharpening and identifying
 
 
 <p align="center">
-  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/CV.png" alt="Computer Vision Logo" width="300" />
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/docs/summary/digital%20image/3_convolution_calculus_results.png" alt="Computer Vision Logo" width="500" />
 </p>
 
 
@@ -368,7 +368,7 @@ Wavelet Transform: Allows image analysis at multiple resolutions and is a corner
 
 
 <p align="center">
-  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/CV.png" alt="Computer Vision Logo" width="300" />
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/docs/summary/digital%20image/4_fourier_transform_results.png" alt="Computer Vision Logo" width="500" />
 </p>
 
 
@@ -381,7 +381,7 @@ Used for tasks like blurring (averaging filter) and sharpening (Laplacian filter
 
 
 <p align="center">
-  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/CV.png" alt="Computer Vision Logo" width="300" />
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/docs/summary/digital%20image/5_histogram_statistics.png" alt="Computer Vision Logo" width="500" />
 </p>
 
 
@@ -396,6 +396,3 @@ Image Restoration: Using statistical models (like the Wiener filter) to estimate
 Histogram Processing: Analyzing the statistical distribution of pixel intensities for contrast enhancement (e.g., histogram equalization)
 
 
-<p align="center">
-  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/CV.png" alt="Computer Vision Logo" width="300" />
-</p>
