@@ -324,7 +324,7 @@ Operations: Basic image manipulations, like adding or subtracting two images, ar
 
 
 <p align="center">
-  <img src="/Volumes/myjob/Computer/Machine learning & AI/computer vision/CV uni/projects/ComputerVision-DataScience-Master/docs/summary/digital image/1_linear_algebra_results.png" alt="Computer Vision Logo" width="300" />
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/docs/summary/digital%20image/1_linear_algebra_results.png" alt="Computer Vision Logo" width="300" />
 </p>
 
 
