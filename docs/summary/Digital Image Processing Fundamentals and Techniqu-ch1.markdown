@@ -307,3 +307,7 @@ Distance is a metric used to calculate how far apart two pixels are. For pixels 
 ## 2.6 INTRODUCTION TO THE BASIC MATHEMATICAL TOOLS USED IN DIGITAL IMAGE PROCESSING
 
 Introduces the principal mathematical tools used in the book and helps develop an understanding of their application in image processing tasks
+
+<p align="center">
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/Geometric%20Transformations.png" alt="Computer Vision Logo" width="500" />
+</p>
