@@ -1,30 +1,18 @@
 # Digital Image Processing Fundamentals and Techniques
 
-subject: Image Processing
-any other review: No
-chap 1: Yes
-chap 2: No
-chap 3: No
-start date: September 12, 2025
-
 chap 1 : (17- 46 page)
 
 - Understand the concept of a digital image.
-- Have a broad overview of the historical under-
-pinnings of the field of digital image process-
+- Have a broad overview of the historical underpinnings of the field of digital image process-
 ing.
-- Understand the definition and scope of digi-
-tal image processing.
-- Know the fundamentals of the electromag-
-netic spectrum and its relationship to image
+- Understand the definition and scope of digital image processing.
+- Know the fundamentals of the electromagnetic spectrum and its relationship to image
 generation.
-- Be aware of the different fields in which digi-
-tal image processing methods are applied.
+- Be aware of the different fields in which digital image processing methods are applied.
 - Be familiar with the basic processes involved
 in image processing.
 - Be familiar with the components that make
-up a general-purpose digital image process-
-ing system.
+up a general-purpose digital image processing system.
 - Be familiar with the scope of the literature
 where image processing work is reported
 
