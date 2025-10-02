@@ -1,10 +1,9 @@
 # Digital Image Processing Fundamentals and Techniques
 
-chap 1 : (17- 46 page)
+# chap 1 : (17- 46 page)
 
 - Understand the concept of a digital image.
-- Have a broad overview of the historical underpinnings of the field of digital image process-
-ing.
+- Have a broad overview of the historical underpinnings of the field of digital image processing.
 - Understand the definition and scope of digital image processing.
 - Know the fundamentals of the electromagnetic spectrum and its relationship to image
 generation.
@@ -129,3 +128,75 @@ Two subsystems are required to acquire digital images. The first is a physical s
 - Specialized image processing hardware
 - Image processing software
 - Image sensors
+
+---
+# chap 2: digital image fundementals
+(47 -  page)
+
+* Have an understanding of some important
+functions and limitations of human vision.
+* Be familiar with the electromagnetic energy
+spectrum, including basic properties of light.
+* Know how digital images are generated and
+represented.
+* Understand the basics of image sampling and
+quantization.
+* Be familiar with spatial and intensity resolu-
+tion and their effects on image appearance.
+* Have an understanding of basic geometric
+relationships between image pixels.
+* Be familiar with the principal mathematical
+tools used in digital image processing.
+* Be able to apply a variety of introductory dig-
+ital image processing techniques.
+
+## 2.1 ELEMENTS OF VISUAL PERCEPTION
+
+Human Visual System (Section 2.1): Summarizes visual perception, including image formation in the eye, and its capabilities for brightness adaptation and discrimination. It notes that while digital processing is mathematical, human intuition and visual judgment are crucial, and electronic sensors often exceed the eye's resolution.
+
+
+## 2.2 LIGHT AND THE ELECTROMAGNETIC SPECTRUM
+
+Discusses light, the electromagnetic spectrum, and their imaging characteristics.
+
+A photon is the fundamental particle, or quantum, of electromagnetic (EM) radiation, including visible light. It's a discrete packet of energy that has:
+
+Zero rest mass and no electric charge.
+
+It travels at the speed of light (c) in a vacuum.
+
+It exhibits wave-particle duality, meaning it has properties of both a particle and a wave.
+
+Photon and Wavelength Relationship
+The wavelength (λ) is a characteristic of the photon's wave nature, representing the spatial distance over which the wave's shape repeats.
+
+The photon's energy (E) is inversely proportional to its wavelength. This relationship is described by the Planck-Einstein relation:
+
+E= 
+hc /
+λ
+
+​	
+ 
+Where:
+
+E is the energy of the photon (in Joules or electron-volts).
+
+h is Planck's constant (6.626×10 
+−34
+  J⋅s).
+
+c is the speed of light (2.998×10 
+8
+  m/s).
+
+λ is the wavelength (in meters).
+
+This inverse relationship means:
+
+Short wavelength (e.g., gamma rays, X-rays, blue light) corresponds to high frequency and high energy photons.
+
+Long wavelength (e.g., radio waves, microwaves, red light) corresponds to low frequency and low energy photons.
+
+The relationship between wavelength (λ), frequency (f), and the speed of light (c) is also fundamental: c=fλ, which shows that wavelength and frequency are also inversely related.
+
