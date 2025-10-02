@@ -191,6 +191,7 @@ Data-centric AI CommunityResources and community for data-centric AI practices.
 | [Generative AI for Everyone](https://www.coursera.org/learn/generative-ai-for-everyone) | online course |
 | [UCI](https://archive.ics.uci.edu)| UC Irvine Machine Learning Repository |
 | [ONNX](https://onnx.ai) | open format built to represent machine learning models |
+| [localstack](https://github.com/localstack/localstack)| A fully functional local AWS cloud stack. Develop and test your cloud & Serverless apps offline |
 
 
 ## List of other Useful videos:
