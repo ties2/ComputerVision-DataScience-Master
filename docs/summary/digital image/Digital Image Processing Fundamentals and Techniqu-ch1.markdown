@@ -322,6 +322,13 @@ Representation: A digital image f(x,y) is represented as a matrix or array of pi
 
 Operations: Basic image manipulations, like adding or subtracting two images, are typically performed as array operations (pixel-by-pixel). More complex methods, like geometric transformations (rotation, scaling), rely on matrix multiplication.
 
+
+<p align="center">
+  <img src="/Volumes/myjob/Computer/Machine learning & AI/computer vision/CV uni/projects/ComputerVision-DataScience-Master/docs/summary/digital image/1_linear_algebra_results.png" alt="Computer Vision Logo" width="300" />
+</p>
+
+
+
 2. Set and Logical Operations
 
 Used for tasks involving pixel grouping, boundaries, and binary images.
@@ -329,6 +336,12 @@ Used for tasks involving pixel grouping, boundaries, and binary images.
 Set Operations (Union, Intersection, Complement): Applied to sets of pixels to define regions or combine image masks. For grayscale images, these often translate to max and min operations (e.g., Union is max(A,B)).
 
 Logical Operations (AND, OR, NOT, XOR): Crucial for masking, bit-plane slicing, and Morphological Image Processing (e.g., erosion and dilation).
+
+
+<p align="center">
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/CV.png" alt="Computer Vision Logo" width="300" />
+</p>
+
 
 3. Calculus and Differential Operators
 
@@ -338,6 +351,12 @@ Gradient: The first-order derivative (magnitude and direction) used for edge det
 
 Laplacian: The second-order derivative used for image sharpening and identifying zero-crossings, which accurately mark edges.
 
+
+<p align="center">
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/CV.png" alt="Computer Vision Logo" width="300" />
+</p>
+
+
 4. Transforms (Signal Processing)
 
 These tools convert the image from the spatial domain (pixel coordinates) to a different domain, often for easier manipulation or compression.
@@ -346,11 +365,25 @@ Fourier Transform (FT): Decomposes an image into its constituent frequency compo
 
 Wavelet Transform: Allows image analysis at multiple resolutions and is a cornerstone for modern image compression (e.g., JPEG2000) and multi-resolution analysis.
 
+
+
+<p align="center">
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/CV.png" alt="Computer Vision Logo" width="300" />
+</p>
+
+
 5. Filtering and Convolution
 
 Convolution: The primary mathematical operation for applying spatial filters. It involves moving a small matrix (kernel or mask) across the image and computing the sum of products at each pixel.
 
 Used for tasks like blurring (averaging filter) and sharpening (Laplacian filter).
+
+
+
+<p align="center">
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/CV.png" alt="Computer Vision Logo" width="300" />
+</p>
+
 
 6. Probability and Statistics
 
@@ -361,3 +394,8 @@ Noise Analysis: Modeling and removing random pixel variations.
 Image Restoration: Using statistical models (like the Wiener filter) to estimate the original image from a degraded version.
 
 Histogram Processing: Analyzing the statistical distribution of pixel intensities for contrast enhancement (e.g., histogram equalization)
+
+
+<p align="center">
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/CV.png" alt="Computer Vision Logo" width="300" />
+</p>
