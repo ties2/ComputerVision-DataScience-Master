@@ -229,3 +229,81 @@ Flatbed Scanners: The most common use.
 Airborne Imaging: The strip is mounted perpendicular to the direction of flight to image a geographical area.
 
 Mechanism (Cross-Sectional Imaging): Sensors in a ring configuration are used with a rotating X-ray source to capture data used for Computerized Axial Tomography (CAT), which produces cross-sectional ("slice") images. Reconstruction algorithms are needed to convert the raw sensed data into a meaningful image.
+
+## 2.4 IMAGE SAMPLING AND QUANTIZATION
+
+ Introduces uniform image sampling, intensity quantization, digital image representation, the effects of varying samples/intensity levels, spatial and intensity resolution, and image interpolation.
+
+ 
+  Deals with basic relationships between pixels.
+
+To convert a continuous image function, f(s,t), into a digital image, two processes are necessary:
+
+Sampling: Digitizing the coordinate values (x and y spatial locations). This creates a discrete grid of points (the dark squares in the illustration).
+
+Quantization: Digitizing the amplitude (intensity) values. This assigns a specific discrete intensity level (e.g., one of eight levels from black to white) to each sampled point. This is the vertical conversion (white squares in the illustration).
+
+The quality of the digital image is primarily determined by the number of samples (spatial resolution) and the number of discrete intensity levels (intensity resolution).
+
+2. Digital Image Acquisition Methods
+
+The method of image acquisition determines how sampling is practically achieved:
+
+Single Sensing Element (e.g., drum scanner): Quantization occurs on the sensor output. Spatial sampling is controlled by the number of mechanical increments at which data is collected.
+
+Sensing Strip (e.g., flatbed scanner): The number of sensors in the strip determines sampling in one direction. Mechanical motion provides sampling in the other direction.
+
+Sensing Array (e.g., camera sensor): No motion is needed; the number of sensors in the 2-D array determines sampling in both directions.
+
+Representing Digital Images
+A digital image f(x,y) is a function containing M rows and N columns, where x and y are discrete integer coordinates.
+
+There are three main ways to represent a digital image:
+
+3-D Plot: A graph where the x and y axes determine spatial location and the z axis represents the intensity value.
+
+Visual Display: The image as it appears on a screen or printout, where the intensity of each point is proportional to its value (most common for viewing).
+
+Numerical Array (Matrix): The representation used for computer processing. 
+
+
+## 2.5 SOME BASIC RELATIONSHIPS BETWEEN PIXELS
+
+1. Neighbors of a Pixel
+The relationships define the pixels immediately surrounding a central pixel p at coordinates (x,y).
+
+4-Neighbors (N 4 (p)): These are the four pixels immediately adjacent to p along the horizontal and vertical directions.
+
+Coordinates: (x+1,y), (x−1,y), (x,y+1), (x,y−1).
+
+Diagonal Neighbors (N D(p)): These are the four pixels adjacent to p along the diagonals.
+
+Coordinates: (x+1,y+1), (x+1,y−1), (x−1,y+1), (x−1,y−1).
+
+8-Neighbors (N 8(p)): This set combines the 4-neighbors and the diagonal neighbors.
+
+Relationship: N 8(p)=N 4(p)∪N D(p).
+
+This set consists of the eight pixels that form a 3×3 block around p.
+
+2. Adjacency, Connectivity, Regions, and Boundaries
+These concepts use the neighbor definitions to establish relationships between pixels within an image:
+
+Adjacency: Two pixels are adjacent if one is in the neighbor set (N4 or N8 ) of the other. Adjacency requires a specific connectivity type (N4  or N8 ) and that the pixels satisfy a criterion (e.g., having the same intensity value).
+
+V: The set of intensity values used to define adjacency (e.g., V={1} for binary images, or V={100,101,…,110} for grayscale).
+
+m-Adjacency (Mixed Adjacency): A modified 8-adjacency used to eliminate ambiguity that can arise with 8-connectivity (e.g., forming a diagonal path that splits a region).
+
+Connectivity: A path between two pixels exists if they are adjacent, forming a sequence of adjacent pixels. Connected components (or regions) are subsets of pixels where a path exists between any two pixels in the subset.
+
+Region: A subset of pixels in an image that are connected. The entire image is usually denoted as R.
+
+Boundary (or Border): The set of pixels in a region R that have one or more neighbors outside of R.
+
+3. Distance Measures
+Distance is a metric used to calculate how far apart two pixels are. For pixels p at (x,y) and q at (s,t):
+
+## 2.6 INTRODUCTION TO THE BASIC MATHEMATICAL TOOLS USED IN DIGITAL IMAGE PROCESSING
+
+Introduces the principal mathematical tools used in the book and helps develop an understanding of their application in image processing tasks
