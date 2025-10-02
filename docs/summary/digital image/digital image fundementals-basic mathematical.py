@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 # --- 0. Setup: Create a simple synthetic image (a 2D discrete function) ---
 # Image dimensions: 64x64 pixels, 8-bit grayscale (values 0-255)
 SIZE = 64
+save_path='./docs/summary/digital image'
+
 # Create a base image with a diagonal gradient for visual interest
 x, y = np.meshgrid(np.linspace(0, 1, SIZE), np.linspace(0, 1, SIZE))
 base_image = (np.sin(x * np.pi * 5) * np.cos(y * np.pi * 5) + 1) / 2
@@ -16,7 +18,7 @@ noisy_image = np.clip(noisy_image, 0, 255).astype(np.uint8)
 print("Original Image Matrix Shape:", base_image.shape)
 
 # Helper function to display results
-def display_result(images, titles, save_path='./docs/summary/digital image'):
+def display_result(images, titles, save_path):
     """Displays images side-by-side and optionally saves them."""
     fig, axes = plt.subplots(1, len(images), figsize=(15, 5))
     if len(images) == 1:
@@ -55,7 +57,7 @@ difference_image = np.abs(base_image.astype(np.int16) - shifted_image.astype(np.
 display_result(
     [base_image, bright_image, difference_image],
     ['Original Image', f'Scaled (x{scale_factor})', 'Difference (Change Detected)'],
-    save_path='1_linear_algebra_results.png'
+    save_path='./docs/summary/digital image/1_linear_algebra_results.png'
 )
 
 
@@ -83,7 +85,7 @@ complement_A = 255 - mask_A
 display_result(
     [mask_A, mask_B, union_result, complement_A],
     ['Mask A', 'Mask B', 'Union (max(A, B))', 'Complement (NOT A)'],
-    save_path='2_set_logical_ops.png'
+    save_path='./docs/summary/digital image/2_set_logical_ops.png'
 )
 
 
@@ -140,7 +142,7 @@ edges_x = convolve_2d(base_image, sobel_x)
 display_result(
     [noisy_image, blurred_image, edges_x],
     ['Noisy Input', 'Filtered (Averaging/Blur)', 'Edges (Sobel X/Gradient)'],
-    save_path='3_convolution_calculus_results.png'
+    save_path='./docs/summary/digital image/3_convolution_calculus_results.png'
 )
 
 
@@ -174,7 +176,7 @@ plt.imshow(magnitude_spectrum, cmap='magma')
 plt.title('Frequency Domain (Log Magnitude Spectrum)')
 plt.axis('off')
 plt.tight_layout()
-plt.savefig('4_fourier_transform_results.png')
+plt.savefig('./docs/summary/digital image/4_fourier_transform_results.png')
 print("Saved visualization to: 4_fourier_transform_results.png")
 plt.close()
 
@@ -203,7 +205,7 @@ plt.xlabel('Pixel Intensity Value (0-255)')
 plt.ylabel('Number of Pixels (Frequency)')
 plt.legend()
 plt.grid(True, alpha=0.3)
-plt.savefig('5_histogram_statistics.png')
+plt.savefig('./docs/summary/digital image/5_histogram_statistics.png')
 print("Saved visualization to: 5_histogram_statistics.png")
 plt.close()
 
