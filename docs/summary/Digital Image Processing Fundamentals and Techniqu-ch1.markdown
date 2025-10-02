@@ -200,3 +200,32 @@ Long wavelength (e.g., radio waves, microwaves, red light) corresponds to low fr
 
 The relationship between wavelength (λ), frequency (f), and the speed of light (c) is also fundamental: c=fλ, which shows that wavelength and frequency are also inversely related.
 
+https://www.youtube.com/watch?v=tbaTbESqycc
+
+## 2.3 IMAGE SENSING AND ACQUISITION
+
+Explains imaging sensors and their use in generating digital images.
+
+1. Image Acquisition Using a Single Sensing Element
+This method uses a single sensor (like a photodiode, which outputs a voltage proportional to light intensity, often with a filter for color selectivity).
+
+Mechanism: A 2-D image is created by using precise mechanical relative displacement in both x and y directions between the sensor and the object/film.
+
+Example: A high-precision drum scanner where a film negative rotates in one dimension (by the drum) and the sensor moves in the perpendicular dimension (by a lead screw). Light passes through the film, is modulated by its density, and is then captured and digitized by the sensor.
+
+Pros & Cons: It produces high-resolution images but is slow and generally not portable.
+
+Nomenclature: Systems that acquire images by light passing through the medium are called transmission microdensitometers; those using reflected light are reflection microdensitometers.
+
+2. Image Acquisition Using Sensor Strips
+This method uses an in-line sensor strip (a 1-D array of sensors) to capture one line of the image at a time.
+
+Mechanism (Planar Imaging): Motion perpendicular to the strip provides the second dimension, completing the 2-D image.
+
+Examples:
+
+Flatbed Scanners: The most common use.
+
+Airborne Imaging: The strip is mounted perpendicular to the direction of flight to image a geographical area.
+
+Mechanism (Cross-Sectional Imaging): Sensors in a ring configuration are used with a rotating X-ray source to capture data used for Computerized Axial Tomography (CAT), which produces cross-sectional ("slice") images. Reconstruction algorithms are needed to convert the raw sensed data into a meaningful image.
