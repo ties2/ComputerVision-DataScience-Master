@@ -311,3 +311,53 @@ Introduces the principal mathematical tools used in the book and helps develop a
 <p align="center">
   <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/Geometric%20Transformations.png" alt="Computer Vision Logo" width="500" />
 </p>
+
+
+The basic mathematical tools in digital image processing (DIP) are essential for representing, transforming, and manipulating image data. An image is fundamentally treated as a two-dimensional discrete function (matrix).
+
+Core Mathematical Tools
+1. Linear Algebra (Vectors and Matrices)
+
+Representation: A digital image f(x,y) is represented as a matrix or array of pixel intensity values. A color image uses a third dimension (tensor) for color channels (RGB).
+
+Operations: Basic image manipulations, like adding or subtracting two images, are typically performed as array operations (pixel-by-pixel). More complex methods, like geometric transformations (rotation, scaling), rely on matrix multiplication.
+
+2. Set and Logical Operations
+
+Used for tasks involving pixel grouping, boundaries, and binary images.
+
+Set Operations (Union, Intersection, Complement): Applied to sets of pixels to define regions or combine image masks. For grayscale images, these often translate to max and min operations (e.g., Union is max(A,B)).
+
+Logical Operations (AND, OR, NOT, XOR): Crucial for masking, bit-plane slicing, and Morphological Image Processing (e.g., erosion and dilation).
+
+3. Calculus and Differential Operators
+
+Used to detect changes in intensity, which correspond to edges and contours.
+
+Gradient: The first-order derivative (magnitude and direction) used for edge detection (e.g., Sobel, Prewitt operators).
+
+Laplacian: The second-order derivative used for image sharpening and identifying zero-crossings, which accurately mark edges.
+
+4. Transforms (Signal Processing)
+
+These tools convert the image from the spatial domain (pixel coordinates) to a different domain, often for easier manipulation or compression.
+
+Fourier Transform (FT): Decomposes an image into its constituent frequency components. It is fundamental for filtering (low-pass for smoothing, high-pass for sharpening) in the frequency domain.
+
+Wavelet Transform: Allows image analysis at multiple resolutions and is a cornerstone for modern image compression (e.g., JPEG2000) and multi-resolution analysis.
+
+5. Filtering and Convolution
+
+Convolution: The primary mathematical operation for applying spatial filters. It involves moving a small matrix (kernel or mask) across the image and computing the sum of products at each pixel.
+
+Used for tasks like blurring (averaging filter) and sharpening (Laplacian filter).
+
+6. Probability and Statistics
+
+Used to model and manage uncertainty, primarily in:
+
+Noise Analysis: Modeling and removing random pixel variations.
+
+Image Restoration: Using statistical models (like the Wiener filter) to estimate the original image from a degraded version.
+
+Histogram Processing: Analyzing the statistical distribution of pixel intensities for contrast enhancement (e.g., histogram equalization)
