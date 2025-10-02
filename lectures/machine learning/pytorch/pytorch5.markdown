@@ -503,3 +503,15 @@ While often used interchangeably, there's a subtle difference:
 Normalization (Min-Max Scaling): Rescales data to be strictly between a minimum and maximum value, typically [0,1].
 
 Standardization (Z-Score): Rescales data so it has a mean of 0 and a standard deviation of 1. This is generally preferred for algorithms that assume a normal distribution.
+
+## Compose
+1. What is Compose?
+It's a class from the torchvision.transforms module that acts like a pipeline. It takes a list of individual transformation objects (like ToTensor, Normalize, Resize, etc.) and runs the data through them in the exact order they are defined.
+
+2. Why use it?
+Automation: It automates the entire preparation sequence for every single data sample requested by the DataLoader.
+
+Consistency: It ensures that every image, text snippet, or row of data goes through the exact same set of steps (e.g., resizing, then cropping, then converting to tensor, then normalizing).
+
+Clean Code: It keeps your Dataset class clean by moving the complex, multi-step preprocessing logic out of the core data retrieval (__getitem__) method.
+
