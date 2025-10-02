@@ -506,6 +506,7 @@ Standardization (Z-Score): Rescales data so it has a mean of 0 and a standard de
 
 ## Compose
 1. What is Compose?
+
 It's a class from the torchvision.transforms module that acts like a pipeline. It takes a list of individual transformation objects (like ToTensor, Normalize, Resize, etc.) and runs the data through them in the exact order they are defined.
 
 2. Why use it?
@@ -515,3 +516,20 @@ Consistency: It ensures that every image, text snippet, or row of data goes thro
 
 Clean Code: It keeps your Dataset class clean by moving the complex, multi-step preprocessing logic out of the core data retrieval (__getitem__) method.
 
+Example:
+```
+import torch
+import torchvision.transforms as T 
+import torchvision.datasets as datasets 
+
+transform1 = T.ToTensor()
+
+transform2 = T.Normalize(
+    mean=[0.5, 0.5, 0.5], 
+    std=[0.5, 0.5, 0.5]
+)
+
+transform = T.Compose([transform1, transform2])
+
+print(f"Sequence: {transform}")
+```
