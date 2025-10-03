@@ -597,3 +597,25 @@ sample,label=train_ds[1]
 plt.imshow(sample.squeeze(), cmap='gray')
 plt.show()
 ```
+# dataset batching 
+
+Why Batching is Essential
+Instead of feeding one data sample at a time to the model (which is slow and inefficient), batching achieves two main goals:
+
+* Efficiency (GPU): Modern hardware, especially GPUs, is highly optimized for parallel processing. Feeding a large chunk of data (a batch) simultaneously is vastly faster than processing samples one by one.
+
+Stable Training (Gradient Descent): When the model calculates the error (loss) and adjusts its weights (gradient descent), it needs this calculation to be stable.
+
+Using a single data point gives a noisy, unstable estimate of the true error.
+
+Using a mini-batch (e.g., 32 or 64 samples) averages out the noise across those samples, giving a much more stable and accurate estimate of the direction the model should adjust its weights.
+
+In PyTorch, the DataLoader handles all the batching logistics, automatically grabbing individual samples from the Dataset and compiling them into these mini-batches.
+
+|Term	Short | Explanation |
+| ---------- | -------------- |
+| Training	| The overall process where the model is shown the data, makes predictions, calculates the error (loss), and adjusts its internal weights to minimize that error.
+| Epoch	| One complete pass through the entire training dataset. If your dataset has 10,000 samples and you train for 10 epochs, the model sees 100,000 total samples.
+| Training Loop	| The repetitive, sequential code block that defines the steps for one epoch: 1. Load Batch → 2. Forward Pass (predict) → 3. Calculate Loss → 4. Backpropagation (adjust weights).
+| Batch Size	| The number of data samples processed together at one time. If your Batch Size is 32, the model adjusts its weights after seeing 32 samples. (Chosen by the user).
+| Batch Number | The sequential count of mini-batches processed within a single epoch. If you have 1,000 total samples and a batch size of 100, you will have 10 batches (and 10 batch numbers) per epoch.
