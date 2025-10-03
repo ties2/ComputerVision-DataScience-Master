@@ -619,3 +619,18 @@ In PyTorch, the DataLoader handles all the batching logistics, automatically gra
 | Training Loop	| The repetitive, sequential code block that defines the steps for one epoch: 1. Load Batch → 2. Forward Pass (predict) → 3. Calculate Loss → 4. Backpropagation (adjust weights).
 | Batch Size	| The number of data samples processed together at one time. If your Batch Size is 32, the model adjusts its weights after seeing 32 samples. (Chosen by the user).
 | Batch Number | The sequential count of mini-batches processed within a single epoch. If you have 1,000 total samples and a batch size of 100, you will have 10 batches (and 10 batch numbers) per epoch.
+
+
+Batching is a mechanical process handled by the DataLoader to prepare data for efficient training. It involves three simple, sequential steps:
+
+Request Indices: The DataLoader first generates a list of random indices from the total dataset size (e.g., indices [45, 12, 98, ...] for a batch size of 32). This ensures shuffling.
+
+Retrieve Samples: It uses the __getitem__ method of the Dataset to fetch the individual data sample (X) and its label (y) for each of those indices.
+
+Collate & Stack: It then takes these individual samples (e.g., 32 images) and stacks them together to form two larger tensors:
+
+One tensor for all features (Batch X).
+
+One tensor for all labels (Batch y).
+
+This resulting mini-batch is then immediately passed to the model for the forward pass. This process repeats until the entire dataset (one epoch) has been consumed.
