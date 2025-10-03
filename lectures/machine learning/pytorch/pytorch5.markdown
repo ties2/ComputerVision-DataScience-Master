@@ -533,3 +533,48 @@ transform = T.Compose([transform1, transform2])
 
 print(f"Sequence: {transform}")
 ```
+# Make transfor for label
+
+The reason we specifically transform labels (targets) in PyTorch is not necessarily to change their value, but to ensure they have the exact data type and structure that PyTorch's loss functions and training mechanisms require.
+
+Why Transform the Label?
+The transformation exists to satisfy the strict requirements of PyTorch's core mathematical operations, especially for classification tasks.
+
+1. The Requirement: torch.long
+
+The most crucial reason is that standard classification loss functions in PyTorch, like nn.CrossEntropyLoss, require the target labels (y) to be an integer type, specifically a 64-bit integer, which corresponds to the data type torch.long.
+
+Why? In classification, the labels represent indices (e.g., 0, 1, 2,...) pointing to the predicted class scores (logits) in the model's output. Loss functions use these integer indices to look up the correct prediction score and calculate the error.
+
+2. Consistency
+
+Data read from files, NumPy arrays, or Pandas DataFrames often defaults to types like standard Python integers, float64, or int32.
+
+The label transformation process, demonstrated by the LabelToTensor class in the Canvas, guarantees that every label is consistently converted to a PyTorch tensor of the precise torch.long type before it's used in the training loop. This prevents runtime errors that would otherwise occur when the model tries to compute the loss.
+
+```
+import torch
+import numpy as np
+
+class LabelToTensor:
+    """
+    # This is the method executed when the object is called like a function.
+    def __call__(self, label):
+        return torch.tensor(label, dtype=torch.long)
+
+# --- Demonstration ---
+
+# 1. Create the label transformation object
+target_transform = LabelToTensor()
+
+# 2. Sample raw label data
+raw_label_int = 5
+raw_label_np = np.array([1, 0, 3])
+
+# 3. Apply the transform by calling the object directly
+tensor_label_1 = target_transform(raw_label_int)
+tensor_label_2 = target_transform(raw_label_np)
+
+print(f"Raw Label (Int): {raw_label_int} -> Tensor Type: {tensor_label_1.dtype}, Value: {tensor_label_1}")
+print(f"Raw Label (NumPy): {raw_label_np} -> Tensor Type: {tensor_label_2.dtype}, Value: {tensor_label_2}")
+```
