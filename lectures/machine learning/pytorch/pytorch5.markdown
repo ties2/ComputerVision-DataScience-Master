@@ -577,3 +577,23 @@ tensor_label_2 = target_transform(raw_label_np)
 print(f"Raw Label (Int): {raw_label_int} -> Tensor Type: {tensor_label_1.dtype}, Value: {tensor_label_1}")
 print(f"Raw Label (NumPy): {raw_label_np} -> Tensor Type: {tensor_label_2.dtype}, Value: {tensor_label_2}")
 ```
+# Example for using MNIST by check lambda,totensor and normalize
+
+```
+import torch
+import torchvision.transforms as T
+from torchvision import datasets,transforms
+from torchvision.transforms import ToTensor,Lambda,Normalize,Compose
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
+train_ds= datasets.MNIST(root='content/data',train=True,download=True,transform=Compose(ToTensor(),Normalize(0,1)),target_transform=lambda y:torch.zeros(10,dtype=torch.float).scatter_(0,torch.tensor(y),value=1).type(torch.float32))
+test_ds= datasets.MNIST(root='content/data',train=False,download=True,transform=ToTensor(),target_transform=lambda y:torch.zeros(10,dtype=torch.float).scatter_(0,torch.tensor(y),value=1).type(torch.float32))
+len(test_ds)
+
+
+sample,label=train_ds[1]
+plt.imshow(sample.squeeze(), cmap='gray')
+plt.show()
+```
