@@ -557,7 +557,6 @@ import torch
 import numpy as np
 
 class LabelToTensor:
-    """
     # This is the method executed when the object is called like a function.
     def __call__(self, label):
         return torch.tensor(label, dtype=torch.long)
