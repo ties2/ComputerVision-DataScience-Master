@@ -52,3 +52,13 @@ Here are the details on several common activation functions:
 | ReLU (Rectified Linear Unit)	| Piecewise Linear	| Range: [0,∞)	| Most Popular Default. Simple and highly efficient. It avoids the vanishing gradient problem for positive inputs, leading to faster convergence in deep networks.|
 | Leaky ReLU	| Variation of ReLU	| Range: (−∞,∞)	| Addresses the "dying ReLU" problem by allowing a small, non-zero gradient (e.g., 0.01x) for negative inputs.
 | Softmax	| Probabilistic	| Output sums to 1.0	| Used exclusively in the output layer of a network solving multi-class classification problems. It converts the raw scores into a probability distribution.|
+
+### Short Explanations
+
+* Threshold (Step Function): Acts as a simple on/off switch. If the input exceeds a certain value, the output is 1; otherwise, it's 0. It's too rigid for modern backpropagation, so it's rarely used.
+
+* Sigmoid and Tanh: These are smooth, non-linear functions. They introduce the necessary complexity but struggle when the input is extreme (very positive or very negative). In these regions, the gradient (slope) becomes near zero, causing the learning process to stall (the vanishing gradient issue).
+
+* ReLU and Leaky ReLU: These are the standard choices today. Their simple linear structure for positive values allows the gradient to remain strong, speeding up training. Leaky ReLU fixes the problem where neurons can become permanently "dead" (always outputting zero) by giving them a tiny slope for negative inputs.
+
+* Softmax: Unlike the others (which are applied to hidden layers), Softmax is only used on the final output layer. It ensures that the model's predictions for all possible classes add up to 1, effectively giving you a clean probability distribution.
