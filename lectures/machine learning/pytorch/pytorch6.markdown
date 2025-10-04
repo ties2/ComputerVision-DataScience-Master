@@ -137,3 +137,22 @@ print(f"5. Leaky ReLU (alpha=0.01):     {leaky_relu(input_data)}")
 print(f"6. Softmax (Probabilities sum to 1): {softmax(input_data)}")
 print(f"   (Sum of Softmax outputs: {np.sum(softmax(input_data)):.4f})")
 ```
+output:
+```
+--- Input Data: [-2.  0.  3.] ---
+1. Step Function (Threshold=0): [0 1 1]
+2. Sigmoid (Range 0 to 1):      [0.11920292 0.5        0.95257413]
+3. Tanh (Range -1 to 1):        [-0.96402758  0.          0.99505475]
+4. ReLU (max(0, x)):            [0. 0. 3.]
+5. Leaky ReLU (alpha=0.01):     [-0.02  0.    3.  ]
+6. Softmax (Probabilities sum to 1): [0.00637746 0.04712342 0.94649912]
+   (Sum of Softmax outputs: 1.0000)
+```
+Analysis of Activation Function Outputs
+The input array represents three weighted sums received by three different neurons: a strong negative input (−2.0), a neutral input (0.0), and a strong positive input (3.0).
+
+|Input	|Step/Threshold	|Sigmoid	|Tanh	|ReLU	|Leaky ReLU	|Softmax |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+−2.0 (Strong Negative)	|0	|0.12	|−0.96	|0.0	|−0.02	|0.006 |
+|0.0 (Neutral)	|1	|0.50	|0.0	|0.0	|0.0	|0.047|
+|3.0 (Strong Positive)	|1	|0.95	|0.995	|3.0	|3.0	|0.946
