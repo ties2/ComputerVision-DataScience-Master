@@ -62,3 +62,78 @@ Here are the details on several common activation functions:
 * ReLU and Leaky ReLU: These are the standard choices today. Their simple linear structure for positive values allows the gradient to remain strong, speeding up training. Leaky ReLU fixes the problem where neurons can become permanently "dead" (always outputting zero) by giving them a tiny slope for negative inputs.
 
 * Softmax: Unlike the others (which are applied to hidden layers), Softmax is only used on the final output layer. It ensures that the model's predictions for all possible classes add up to 1, effectively giving you a clean probability distribution.
+
+### Python implementations for those key activation functions
+
+```
+import numpy as np
+import math
+
+# --- 1. Threshold (Step) Function ---
+def step_function(x, threshold=0.0):
+    """
+    Implements the Threshold or Step function.
+    Output is 1 if input (x) exceeds the threshold, 0 otherwise.
+    This function is non-differentiable at the threshold, making it unsuitable for backpropagation.
+    """
+    return np.where(x >= threshold, 1, 0)
+
+# --- 2. Sigmoid Function ---
+def sigmoid(x):
+    """
+    Implements the Sigmoid activation function.
+    Range: (0, 1). Useful for binary classification output (probabilities).
+    """
+    # Using np.exp for element-wise exponentiation in the array
+    return 1 / (1 + np.exp(-x))
+
+# --- 3. Tanh (Hyperbolic Tangent) Function ---
+def tanh_function(x):
+    """
+    Implements the Tanh activation function.
+    Range: (-1, 1). Zero-centered, often performs better than Sigmoid in hidden layers.
+    """
+    return np.tanh(x)
+
+# --- 4. ReLU (Rectified Linear Unit) Function ---
+def relu(x):
+    """
+    Implements the ReLU activation function.
+    Output is max(0, x). Most commonly used default activation in deep learning.
+    """
+    return np.maximum(0, x)
+
+# --- 5. Leaky ReLU Function ---
+def leaky_relu(x, alpha=0.01):
+    """
+    Implements the Leaky ReLU function.
+    Returns x for x > 0, and (alpha * x) for x <= 0, preventing 'dying neurons'.
+    """
+    return np.where(x > 0, x, alpha * x)
+
+# --- 6. Softmax Function ---
+def softmax(x):
+    """
+    Implements the Softmax function.
+    Used in the output layer for multi-class classification. Converts scores (logits) 
+    into a probability distribution that sums to 1.
+    """
+    # Subtracting the maximum input for numerical stability (common practice)
+    exp_x = np.exp(x - np.max(x))
+    return exp_x / np.sum(exp_x, axis=0) # Sum across the entire array for 1D input
+
+# --- Demonstration ---
+
+# Define a sample input array representing the weighted sum of inputs (or 'logits')
+input_data = np.array([-2.0, 0.0, 3.0])
+
+print(f"--- Input Data: {input_data} ---")
+
+print(f"1. Step Function (Threshold=0): {step_function(input_data)}")
+print(f"2. Sigmoid (Range 0 to 1):      {sigmoid(input_data)}")
+print(f"3. Tanh (Range -1 to 1):        {tanh_function(input_data)}")
+print(f"4. ReLU (max(0, x)):            {relu(input_data)}")
+print(f"5. Leaky ReLU (alpha=0.01):     {leaky_relu(input_data)}")
+print(f"6. Softmax (Probabilities sum to 1): {softmax(input_data)}")
+print(f"   (Sum of Softmax outputs: {np.sum(softmax(input_data)):.4f})")
+```
