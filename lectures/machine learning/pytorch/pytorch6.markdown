@@ -195,3 +195,21 @@ These functions are called "squashers" because they compress the input into a li
 * Leaky ReLU: This is used to fix ReLU's problem with negative inputs (the "dying neuron" problem).
 
     * Instead of setting −2.0 to 0.0 (like ReLU), it assigns a tiny, non-zero value (−0.02) to ensure that the neuron still has a small gradient and can potentially learn again later.
+
+Example:
+
+```
+x= torch.arange(-5,5,0.1)
+
+y1= torch.sign(x)
+
+plt.plot(x,y1,'r.',linewidth=2)
+
+plt.grid('minor')
+
+plt.xlabel('v',fontsize=15)
+
+plt.ylabel('y',fontsize=15)
+
+plt.show()
+```
