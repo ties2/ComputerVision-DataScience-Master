@@ -37,3 +37,18 @@ The network learns through a process called Backpropagation.
 2. Loss Calculation: The difference between the network's prediction and the true answer is measured as the loss (error).
 
 3. Weight Adjustment: Backpropagation uses the loss to calculate how much each individual weight contributed to the error. The network then slightly adjusts these weights to reduce the error in the next pass, slowly improving its ability to make accurate predictions
+
+ ## activation function
+ 
+ activation function is the non-linear "switch" that gives a neural network its power. Without it, the network would just be performing linear regression.
+
+Here are the details on several common activation functions:
+
+| Function | Type | Formula - Range | Use Case & Feature |
+| ----- | ----- | ----- | -----|
+| Threshold / Step	| Discontinued	| Output is 0 or 1.	| Obsolete. Used in early Perceptrons. Cannot be used for modern training because its derivative is zero everywhere (it cannot learn).|
+| Sigmoid	| S-shaped, Smooth	| Range: (0,1)	| Historically popular for binary classification (since the output looks like a probability). Suffer from the vanishing gradient problem when inputs are very large or very small.|
+| Tanh (Hyperbolic Tangent)	| S-shaped, Smooth	| Range: (−1,1)	| Similar to Sigmoid but centered at zero. Often performs better than Sigmoid because centering the data around zero helps the optimization process.
+| ReLU (Rectified Linear Unit)	| Piecewise Linear	| Range: [0,∞)	| Most Popular Default. Simple and highly efficient. It avoids the vanishing gradient problem for positive inputs, leading to faster convergence in deep networks.|
+| Leaky ReLU	| Variation of ReLU	| Range: (−∞,∞)	| Addresses the "dying ReLU" problem by allowing a small, non-zero gradient (e.g., 0.01x) for negative inputs.
+| Softmax	| Probabilistic	| Output sums to 1.0	| Used exclusively in the output layer of a network solving multi-class classification problems. It converts the raw scores into a probability distribution.|
