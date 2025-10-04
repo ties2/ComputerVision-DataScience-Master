@@ -156,3 +156,42 @@ The input array represents three weighted sums received by three different neuro
 −2.0 (Strong Negative)	|0	|0.12	|−0.96	|0.0	|−0.02	|0.006 |
 |0.0 (Neutral)	|1	|0.50	|0.0	|0.0	|0.0	|0.047|
 |3.0 (Strong Positive)	|1	|0.95	|0.995	|3.0	|3.0	|0.946
+
+
+1. The On/Off Switch: Threshold & ReLU
+
+* Step Function: This is the most basic switch. The negative input is turned Off (0), while the 0.0 and 3.0 inputs are both turned completely On (1). It loses all sense of magnitude.
+
+* ReLU (Rectified Linear Unit): This is the modern digital switch. Any negative input is killed (set to 0.0). The 0.0 input is 0.0. Critically, the strong positive input of 3.0 is passed through unchanged (3.0), preserving its magnitude and maintaining a strong gradient for learning.
+
+2. The Squashers: Sigmoid & Tanh
+
+These functions are called "squashers" because they compress the input into a limited range:
+
+* Sigmoid: It squashes all inputs into the (0,1) range.
+
+    * The strong negative input (−2.0) is squashed close to 0 (0.12).
+
+    * The strong positive input (3.0) is squashed close to 1 (0.95).
+
+    * The 0.0 input always lands exactly at 0.50.
+
+* Tanh (Hyperbolic Tangent): It squashes all inputs into the (−1,1) range.
+
+    * It treats the 0.0 input perfectly, mapping it to 0.0.
+
+    * The strong negative input is mapped close to −1 (−0.96), and the positive input close to 1 (0.995). Tanh is generally preferred over Sigmoid because its output is centered around zero.
+
+3. The Specialist: Softmax
+
+* Softmax: This function converts the raw inputs (logits) into a probability distribution that sums to 1.0.
+
+    * The strong positive value (3.0) is assigned the highest probability (0.946).
+
+    * The negative and neutral values are assigned very low probabilities, essentially indicating the network is highly confident that the true class is the one corresponding to the 3.0 input.
+
+4. The Fixer: Leaky ReLU
+
+* Leaky ReLU: This is used to fix ReLU's problem with negative inputs (the "dying neuron" problem).
+
+    * Instead of setting −2.0 to 0.0 (like ReLU), it assigns a tiny, non-zero value (−0.02) to ensure that the neuron still has a small gradient and can potentially learn again later.
