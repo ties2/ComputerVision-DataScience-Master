@@ -10,7 +10,22 @@ The lecture materials in this directory complement the project repositories and 
 
 ##  📚 Lecture Content
 Below is an overview of the lecture materials, organized by topic. Each section links to specific resources (e.g., slides, PDFs, or notebooks) stored in this lectures/ directory or external repositories where applicable. These materials are drawn from coursework, seminars, and workshops, providing a foundation for the practical projects.
-Fundamentals
+
+
+| Suggested Folder/Category Name	|Content Focus |
+| ---- | ---- |
+| 01_Academic_Milestones |	Thesis/Dissertation Progress: Proposal drafts, milestone presentations, literature review notes, methodology logs.|
+| 02_Skills_Essentials |	Study and Soft Skills: Markdown files on time management, note-taking strategies for complex papers, tips for writing research papers, presentation templates.|
+| 03_Tooling_Setup	|Environment Guides: Detailed guides on setting up your ideal environment (e.g., WSL2 setup for PyTorch/CUDA, Docker containers for reproducibility, specific VS Code extensions).|
+|04_Learning_Log	|Daily/Weekly Log: Short, dated entries (in a simple .md file) on failures, breakthroughs, new paper reads, and debugging lessons.|
+| 05_Core_Concepts_From_Scratch |	Fundamentals: Implementations of classic algorithms from scratch (e.g., Convolution/Pooling layers in NumPy, Simple Linear Regression, Canny Edge Detection).|
+| 06_Detection_Segmentation|	Object Analysis: Projects involving YOLO, R-CNN variants, semantic segmentation (U-Net, DeepLab), or instance segmentation.|
+|07_Generative_Models	|Creation & Style: Projects using GANs, VAEs, or diffusion models for image synthesis, style transfer, or super-resolution.|
+|08_Advanced_Vision_Transf |Modern Architectures: Implementations or explorations of Vision Transformers (ViT), attention mechanisms, and multi-modal learning.|
+
+---
+
+## Fundamentals
 
 * [Linear Algebra](https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/mathematics/Linear%20Algebra.markdown): SlidesCore mathematical concepts for machine learning and computer vision.
 * Image Features: PresentationTechniques for extracting and analyzing features from images.
@@ -88,7 +103,7 @@ Data-centric AI: Kick-off SlidesImproving data quality for better machine learni
 
 ---
 
-🚀 How to Use These Materials
+## How to Use These Materials
 
 Access Lecture Files:
 
@@ -107,14 +122,14 @@ Supplementary Resources:
 Find additional datasets, papers, and tutorials in the resources/ folder of the main repository.
 
 
-💡 Contributing
+### Contributing
 Have additional lecture materials, corrections, or suggestions? Contributions are welcome!
 
 Fork the main repository.
 Add or update files in the lectures/ directory.
 Submit a pull request with a clear description of your changes.
 
-📬 Contact
+### Contact
 Questions or feedback? Reach out:
 Email: nirvana.elahi@outlook.com
 
