@@ -91,3 +91,110 @@ Why it's necessary: Anomalies often represent critical events.
     * Manufacturing: Detecting defective parts on an assembly line that fall outside normal measurement tolerances.
 
 Common Algorithms: Isolation Forest, One-Class SVM.
+
+| Unsupervised Task	|Primary Goal	|Example Output
+|---- | ----| ---- |
+|Clustering	Grouping similar points	|Cluster A, Cluster B, Cluster C
+|Dimensionality Reduction	|Reducing complexity	Two principal components (PC1, PC2)
+|Anomaly Detection	|Finding rare events|Normal or Anomaly flag
+
+
+---
+
+# Linear Regression
+
+The Core Concept
+Linear Regression assumes that the relationship between the features (X) and the target variable (y) is linear.
+
+1. The Equation
+
+The model's goal is to find the parameters (W and b) that define this line:
+y^=Wx+
+
+2. The Learning Process
+
+The algorithm learns by minimizing the error between the predicted values ( y^) and the actual target values (y).
+
+Loss Function: It typically uses the Mean Squared Error (MSE), which calculates the average of the squared differences between  
+y^and y.
+
+Optimization: It uses techniques like Gradient Descent to iteratively adjust the weight (W) and bias (b) in the direction that reduces the MSE, until the line fits the data as closely as possible.
+
+3. Use Case
+
+Linear Regression is used when you need to predict a numeric quantity based on continuous data and want a model that is simple, fast, and highly interpretable (you can easily understand the influence of each feature).
+
+Example: Predicting a house price based on its square footage.
+
+```
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error, r2_score # New Import
+
+# --- 1. Generate Synthetic Data ---
+# We create data that already has a linear relationship: y = 2*x + 5 + (some noise)
+# X must be reshaped to (n_samples, n_features) for scikit-learn
+X = np.arange(100).reshape(-1, 1) # Features (Input: 0 to 99)
+y = 2 * X.flatten() + 5 + np.random.normal(0, 10, 100) # Target (Output)
+
+# Split the data into training and testing sets
+# X_test and y_test are held back for validation/testing
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+
+# --- 2. Initialize and Train the Model ---
+
+# Initialize the Linear Regression model
+model = LinearRegression()
+
+# Train the model using the training data
+# The .fit() method is where the model calculates the optimal W (weight) and b (bias)
+print("Training the Linear Regression model...")
+model.fit(X_train, y_train)
+
+
+# --- 3. Analyze Results, Validate, and Predict ---
+
+# 1. Print the learned parameters
+print("\n--- Learned Parameters ---")
+# The coefficient (coef_) is the Weight (W) or slope
+print(f"Weight (Slope, W): {model.coef_[0]:.4f}")
+# The intercept (intercept_) is the Bias (b) or y-intercept
+print(f"Bias (Y-Intercept, b): {model.intercept_:.4f}")
+# Our initial data was generated with W=2 and b=5. The model's findings are close!
+
+
+# 2. Model Validation (Evaluation on Test Set)
+# Use the trained model to predict values for the unseen test data
+y_pred = model.predict(X_test)
+
+# Calculate performance metrics
+mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred) # Alternatively, use model.score(X_test, y_test)
+
+print("\n--- Model Validation (Evaluation on Test Set) ---")
+print(f"Mean Squared Error (MSE): {mse:.2f}")
+print(f"R-squared Score (R2): {r2:.4f}")
+print("R2 close to 1.0 indicates a very good fit to the data.")
+
+
+# 3. Make a single prediction on a new input
+new_input = np.array([[105]]) # Predict the value for X=105
+predicted_y = model.predict(new_input)
+
+print("\n--- Single Point Prediction ---")
+print(f"For an input X = 105, the predicted Y is: {predicted_y[0]:.4f}")
+```
+# Loss Function (or Cost Function)
+
+ Loss Function (or Cost Function), and for Linear Regression, the standard choice is the Mean Squared Error (MSE).
+
+The entire purpose of the training process is to find the model parameters (W and b) that minimize the value calculated by this formula.
+
+Mean Squared Error (MSE) Formula
+The formula calculates the average of the squared differences between the predicted value and the actual true value across all m samples in the dataset.
+
+$\frac{1}{2m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})^2$.
+
+The MSE tells the model: "How much, on average, are your predictions y^ wrong?" The model then uses Gradient Descent to reduce this J value toward zero.
