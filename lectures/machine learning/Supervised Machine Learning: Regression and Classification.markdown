@@ -235,3 +235,186 @@ $$
 | ---- | ---- | ---- | ---- |
 |f(x)	|The Predictor (The Model)	|A Prediction (y^)	|The Input Data (x)|
 |J(W)	|The Evaluator (The Loss)	|A single Score (Loss value)	|The Model's Parameters (W and b)
+
+---
+
+# Gradient Descent
+
+Gradient Descent is the most common and fundamental optimization algorithm used to train machine learning models, including Linear Regression and Neural Networks.
+
+Its primary goal is to iteratively adjust the model's parameters (the weights W and bias b) to find the combination that results in the lowest possible loss function value J(W,b).
+
+* The Concept: Finding the Bottom of the Hill
+Imagine the loss function J(W,b) as a deep valley or a bowl-shaped hill, where the lowest point is the optimal solution (the best-fitting line).
+
+Gradient Descent is the process of a hiker trying to reach the bottom of that valley:
+
+1. Starting Point: The model starts with random initial parameters (W and b), placing the hiker high up on the hill.
+
+2. The Gradient (Slope): At the hiker's current location, the algorithm calculates the gradient (the slope). The gradient tells us the direction of the steepest ascent (uphill).
+
+3. The Descent: To minimize the cost, the hiker must move in the opposite direction of the gradient—the direction of the steepest descent (downhill).
+
+4. Iteration: The parameters are updated slightly in the downhill direction. This process is repeated thousands or millions of times until the hiker reaches the bottom (where the slope is zero or near zero).
+
+The Key Update Formula
+The adjustment to the parameters is determined by this formula:
+
+$$
+\text{New Parameter} = \text{Old Parameter} - (\alpha \times \frac{\partial J(\mathbf{W}, b)}{\partial \mathbf{W}})
+$$
+
+Components Explained:
+
+Parameter (W or b): The value being adjusted.
+
+Gradient: The rate of change of the loss function with respect to the parameter (how much changing the parameter affects the loss).
+
+α (Learning Rate): A crucial hyperparameter that dictates the size of the step the algorithm takes down the hill.
+
+If α is too large, the algorithm might step too far and miss the bottom (overshoot).
+
+If α is too small, training will be accurate but extremely slow.
+
+
+single Python file that implements Gradient Descent from scratch using NumPy (without PyTorch or Scikit-learn)
+
+```
+import numpy as np
+
+# --- 1. Generate Synthetic Data ---
+# True parameters are W_true=2 and b_true=1
+W_true = 2.0
+b_true = 1.0
+m = 50 # Number of data points
+
+# Generate random X values
+X = np.random.rand(m, 1) * 10 
+# Generate Y values with noise
+y = W_true * X + b_true + np.random.normal(0, 1, (m, 1)) 
+
+
+# --- 2. Hyperparameters and Initialization ---
+# Learning Rate (alpha) - Controls the step size
+learning_rate = 0.01 
+# Number of iterations (epochs)
+iterations = 1000 
+
+# Initialize W and b with small random values (the "starting point" on the hill)
+W = np.random.randn(1, 1)
+b = np.random.randn(1)
+
+
+# --- 3. Gradient Descent Functions ---
+
+def compute_loss(X, y, W, b):
+    """Calculates the Mean Squared Error (MSE) loss."""
+    m = len(y)
+    # Predicted value (y_hat = Wx + b)
+    y_pred = X @ W + b
+    # Squared error term
+    error = y_pred - y
+    # MSE Cost Function J(W, b)
+    # np.sum returns a single scalar value (no index needed)
+    loss = (1 / (2 * m)) * np.sum(error ** 2) 
+    return loss, y_pred
+
+def compute_gradient(X, y, y_pred):
+    """Calculates the gradient (partial derivative) of the loss w.r.t W and b."""
+    m = len(y)
+    error = y_pred - y
+    
+    # Gradient w.r.t. W: how much W affects the loss
+    dJ_dW = (1 / m) * (X.T @ error)
+    
+    # Gradient w.r.t. b: how much b affects the loss
+    dJ_db = (1 / m) * np.sum(error)
+    
+    return dJ_dW, dJ_db
+
+
+# --- 4. The Training Loop (Gradient Descent) ---
+print("Starting Gradient Descent...")
+
+for i in range(iterations):
+    # a. Forward Pass & Loss Calculation
+    loss, y_pred = compute_loss(X, y, W, b)
+
+    # b. Compute Gradients
+    dJ_dW, dJ_db = compute_gradient(X, y, y_pred)
+    
+    # c. Gradient Descent Update Rule (The Core Step!)
+    # W = W - (alpha * dJ/dW)
+    W = W - learning_rate * dJ_dW
+    # b = b - (alpha * dJ/db)
+    b = b - learning_rate * dJ_db
+    
+    # Print progress every 100 iterations
+    if i % 100 == 0:
+        # FIX: Removed [0] from 'loss' since it is a scalar
+        print(f"Iteration {i:4d} | Loss: {loss:.4f} | W: {W[0,0]:.4f} | b: {b[0]:.4f}")
+
+# --- 5. Final Results ---
+print("\n--- Training Complete ---")
+# FIX: Removed [0] from 'loss' since it is a scalar
+print(f"Final Learned W: {W[0,0]:.4f} (True: {W_true})")
+print(f"Final Learned b: {b[0]:.4f} (True: {b_true})")
+print(f"Final Loss: {loss:.4f}")
+```
+output:
+```
+Starting Gradient Descent...
+Iteration    0 | Loss: 70.9915 | W: 0.8161 | b: -0.1338
+Iteration  100 | Loss: 0.5088 | W: 2.1429 | b: 0.2356
+Iteration  200 | Loss: 0.4921 | W: 2.1237 | b: 0.3627
+Iteration  300 | Loss: 0.4823 | W: 2.1091 | b: 0.4602
+Iteration  400 | Loss: 0.4766 | W: 2.0978 | b: 0.5348
+Iteration  500 | Loss: 0.4732 | W: 2.0892 | b: 0.5920
+Iteration  600 | Loss: 0.4712 | W: 2.0826 | b: 0.6359
+Iteration  700 | Loss: 0.4700 | W: 2.0776 | b: 0.6695
+Iteration  800 | Loss: 0.4694 | W: 2.0737 | b: 0.6952
+Iteration  900 | Loss: 0.4689 | W: 2.0707 | b: 0.7149
+
+--- Training Complete ---
+Final Learned W: 2.0685 (True: 2.0)
+Final Learned b: 0.7299 (True: 1.0)
+Final Loss: 0.4687
+```
+
+Gradient Descent isn't a single fixed algorithm; it's a family of optimization techniques. They all share the same core goal—minimizing the cost function J(W,b)—but they differ fundamentally in how many training examples they use to calculate the gradient (the slope) for a single parameter update.
+
+Here is an explanation of the three main types of Gradient Descent algorithms.
+
+1. Batch Gradient Descent (BGD)
+Batch Gradient Descent is the most theoretically straightforward method.
+
+How it Works
+
+BGD calculates the gradient using all m training examples in the dataset before taking a single step down the cost function surface.
+
+2. Stochastic Gradient Descent (SGD)
+Stochastic (meaning "random") Gradient Descent is the opposite extreme from BGD.
+
+How it Works
+
+SGD calculates the gradient using only one training example at a time. After processing that single example, the parameters are immediately updated.
+
+3. Mini-Batch Gradient Descent (MBGD)
+Mini-Batch Gradient Descent is the standard approach used in almost all deep learning and machine learning applications today because it offers the best balance.
+
+How it Works
+
+MBGD splits the full dataset into smaller, manageable subsets called mini-batches (typically sized 32, 64, 128, or 256). The gradient is calculated and parameters are updated once per mini-batch.
+
+Summary: The Trade-off
+
+The choice between these algorithms comes down to a trade-off between speed and stability:
+
+BGD = Maximum Stability, Minimum Speed.
+
+SGD = Maximum Speed, Minimum Stability.
+
+MBGD = The sweet spot, offering fast updates with relatively stable movement toward the minimum.
+
+Because of this efficiency and balance, Mini-Batch Gradient Descent is almost always the default choice when training machine learning models.
+
