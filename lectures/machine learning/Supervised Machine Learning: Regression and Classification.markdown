@@ -418,3 +418,26 @@ MBGD = The sweet spot, offering fast updates with relatively stable movement tow
 
 Because of this efficiency and balance, Mini-Batch Gradient Descent is almost always the default choice when training machine learning models.
 
+
+The "derivative term" in Gradient Descent is the Gradient itself. It is the crucial piece of information that tells the algorithm exactly how to change the parameters to lower the cost.
+
+## The Derivative Term:  
+​	
+$$
+\frac{\partial J(\mathbf{W}, b)}{\partial \mathbf{W}}
+$$
+
+In the context of machine learning optimization, the derivative term is the partial derivative of the cost function J with respect to a specific parameter (like a weight W or bias b).
+
+1. What It Calculates (The Slope)
+
+Definition: The derivative term calculates the instantaneous slope (or gradient) of the cost function curve at the current parameter values.
+
+Meaning: It tells us, "If I slightly increase this parameter (W), how much will the cost J increase or decrease?"
+
+|Derivative Value	|Interpretation (Slope)	|Action (Descent)
+| ---- | ---- | ---- |
+|Positive Slope	|Increasing W makes the cost J increase.	|Decrease W to move downhill.
+|Negative Slope	|Increasing W makes the cost J decrease.	|Increase W to move downhill.
+|Near Zero	|You are at or near the optimal minimum.	|Stop or take tiny steps.
+
