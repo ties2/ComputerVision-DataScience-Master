@@ -423,6 +423,7 @@ The "derivative term" in Gradient Descent is the Gradient itself. It is the cruc
 
 ## The Derivative Term:  
 ​	
+
 $$
 \frac{\partial J(\mathbf{W}, b)}{\partial \mathbf{W}}
 $$
@@ -441,3 +442,36 @@ Meaning: It tells us, "If I slightly increase this parameter (W), how much will 
 |Negative Slope	|Increasing W makes the cost J decrease.	|Increase W to move downhill.
 |Near Zero	|You are at or near the optimal minimum.	|Stop or take tiny steps.
 
+---
+
+## Learning Rate
+
+The Learning Rate (α) is arguably the most critical hyperparameter in Gradient Descent and all of deep learning. It dictates the magnitude of the step the optimization algorithm takes toward the minimum of the cost function.
+
+### What is the Learning Rate?
+In the Gradient Descent update formula:
+
+New Parameter=Old Parameter−(α×Gradient)
+
+The learning rate (α) is the scalar value that scales the Gradient. It determines how quickly or slowly the model updates its weights based on the calculated error.
+
+The Trade-Off: Too High vs. Too Low
+Choosing the right learning rate is a critical balancing act:
+
+1. Learning Rate is Too Large (High α)
+
+* Effect: The algorithm takes massive steps downhill.
+
+* Problem: It will likely overshoot the minimum, jumping back and forth across the optimal value without ever settling, leading to instability, divergence, or wildly fluctuating loss.
+
+2. Learning Rate is Too Small (Low α)
+
+* Effect: The algorithm takes tiny, cautious steps downhill.
+
+* Problem: The model will take an extremely long time to converge (reach the minimum), wasting significant computational resources. It can also get stuck in a poor local minimum.
+
+3. Just Right
+
+* Effect: The algorithm takes progressively smaller, efficient steps, allowing it to rapidly descend the steepest parts of the curve and then gently settle precisely at the minimum.
+
+* In summary, the Learning Rate is the "speed dial" for your model's learning process. Finding the optimal value is essential for efficient and successful training.
