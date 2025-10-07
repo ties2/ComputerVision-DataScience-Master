@@ -475,3 +475,39 @@ Choosing the right learning rate is a critical balancing act:
 * Effect: The algorithm takes progressively smaller, efficient steps, allowing it to rapidly descend the steepest parts of the curve and then gently settle precisely at the minimum.
 
 * In summary, the Learning Rate is the "speed dial" for your model's learning process. Finding the optimal value is essential for efficient and successful training.
+
+----
+
+Regression with Multiple Features, also known as Multiple Linear Regression, is a straightforward extension of simple linear regression. Instead of using just one input variable (x) to predict the target (y), it uses two or more input features.
+
+The Core Concept
+The goal remains the same: to find the best-fitting linear relationship. However, instead of fitting a 2D line, the model fits a higher-dimensional plane or hyperplane.
+
+1. The Equation
+
+The model takes into account every single feature 
+$$
+\ (x_1, x_2, \dots, x_n)
+$$
+and assigns a unique weight  to each one:
+
+$$
+\hat{y} = W_1x_1 + W_2x_2 + \dots + W_nx_n + b
+$$
+​
+
+2. The Learning Process
+
+The process of training remains identical to the simple case:
+
+Cost Function: The model calculates the Mean Squared Error (J) based on the difference between the predicted  
+y^ and the true y.
+
+Optimization: It uses Gradient Descent to simultaneously adjust all parameters 
+$$
+\mathbf{W} = (W_1, W_2, \dots, W_n)
+$$ in the direction that minimizes the J value.
+
+Key Benefit: Better Accuracy
+
+By incorporating multiple sources of information, Multiple Linear Regression can capture more complex relationships in the data, leading to more accurate and reliable predictions than simple linear regression. For example, predicting a student's final grade is much more accurate if you use features like hours studied, prior GPA, and attendance rate, rather than just one of those factors alone.
