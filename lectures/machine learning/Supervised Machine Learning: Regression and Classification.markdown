@@ -504,9 +504,12 @@ Cost Function: The model calculates the Mean Squared Error (J) based on the diff
 y^ and the true y.
 
 Optimization: It uses Gradient Descent to simultaneously adjust all parameters 
+
 $$
 \mathbf{W} = (W_1, W_2, \dots, W_n)
-$$ in the direction that minimizes the J value.
+$$ 
+
+in the direction that minimizes the J value.
 
 Key Benefit: Better Accuracy
 
