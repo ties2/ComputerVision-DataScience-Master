@@ -499,6 +499,10 @@ $$
 ​
 
 
+
+
+s
+
 2. The Learning Process
 
 The process of training remains identical to the simple case:
