@@ -495,6 +495,7 @@ $$
 \hat{y} = W_1x_1 + W_2x_2 + \dots + W_nx_n + b
 $$
 ​
+
 2. The Learning Process
 
 The process of training remains identical to the simple case:
