@@ -491,12 +491,13 @@ $$
 \ (x_1, x_2, \dots, x_n)
 $$
 
+and assigns a unique weight  to each one:
 
 $$
 \hat{y} = W_1x_1 + W_2x_2 + \dots + W_nx_n + b
 $$
 
-and assigns a unique weight  to each one:
+
 
 
 ​
