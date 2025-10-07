@@ -486,9 +486,11 @@ The goal remains the same: to find the best-fitting linear relationship. However
 1. The Equation
 
 The model takes into account every single feature 
+
 $$
 \ (x_1, x_2, \dots, x_n)
 $$
+
 and assigns a unique weight  to each one:
 
 $$
@@ -506,7 +508,7 @@ y^ and the true y.
 Optimization: It uses Gradient Descent to simultaneously adjust all parameters 
 
 $$
-\mathbf{W} = (W_1, W_2, \dots, W_n)
+\ (W_1, W_2, \dots, W_n)
 $$ 
 
 in the direction that minimizes the J value.
