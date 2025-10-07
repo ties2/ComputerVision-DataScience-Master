@@ -520,3 +520,28 @@ in the direction that minimizes the J value.
 Key Benefit: Better Accuracy
 
 By incorporating multiple sources of information, Multiple Linear Regression can capture more complex relationships in the data, leading to more accurate and reliable predictions than simple linear regression. For example, predicting a student's final grade is much more accurate if you use features like hours studied, prior GPA, and attendance rate, rather than just one of those factors alone.
+
+---
+
+## Vectorization
+
+Vectorization is the fundamental technique of replacing explicit loops in code (like for loops) with efficient, highly optimized linear algebra operations performed on entire arrays or matrices (vectors).
+
+Why Vectorization is Essential in ML
+When you write a machine learning equation like  
+y^=Wx+b, you are usually thinking about applying it to thousands or millions of data points.
+
+1. Inefficient Loop (Scalar Code): If you use a for loop to calculate the prediction for 10,000 houses, the CPU has to handle 10,000 separate sets of instructions sequentially. This is slow because Python loops are not natively optimized.
+
+```
+# Pseudo-code (Inefficient, Scalar)
+for i in range(10000):
+    y_pred[i] = W * x[i] + b
+
+```
+
+2. Efficient Vectorization: With vectorization, you treat the entire set of 10,000 inputs (x) as a single vector and the 10,000 outputs (y^) as another vector. Libraries like NumPy, PyTorch, and TensorFlow use highly optimized C/C++ or GPU code to perform the entire calculation in a single, parallel instruction.
+
+# Pseudo-code (Efficient, Vectorized)
+y_pred = W * X + b # X is an array of 10000 inputs
+
