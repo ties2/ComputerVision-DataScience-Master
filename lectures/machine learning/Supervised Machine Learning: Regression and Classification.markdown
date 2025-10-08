@@ -543,5 +543,44 @@ for i in range(10000):
 2. Efficient Vectorization: With vectorization, you treat the entire set of 10,000 inputs (x) as a single vector and the 10,000 outputs (y^) as another vector. Libraries like NumPy, PyTorch, and TensorFlow use highly optimized C/C++ or GPU code to perform the entire calculation in a single, parallel instruction.
 
 # Pseudo-code (Efficient, Vectorized)
+
 y_pred = W * X + b # X is an array of 10000 inputs
+
+
+---
+Gradient Descent for Multiple Regression (GDM) uses the same fundamental principle as simple linear regression, but it must manage and update multiple weights and the bias (b) simultaneously.
+
+The goal is still to minimize the Cost Function J(W,b), which now represents a very complex, multi-dimensional surface (a hyperplane).
+
+The Core Mechanism: Simultaneous Update
+In Multiple Regression, the training loop must calculate a separate derivative (or slope) for every single parameter to determine how much that specific parameter contributed to the total error.
+
+1. The Gradient Calculation
+
+For each iteration, the algorithm computes n+1 gradients: one for each weight W jand one for the bias b.
+
+The partial derivative for any individual weight Wj is calculated as:
+
+$$
+\text{Gradient}_j = \frac{\partial J(\mathbf{W}, b)}{\partial W_j}
+$$
+
+This tells us: "How sensitive is the total cost J to changes in just the weight W 
+j
+​	
+ ?"
+
+2. The Update Rule
+
+After calculating all the gradients, every parameter is updated at the same moment using the Learning Rate (α):
+
+$$
+W_j := W_j - (\alpha \frac{\partial J}{\partial W_j})
+$$
+
+update: 
+
+$$
+b = b - (\alpha \frac{\partial J}{\partial b})
+$$
 
