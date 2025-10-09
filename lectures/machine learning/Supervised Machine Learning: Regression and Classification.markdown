@@ -710,3 +710,45 @@ Ideal Curve (Good α): The curve starts high and drops quickly and smoothly, eve
 Bouncing Curve (Too High α): If the loss jumps up and down aggressively, your learning rate is too high, causing the model to overshoot the minimum repeatedly.
 
 Flat Curve (Too Low α): If the loss barely moves down, your learning rate is too low, and the model is taking steps too small to make progress.
+
+---
+
+## Automatic Convergence Test
+
+The Automatic Convergence Test is a stopping condition used in Gradient Descent to automatically determine when the model has found the minimum of the cost function, allowing the training to stop.
+
+Instead of running for a fixed, arbitrary number of epochs (like 1,000 or 10,000), the test lets the algorithm decide it's "done."
+
+How the Convergence Test Works
+The test operates by monitoring the value of the Cost Function (J) after each step of Gradient Descent.
+
+Define a Threshold (ϵ): You set a very small tolerance value, often called epsilon (ϵ), like 
+
+$$
+10^{-3}, \quad 10^{-4}, \quad \text{or} \quad 10^{-5}
+$$
+
+This value represents the maximum amount of improvement that is considered meaningful.
+
+Monitor Loss Change: After each iteration, the algorithm compares the new cost value J 
+new
+​	
+  with the previous cost value J 
+old
+​	
+ .
+
+Check for Small Change: If the decrease in the loss is less than the defined threshold ϵ, the model is deemed to have converged.
+
+$$
+\text{If } (J_{\text{old}} - J_{\text{new}}) < \epsilon, \quad \text{then STOP}
+$$
+
+Why Use an Automatic Test?
+* Efficiency: It prevents the model from wasting time and resources on thousands of unnecessary iterations once the loss has plateaued.
+
+* Accuracy: It ensures the model is trained exactly until the parameters are settled at the minimum, leading to better results than stopping prematurely.
+
+* Automation: It removes the need for the user to manually guess an optimal number of epochs for every new dataset.
+
+When the test triggers, it means the gradient is close to zero, and any further updates to the weights are negligible.
