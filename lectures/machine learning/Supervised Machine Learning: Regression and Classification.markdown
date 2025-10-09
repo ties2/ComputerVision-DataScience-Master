@@ -670,3 +670,43 @@ The process involves two steps: subtracting the mean (μ) and then scaling the r
 |Standardization (Z-Score)	|0	|Unbounded (usually ≈[−3,3])| Moderate
 |Mean Normalization	|0	|Bounded (usually ≈[−1,1]) |High (like Min-Max)
 |Min-Max Normalization	|Varies	|Bounded [0, 1] |high
+
+
+## Why Use It?
+
+Mean Normalization is often used when:
+
+1. You need your features to be centered at zero, which improves the performance of Gradient Descent.
+
+2. You also require your scaled feature values to be bounded within a small, defined range (like approximately [−1,1]).
+
+It combines the centering benefit of standardization with the range-bounding benefit of Min-Max scaling.
+
+---
+## Learning Rate and Learning Curve
+
+1. Learning Rate (α): The Speed Dial
+As we discussed, the Learning Rate (α) is a hyperparameter that controls the size of the step Gradient Descent takes toward the minimum of the cost function.
+
+Its Function: It scales the calculated gradient.
+
+Too High: The loss will diverge or oscillate wildly because the steps are too large, overshooting the minimum.
+
+Too Low: The model will take an extremely long time to converge, creeping slowly toward the minimum.
+
+The Learning Rate is an input you set before training begins.
+
+2. Learning Curve: The Diagnostic Chart
+The Learning Curve is a visual tool (a plot) that acts as a diagnostic report for your training process.
+
+What it Plots: It plots the model's performance metric (usually the Loss/Cost Function J) against the number of iterations or epochs run during training.
+
+Its Function: By looking at the curve, you can determine if your model is learning correctly and whether your chosen Learning Rate (α) is effective.
+
+Interpreting the Learning Curve
+
+Ideal Curve (Good α): The curve starts high and drops quickly and smoothly, eventually flattening out near zero. This shows the model is converging efficiently.
+
+Bouncing Curve (Too High α): If the loss jumps up and down aggressively, your learning rate is too high, causing the model to overshoot the minimum repeatedly.
+
+Flat Curve (Too Low α): If the loss barely moves down, your learning rate is too low, and the model is taking steps too small to make progress.
