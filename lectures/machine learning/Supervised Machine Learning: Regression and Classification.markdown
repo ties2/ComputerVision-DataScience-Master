@@ -609,3 +609,47 @@ When you have multiple features, their scale differences can ruin Gradient Desce
 * Effect on Descent: This disparity creates a very elongated, narrow cost surface (like an oval bowl). Gradient Descent struggles here, as it has to take tiny, inefficient steps along the narrow axis and huge steps along the wide axis. It wastes many iterations bouncing back and forth.
 
 * Solution (Normalization/Standardization): By ensuring all features are scaled to a similar range (e.g., between 0 and 1 or centered around 0), the cost surface becomes more spherical. This allows Gradient Descent to take a much more direct and efficient path straight to the minimum.
+
+ Feature Scaling is a crucial data preprocessing step in machine learning, particularly for algorithms that rely on measuring the distance between data points (like K-Nearest Neighbors) or those that use Gradient Descent (like Linear Regression and Neural Networks).
+
+What is Feature Scaling?
+Feature scaling is the process of normalizing or standardizing the range of independent variables (features) in your dataset.
+
+Why It's Necessary (The Problem)
+
+If you have two features in your model—say, House Size (ranging from 500 to 5000) and Number of Bedrooms (ranging from 1 to 5)—they exist on wildly different scales.
+
+Gradient Descent Issue: Gradient Descent treats features with large ranges as more important than features with small ranges, even if they aren't. This creates a very elongated, narrow cost function surface. The algorithm wastes many iterations inefficiently bouncing back and forth along the narrow axis before finally settling.
+
+Distance Issue: For distance-based algorithms (like K-Nearest Neighbors), the feature with the largest magnitude (House Size) will completely dominate the distance calculation, effectively ignoring the contribution of the smaller feature (Bedrooms).
+
+The Solution: A Spherical Cost Surface
+
+By scaling all features to a similar, small range, you transform the elongated cost surface into a more spherical shape. This allows Gradient Descent to take a direct, efficient path straight to the minimum, drastically speeding up training and improving convergence.
+
+Common Scaling Methods
+There are two primary methods used for feature scaling:
+
+1. Normalization (Min-Max Scaling)
+
+Goal: Scales all feature values to fit within a specific range, typically [0, 1].
+
+Formula: 
+
+$$
+x_{\text{normalized}} = \frac{x - x_{\min}}{x_{\max} - x_{\min}}
+$$
+
+Use Case: Good when you need strictly bounded values. However, it is sensitive to outliers, as a single extreme value will compress all other data points into a tiny range.
+
+2. Standardization (Z-Score Normalization)
+
+Goal: Rescales the feature values so they have a mean (μ) of 0 and a standard deviation (σ) of 1.
+
+Formula: 
+
+$$
+x_{\text{standardized}} = \frac{x - \mu}{\sigma}
+$$
+
+
