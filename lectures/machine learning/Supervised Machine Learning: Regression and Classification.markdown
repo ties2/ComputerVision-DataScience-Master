@@ -578,9 +578,34 @@ $$
 W_j := W_j - (\alpha \frac{\partial J}{\partial W_j})
 $$
 
-update: 
 
 $$
 b = b - (\alpha \frac{\partial J}{\partial b})
 $$
 
+The algorithm repeats this simultaneous update until all parameters have settled at the minimum of the cost function, where the gradients are close to zero.
+
+---
+
+## Features Size and Gradient Descent
+
+1. The Dimensionality of the Cost Surface
+
+* Small Number of Features (e.g., 1 to 10): The cost function surface J(W,b) is easy to visualize (a simple bowl). Gradient Descent can often find the minimum reliably, and you don't need complex optimizers.
+
+* Large Number of Features (High Dimensionality): The cost surface becomes a complex, high-dimensional valley (a "hyperplane"). This can introduce challenges:
+
+    * It's harder to visualize and prone to having many local minima (little dips where the algorithm might get stuck).
+
+    * Calculating the gradient for every single weight Wj becomes computationally expensive, highlighting the need for vectorization and Mini-Batch Gradient Descent.
+
+2. The Need for Feature Scaling
+
+When you have multiple features, their scale differences can ruin Gradient Descent's effectiveness:
+
+* Problem: If Feature 1 (Size) ranges from 0 to 1000, and Feature 2 (Age) ranges from 0 to 5, the weight W1 associated with size will need to be very small, and W2
+​will need to be very large.
+
+* Effect on Descent: This disparity creates a very elongated, narrow cost surface (like an oval bowl). Gradient Descent struggles here, as it has to take tiny, inefficient steps along the narrow axis and huge steps along the wide axis. It wastes many iterations bouncing back and forth.
+
+* Solution (Normalization/Standardization): By ensuring all features are scaled to a similar range (e.g., between 0 and 1 or centered around 0), the cost surface becomes more spherical. This allows Gradient Descent to take a much more direct and efficient path straight to the minimum.
