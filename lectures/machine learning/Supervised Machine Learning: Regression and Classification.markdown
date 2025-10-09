@@ -727,6 +727,29 @@ Your learning curve will fall into one of three major categories, which tells yo
 | Flat/Slow Descent	| The loss barely moves, or decreases extremely slowly.	| α is TOO LOW. Increase α by 10x (e.g., if you used 0.0001, try 0.001).
 | Rapid, Smooth Descent	|The loss drops quickly and smoothly, then begins to flatten out.	|α is GOOD. Keep this rate or try a slightly higher one to see if you can converge faster.|
 
+### Note: 
+
+So if gradient descent isn't working, one thing I often do and I hope you find this tip useful too, one thing I'll often do is just set Alpha to be a very small number and see if that causes the cost to decrease on every iteration. If even with Alpha set to a very small number, J doesn't decrease on every single iteration, but instead sometimes increases, then that usually means there's a bug somewhere in the code.
+
+4. The "Learning Rate Finder" (Advanced)
+
+For more complex models like Neural Networks, the best practice is to use a Learning Rate Finder (a tool available in deep learning frameworks).
+
+The Finder:
+
+Starts with a very small α , for example:
+
+$$
+10^{-7}
+$$
+
+Gradually increases α exponentially across many iterations.
+
+Records the loss at each step.
+
+The optimal learning rate is usually located just before the point where the loss curve stops descending and starts to shoot upward (diverge).
+
+Crucial Takeaway: You must find the largest possible learning rate that allows the model to converge smoothly. This ensures the fastest training time without sacrificing stability.
 
 ---
 
@@ -789,3 +812,22 @@ Why Use an Automatic Test?
 When the test triggers, it means the gradient is close to zero, and any further updates to the weights are negligible.
 
 ---
+
+## Deep Learning Frameworks 
+
+Deep Learning Frameworks are powerful, specialized software libraries that provide the tools, structures, and optimized functions needed to efficiently build, train, and deploy complex neural network models.
+
+They abstract away the heavy, low-level mathematics (like calculating derivatives for Gradient Descent) and allow machine learning engineers to focus on the model's architecture and data.
+
+Why They Are Essential
+Deep learning requires intensive computation, primarily consisting of vector and matrix operations. Frameworks handle this by:
+
+1.  Vectorization & Hardware Acceleration: They are built on highly optimized backends (like C++ or CUDA) that efficiently run calculations in parallel on GPUs, making the training of huge models feasible.
+
+2. Automatic Differentiation (Autograd): This is the core feature. Frameworks automatically calculate all the necessary gradients (derivatives) needed for Gradient Descent. This saves developers from the tedious, error-prone task of manually deriving and coding the gradients for every layer of a complex neural network.
+
+3. Model Building: They provide high-level APIs (Application Programming Interfaces) that make defining complex network layers (like convolutional or recurrent layers) simple and modular.
+
+The Two Most Popular Deep Learning Frameworks:
+PyTorch
+TensorFlow
