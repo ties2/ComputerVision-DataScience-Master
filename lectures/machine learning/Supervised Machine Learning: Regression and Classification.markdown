@@ -652,4 +652,21 @@ $$
 x_{\text{standardized}} = \frac{x - \mu}{\sigma}
 $$
 
+Use Case: The most common method for Gradient Descent-based models (Neural Networks, Logistic/Linear Regression) because it handles outliers better than Min-Max Scaling and produces a nice distribution for the optimizer.
 
+## Mean Normalization
+
+Mean Normalization is another common technique used for Feature Scaling, serving a similar purpose to Standardization (Z-Score) but with a slightly different range target.
+
+What is Mean Normalization?
+Mean normalization modifies the feature values so that the resulting distribution has a mean of zero. This centers the data around the origin (0).
+
+The Formula
+
+The process involves two steps: subtracting the mean (μ) and then scaling the result by the range (the difference between the max and min values).
+
+| Method	| Mean (μ)	|Range | Sensitivity to Outliers
+| --- | ---- | --- | --- |
+|Standardization (Z-Score)	|0	|Unbounded (usually ≈[−3,3])| Moderate
+|Mean Normalization	|0	|Bounded (usually ≈[−1,1]) |High (like Min-Max)
+|Min-Max Normalization	|Varies	|Bounded [0, 1] |high
