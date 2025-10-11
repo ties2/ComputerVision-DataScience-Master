@@ -852,4 +852,29 @@ Common Techniques in Feature Engineering
 |Encoding Categorical Data	|Converting text categories (like "Red," "Green," "Blue") into numerical formats the model can understand.	|Using One-Hot Encoding to convert City: Paris into a binary column Is_Paris: 1.
 |Discretization (Binning)	|Transforming continuous numerical features into discrete categories or "bins."	 |Converting continuous Age into bins like 'Child (0-12)', 'Teen (13-19)', 'Adult (20+).
 |Creating Interaction Features	Combining two or more existing features to create a new, more powerful feature.	|In housing price prediction: combining Square_Footage and Number_of_Rooms into a new Size_Per_Room ratio.
-|Feature Transformation	|Applying mathematical functions to normalize or adjust the distribution of a feature.	|Using a log transformation on Income data to reduce the effect of extreme outliers and achieve a more normal distribution.
+|Feature Transformation	|Applying mathematical functions to normalize or adjust the distribution of a feature.	|Using a log transformation on Income data to reduce the effect of extreme outliers and achieve a more normal distribution.|
+
+
+---
+
+## Polynomial Regression
+
+Polynomial Regression is a form of linear regression in which the relationship between the independent variable x and the dependent variable y is modeled as an n-th degree polynomial.
+
+It is used when a simple straight line (linear model) is not sufficient to capture the curves and bends present in the data.
+
+### The Core Concept
+Despite the name, Polynomial Regression is still solved using the same techniques as Multiple Linear Regression. The trick is that we use Feature Engineering to create new, non-linear features based on the original input x.
+
+---
+
+## Logistic Regression
+
+Logistic Regression is the foundational algorithm for Classification tasks in machine learning. While its name includes "regression," it is used to predict a category (like "Yes/No," "True/False," or "Cat/Dog") rather than a continuous number.
+
+How Logistic Regression Works
+Instead of trying to fit a straight line to the data (as in Linear Regression), Logistic Regression aims to fit an S-shaped curve, called the Sigmoid Function (or Logistic Function), to predict the probability that an input belongs to a certain class.
+
+1. The Linear Step (Input)
+
+First, the model calculates a standard linear result, z, using the input features (x) and learned parameters (W,b):
