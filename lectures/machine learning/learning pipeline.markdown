@@ -145,3 +145,5 @@ Tools: Common tools include Apache Kafka, Airflow, AWS Glue, or custom scripts i
 
 Data ingestion feeds raw data into the pipeline, where it’s then cleaned, transformed, and used for training models. A robust ingestion process ensures the ML system has reliable, timely, and relevant data to produce accurate models.
 
+
+
