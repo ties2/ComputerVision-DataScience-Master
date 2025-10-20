@@ -85,3 +85,30 @@ By changing the values in the kernel, you can achieve a wide variety of effects:
 |Corner Detection|"Finds image features that have a large intensity variation in all directions (horizontal, vertical, and diagonal). Mathematically, a corner is the intersection of two or more edges|"Provides stable, unique points for object tracking, matching, and 3D reconstruction.|
 |Blob Detection|"Locates regions in an image that are uniform in some property (like brightness, color, or texture) and differ from their surroundings. Blobs can be circular or elliptical.|"Identifies regions of interest that may represent entire objects (e.g., cells, targets, coins).|
 |Ridge Detection|Finds pixels that form an elongated, thin line that is brighter (a ridge) or darker (a valley) than its neighbors. It looks for local maxima/minima in intensity only along the direction perpendicular to the ridge.|"Detects thin structures like roads, cracks, lines, or blood vessels in medical images.|
+
+---
+
+## Edge Detection
+
+Edge Detection is the fundamental process of identifying the boundaries of objects within an image.
+
+
+* What it is: A technique to find points in an image where the pixel intensity changes abruptly.
+
+* What it does: Extracts the structural outline of objects, converting complex image data into simple, meaningful lines.
+
+* How it works: It uses convolution filters (like Sobel or Prewitt) to calculate the image gradient (the first derivative) to measure the magnitude of change. The highest gradient values mark the edges.
+
+The most common and robust algorithm is the Canny Edge Detector, which involves smoothing, gradient calculation, non-maximum suppression (thinning the edges), and hysteresis thresholding (connecting broken edges)
+
+### the most common convolution filters (kernels) used in image processing
+
+|Category|Filter/Kernel Name|Primary Function|Effect/Goal|
+| ---- | ---- | ---- |----|
+|Smoothing / Blur|Box Blur (Mean)|Calculates the average of neighborhood pixels.|Reduces noise and detail; creates a uniform blur|
+|Gaussian Blur|"Weights central pixels highest, decreasing radially|Reduces noise while preserving edges better|
+|Edge Detection|Sobel (X-Direction)|Detects vertical edges by calculating the horizontal gradient|Highlights vertical lines|
+|Sobel (Y-Direction)|Detects horizontal edges by calculating the vertical gradient.,Highlights horizontal lines|
+|Laplacian|Calculates the second derivative (zero-crossings) to find edges|Finds edges and sharp changes; sensitive to noise|
+|Feature Enhancement|Sharpening|Enhances contrast by boosting the center pixel value relative to neighbors|Sharpens fine details and contrast at boundaries|
+|Identity|Returns the original pixel value unchanged|Used for reference (no effect)|
