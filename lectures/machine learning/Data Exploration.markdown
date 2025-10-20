@@ -2,6 +2,47 @@
 
 Data exploration is the initial phase of data analysis, aimed at understanding a dataset's structure, identifying patterns, detecting anomalies, and preparing for deeper modeling. This document outlines three key components: summarizing statistics, visualizing data, and handling missing values or outliers.
 
+Data exploration—through summarizing statistics visualization, and cleaning—transforms raw data into a model-ready state, improving analysis accuracy and revealing actionable insights.
+
+### The 5 V’s of Big Data
+
+Volume, Velocity, Variety, Veracity, Value
+
+* Volume
+
+The size of the dataset.
+* Velocity
+
+The speed at which data is created, collected, processed and analyzed.
+* Variety
+
+The different types and formats of the data.
+    * Structured: databases
+    * Semi-structured: XML, JSON, CSV
+    * Unstructured: Images, videos, audio, text
+* Veracity
+
+The quality and accuracy of data (inconsistencies, uncertainty, bias in data).
+* Value
+The usefulness of the data.
+
+
+
+## Understanding the characteristics of (image) data in the dataset:
+* Size
+    * Number of samples or size of images.
+    * Resolution
+* Validity
+    * How balanced is the dataset regarding the classes available in the dataset?
+    * What is the quality of the dataset?
+        * In the case of images: variability of e.g. brightness, sharpness, contrast, noise
+        * Annotation quality (accuracy, consistency)
+* Relationship between samples
+    * What is the relation between for example classes across samples in the dataset.
+* Data format
+    * What is the format of the files (.jpg, .png, .json, .xml)
+    * How are the images and annotations organized?
+
 ## Summarizing Statistics
 
 Summarizing statistics condense a dataset's key characteristics, providing insights into its distribution, central tendency, and variability.
@@ -57,5 +98,3 @@ Cleaning data by addressing missing values and outliers ensures reliable inputs 
 
 * Use Case: After cleaning, re-check with updated stats/visuals to ensure data quality.
 
-### Conclusion
-Data exploration—through summarizing statistics, visualization, and cleaning—transforms raw data into a model-ready state, improving analysis accuracy and revealing actionable insights.

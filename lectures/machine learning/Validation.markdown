@@ -111,3 +111,65 @@ Object detection metrics must evaluate two things: the correctness of the classi
 Intersection over Union (IoU): Used here to define a true positive. A predicted bounding box is considered correct only if its IoU with a ground truth box exceeds a certain threshold (e.g., 0.5 or 0.75).
 
 Mean Average Precision (mAP): The most common metric. It averages the Average Precision (AP) scores across all object classes. AP is derived from the Precision-Recall curve and provides a single number summarizing the trade-off between identifying relevant objects and avoiding false detections.
+
+----
+
+## Loss function
+
+Loss functions (or Cost Functions or Objective Functions) are core components in machine learning that quantify the "cost" or "error" associated with the difference between a model's predicted output and the true target value.
+
+The goal of training a model is to minimize this loss function using optimization algorithms like Gradient Descent.
+
+The appropriate loss function depends entirely on the type of machine learning task:
+
+1. Regression Loss Functions (Predicting Continuous Values)
+Used when the output is a real number (e.g., predicting house price, temperature).
+
+* Mean Squared Error (MSE) / L2 Loss:
+
+    * formula:
+
+$$
+\text{MSE} = \frac{1}{N}\sum_{i=1}^{N} (y_i - \hat{y}_i)^2
+$$
+
+
+
+Purpose: Calculates the average squared difference between true values (yi) and predictions (y^i).
+
+Characteristics: Penalizes large errors heavily, as they are squared. This makes the model highly sensitive to outliers.
+
+* Mean Absolute Error (MAE) / L1 Loss:
+
+    * Formula:
+
+$$
+\text{MAE} = \frac{1}{N}\sum_{i=1}^{N} |y_i - \hat{y}_i|
+$$
+
+Purpose: Calculates the average absolute difference.
+
+Characteristics: Less sensitive to outliers than MSE, as the errors are not squared. The gradient is constant, which can be beneficial in some cases but may cause issues during optimization near the minimum.
+
+* Huber Loss (Smooth L1 Loss):
+
+    * Purpose: A combination of MSE and MAE. It is quadratic for small errors and linear for large errors.
+
+    * Characteristics: Less sensitive to outliers than MSE while still providing smooth convergence near the minimum, which is better for optimization than MAE.
+
+2. Classification Loss Functions (Predicting Discrete Categories)
+Used when the output is a category (e.g., Cat or Dog, Class A, B, or C).
+
+A. Binary Classification (Two Classes)
+
+Binary Cross-Entropy (BCE) Loss:
+
+Purpose: Used when predicting the probability of a single class (e.g., a value between 0 and 1, usually passed through a sigmoid function).
+
+Characteristics: Measures the performance of a classification model whose output is a probability. The loss increases as the predicted probability diverges from the actual label.
+
+B. Multi-Class Classification (More than Two Classes)
+
+Categorical Cross-Entropy Loss (CFL) / Negative Log Likelihood Loss:
+
+Purpose: The standard loss function for multi-class tasks. It assumes the model's raw output is logits (before softmax).
