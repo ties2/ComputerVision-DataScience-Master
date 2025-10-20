@@ -112,3 +112,104 @@ The most common and robust algorithm is the Canny Edge Detector, which involves 
 |Laplacian|Calculates the second derivative (zero-crossings) to find edges|Finds edges and sharp changes; sensitive to noise|
 |Feature Enhancement|Sharpening|Enhances contrast by boosting the center pixel value relative to neighbors|Sharpens fine details and contrast at boundaries|
 |Identity|Returns the original pixel value unchanged|Used for reference (no effect)|
+
+### Sobel
+
+The Sobel operator (or filter) is one of the most common and simple ways to perform Edge Detection in image processing.
+
+It works by approximating the image's gradient (rate of intensity change) in both the horizontal (x) and vertical (y) directions.
+
+* What it is: A pair of 3×3 convolution kernels.
+
+* What it does: Calculates the magnitude and direction of the fastest change in pixel intensity.
+
+* How it works:
+
+One kernel detects vertical edges (horizontal gradient).
+
+The other kernel detects horizontal edges (vertical gradient).
+
+The two results are combined to find the overall edge strength (the gradient magnitude) at every pixel.
+
+### Harris
+
+The Harris Corner Detector (often just called "Harris") is a classic and highly effective algorithm for finding corners.
+
+* What it is: An algorithm that looks at how image intensity changes when a small window (patch) is moved in various directions.
+
+* What it does: It assigns a "cornerness" score to every pixel.
+
+* How it works:
+
+Flat Region: Moving the window in any direction causes almost no change in intensity. (Low score)
+
+Edge: Moving the window along the edge causes little change, but moving across it causes a large change. (Medium score)
+
+Corner: Moving the window causes a large change in intensity in all directions. (High score)
+
+### Blob Detection 
+
+Blob detection is a fundamental task in computer vision aimed at identifying regions in a digital image that differ in properties, such as brightness or color, compared to surrounding regions. Informally, a blob is a region where some image properties are constant or approximately constant. Blobs are often objects of interest, like cells in a microscope image, stars in a galaxy image, or distinct features for object recognition.
+
+Blob detection methods provide complementary information to edge or corner detectors, often used to find regions of interest for further processing like object tracking or segmentation.
+
+### Laplacian of Gaussian (LoG)
+
+The Laplacian of Gaussian (LoG) is a classical and highly accurate method for blob detection. It works by combining two key steps:
+
+Gaussian Smoothing: The input image is first convolved with a Gaussian kernel (G σ), a low-pass filter with a standard deviation σ. This step smooths the image and reduces noise, which is essential because the next step (the Laplacian) is very sensitive to noise.
+
+Laplacian Operator: The Laplacian (∇ 
+2
+ ) is a second-order spatial derivative operator. It measures the rate of change of the image's gradient, effectively identifying regions of rapid intensity change.
+
+ Exampl:
+
+```
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.patches import Circle  # <-- FIX: Import Circle
+from skimage.feature import blob_log
+
+def laplacian_of_gaussian_cv(images: list[np.ndarray], min_sigma: int = 1, max_sigma: int = 50, num_sigma: int = 10, threshold: float = 0.2, overlap: float = 0.5, log_scale: bool = False) -> list[np.ndarray]:
+    result = []
+    
+    for i, image in enumerate(images):
+        print(f"Processing image {i+1}...")
+        
+        # 1. Blob Detection (using the assumed blob_log function)
+        blobs_log = blob_log(
+            image, 
+            min_sigma=min_sigma, 
+            max_sigma=max_sigma, 
+            num_sigma=num_sigma, 
+            threshold=threshold, 
+            overlap=overlap,
+            log_scale=log_scale
+        )
+        
+        # 2. Visualization
+        fig, ax = plt.subplots(1, 1, figsize=(8, 8))
+        if image.ndim == 2:
+            ax.imshow(image, cmap='gray')
+        else:
+            ax.imshow(image)
+            
+        ax.set_title(f"Image {i+1} - Laplacian of Gaussian Blobs ({len(blobs_log)})")
+        ax.set_axis_off()
+
+        # Draw a circle for each detected blob
+        for y, x, sigma in blobs_log:
+            # Calculate the estimated radius
+            radius = sigma * np.sqrt(2) 
+            
+            # Create the Circle patch - now defined due to the import
+            c = Circle((x, y), radius, color='red', linewidth=1.5, fill=False)
+            ax.add_patch(c)
+        
+        plt.show() 
+        
+        result.append(blobs_log)
+        
+    return result
+```
