@@ -140,3 +140,11 @@ II. Challenges in Data Preprocessing
 * Problem: Simple one-hot encoding creates too many columns, causing the curse of dimensionality and increasing the risk of overfitting.
 
 * Solution: Use target-guided encoding (e.g., Mean Encoding), replacing categories with the average target value for that group, while using K-fold cross-validation to prevent leakage within the encoding process.
+---
+
+Why Resampling is ONLY for the Training Set
+The purpose of the validation and test sets is to simulate real-world, unseen data and provide an unbiased evaluation of your model's performance.
+
+1. Preventing Data Leakage: If you use techniques like RandomOverSampler on the test set, you are introducing artificial, duplicated, or synthetically generated samples into the data that will be used for final evaluation. This inflates the scores (like accuracy and recall) and gives you a false sense of security about your model's true capability. This is a severe form of Data Leakage.
+
+2. Maintaining Real-World Distribution: Your original dataset's imbalance (for validation and test sets) reflects the true distribution of Gamma rays (Class 1) and Hadrons (Class 0) in the real-world observations. The model should be tested on this natural imbalance to see how it performs in a realistic scenario.
