@@ -131,3 +131,25 @@ Gain is a scaling factor, often chosen as the average sensitivity Mean(Flat - Da
 So the formula becomes:
 
 Corrected = Mean(Flat - Dark) * (Raw - Dark) / (Flat - Dark)
+
+---
+# Some Note:
+
+Which type of filter can be used to remove glare and reflections on water?
+ A polarization filter
+
+Which type of filter can be used to filter specific colors?
+filter a band of light frequencies
+
+When the aperture is lowered what happens to the image?
+The depth of field changes
+
+What can be done to improve the sharpness of an image?
+?
+
+If you reduce the exposure time of the camera what happens to the image?
+The brightness is decreased
+
+What is a disadvantage of a color camera with a Bayer filter compared to a three channel camera with of the same sensor specs?
+They have a lower sharpness per channel
+
