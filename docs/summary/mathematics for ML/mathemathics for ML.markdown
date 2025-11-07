@@ -108,3 +108,57 @@ This final section discusses how to choose between different models (e.g., polyn
 
 * Bayesian Model Selection: A probabilistic method that compares models by computing their marginal likelihood (or evidence), $p(D|M) = \int p(D|\theta, M) p(\theta|M) d\theta$
 This integral inherently penalizes overly complex models, acting as an "automatic Occam's razor". Models are compared using the Bayes factor, which is the ratio of their marginal likelihoods, $p(D|M_1) / p(D|M_2)$
+
+
+---
+
+# Chapter 9: Linear Regression
+
+Key Concepts
+
+* Problem Formulation: The goal of regression is to find a function f that maps inputs $x \in \mathbb{R}^D$ to real-valued outputs $y \in \mathbb{R}$.
+
+* Probabilistic Model: The model assumes the observed target y is the function's output f(x) plus i.i.d. Gaussian noise $\epsilon \sim \mathcal{N}(0, \sigma^2)$
+
+* Likelihood: This leads to a Gaussian likelihood function $p(y|x, \theta) = \mathcal{N}(y | f(x, \theta), \sigma^2)$ where θ are the model parameters.
+
+* Linear Regression: This term means the model is linear in its parameters θ, not necessarily in its inputs x. The basic model is $f(x) = x^T\theta$ but this can be extended using basis functions (features) ϕ(x), resulting in $f(x) = \phi(x)^T\theta$ .
+
+### Parameter Estimation: Point Estimates
+
+* Maximum Likelihood Estimation (MLE): This approach finds the parameters $\theta_{ML}$ that maximize the likelihood of the training data.
+
+* MLE as Least Squares: For a Gaussian likelihood, maximizing the log-likelihood is equivalent to minimizing the sum of squared errors.
+
+    * Objective: $L(\theta) \propto ||y - \Phi\theta||^2$ , where Φ is the design matrix of features.
+
+    * Solution: The MLE has a closed-form solution $\theta_{ML} = (\Phi^T\Phi)^{-1}\Phi^T y$
+
+* Overfitting: MLE can overfit the data, especially with flexible models (e.g., high-degree polynomials). This results in low training error but high test error.
+
+* Maximum A Posteriori (MAP) Estimation: This method introduces a prior distribution p(θ) to control overfitting by penalizing complex parameters.
+
+* MAP as Regularized Least Squares: A Gaussian prior $p(\theta) = \mathcal{N}(0, b^2I)$ is equivalent to L2 regularization (also called regularized least squares).
+
+    * Objective: $\min_\theta ||y - \Phi\theta||^2 + \lambda ||\theta||^2$
+    * Solution: The MAP estimate is $\theta_{MAP} = (\Phi^T\Phi + \lambda I)^{-1}\Phi^T y$ This adds a term to the matrix, making it invertible and more numerically stable
+
+### Bayesian Linear Regression
+
+* Core Idea: Instead of finding a single "best" θ, this approach computes the full posterior distribution over the parameters, p(θ∣X,Y)
+
+* Conjugate Prior: Using a Gaussian prior p(θ) (which is conjugate to the Gaussian likelihood) results in a posterior p(θ∣X,Y) that is also a Gaussian.
+
+* Posterior Predictive Distribution: To make a prediction for a new input $x_*$, the parameters are marginalized (integrated out): $p(y_* | X, Y, x_*) = \int p(y_* | x_*, \theta) p(\theta | X, Y) d\theta$
+
+* Uncertainty: The resulting prediction is a Gaussian whose variance accounts for both the observation noise $σ ^2$ and the parameter uncertainty (from the posterior covariance $S_N$ )This naturally captures model confidence.
+
+* Marginal Likelihood: The model evidence p(Y∣X) can be computed in closed form. This is used for model selection (e.g., choosing the best polynomial degree) as it inherently penalizes "complex" models (an "automatic Occam's razor" from Chapter 8).
+
+### Geometric Interpretation
+
+* MLE as Orthogonal Projection: The maximum likelihood solution  
+$\hat{y} = \Phi\theta_{ML}$ is geometrically equivalent to the orthogonal projection of the observed target vector y onto the subspace spanned by the columns of the feature matrix Φ.
+
+* This means the "least squares" solution finds the vector $y^$
+in the feature subspace that is closest (in Euclidean distance) to the true observations y
