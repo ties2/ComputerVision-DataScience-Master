@@ -160,5 +160,5 @@ Key Concepts
 * MLE as Orthogonal Projection: The maximum likelihood solution  
 $\hat{y} = \Phi\theta_{ML}$ is geometrically equivalent to the orthogonal projection of the observed target vector y onto the subspace spanned by the columns of the feature matrix Φ.
 
-* This means the "least squares" solution finds the vector $y^$
+* This means the "least squares" solution finds the vector y^ 
 in the feature subspace that is closest (in Euclidean distance) to the true observations y
