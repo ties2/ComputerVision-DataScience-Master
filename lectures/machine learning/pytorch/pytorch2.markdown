@@ -1,5 +1,54 @@
 ## PyTorch Learning Notes part 2
 
+### Key PyTorch Keywords
+
+Creation
+
+* tensor(), from_numpy()
+
+* empty(), zeros(), ones()
+
+* rand(), randn(), randint()
+
+* arange(), linspace(), randperm()
+
+* _like() (e.g., zeros_like())
+
+Shape Manipulation
+
+* reshape() (use -1 to flatten)
+
+* squeeze() (remove dims of size 1)
+
+* flatten() (collapse dims)
+
+* transpose() (swap two dims)
+
+* cat() (join tensors)
+
+* tile() (repeat tensor)
+
+Math & Indexing
+
+* Rounding: round(), ceil(), floor(), trunc()
+
+* Flipping: flip()
+
+* Indexing: t[:, :2] (slicing)
+
+Core Concepts
+
+* Properties: shape, dtype, device
+
+* Why?: GPU, Autograd (requires_grad)
+
+* Device: cuda, cpu
+
+* Memory: contiguous()
+
+* Data: No strings, only numbers.
+
+
 round numbers in a PyTorch:
 
 You can round numbers in a PyTorch tensor using several different methods, each for a specific type of rounding
