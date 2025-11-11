@@ -1,7 +1,70 @@
 # PyTorch Learning Notes part 5
 ## work with module glob for reading data
 
-Example without glob
+Key Keywords
+### File Handling
+
+* glob: Find files using path patterns.
+
+* glob.glob(pathname + '/*'): Get all files in a directory using a * (wildcard).
+
+### Python OOP (Dunder Methods)
+
+* class: A blueprint for creating objects.
+
+* Dunder Methods: Special methods triggered by Python operations.
+
+  * __init__(self, ...): The constructor; runs when an object is created to set initial state (e.g., self.data = ...).
+
+  * __len__(self): Returns the size; triggered by len(object).
+
+  * __getitem__(self, index): Gets an item; triggered by object[index].
+
+  * __call__(self, ...): Makes the object callable; triggered by object(...).
+
+### PyTorch Data
+
+* Dataset (Abstract Class): The "data source"; holds all data.
+
+  * Must implement __len__ (total size) and __getitem__ (get one sample).
+
+  *  datasets.MNIST: A built-in example.
+
+  * TensorDataset: A simple wrapper for existing tensors.
+
+* DataLoader (Utility Class): The "data delivery"; wraps a Dataset.
+
+  * Provides: Batching, Shuffling, and Multiprocessing.
+
+  * Benefit: GPU efficiency and stable training.
+
+### Data Preprocessing (Transforms)
+
+* transforms.Compose([...]): A pipeline that chains multiple transforms together.
+
+* transforms.ToTensor(): Converts data (like NumPy arrays) into a PyTorch tensor.
+
+* transforms.Normalize(): Rescales tensor data (e.g., to mean 0, std 1).
+
+* Lambda: Used for applying custom functions (e.g., one-hot encoding labels).
+
+* Label Transform: Crucial for converting labels to torch.long, which is required by loss functions like CrossEntropyLoss.
+
+### Batching & DataLoader Params
+
+* Epoch: One complete pass through the entire dataset.
+
+* Batch Size: The number of samples processed at one time.
+
+* shuffle=True: Randomizes the data order at the start of every epoch.
+
+* drop_last=True: Discards the final, smaller batch if the dataset size isn't perfectly divisible by the batch size.
+
+* num_workers > 0: Uses parallel processing to load data in the background, preventing a CPU bottleneck and keeping the GPU busy.
+
+
+## Example without glob
+
 ```
 import pandas as pd
 import numpy as np
