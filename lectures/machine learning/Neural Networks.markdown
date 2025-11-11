@@ -103,3 +103,98 @@ CNNs are a specialized type of neural network particularly effective for process
 
 * **MLPs:** General-purpose networks using fully connected layers. Good for tabular data or when spatial structure isn't critical. Can have many parameters if input is large (like raw images).
 * **CNNs:** Specialized for grid-like data (images). Use convolution (local connectivity and parameter sharing) and pooling to efficiently learn spatial hierarchies of features. Generally more effective and parameter-efficient for image tasks than basic MLPs.
+
+---
+## review these related topics"
+
+•	Data, Models, and Learning
+•	Predictor (as a function vs. as a probabilistic model)
+•	Parameter Estimation (Training) vs. Prediction 
+•	Empirical Risk Minimization (ERM)
+•	Loss Function
+•	Empirical Risk vs. Expected Risk
+•	Overfitting & Underfitting
+•	Regularization (Regularizer, Regularization parameter)
+•	Cross-Validation (Training set, Test set, Validation set)
+•	Maximum Likelihood Estimation (MLE)
+•	Likelihood & Negative Log-Likelihood
+•	Maximum A Posteriori (MAP) Estimation
+•	Prior & Posterior
+•	Probabilistic Modeling
+•	Bayesian Inference
+•	Joint Distribution
+•	Marginal Likelihood (Model Evidence) 
+•	Latent Variables
+•	Directed Graphical Models (Bayesian Networks) 
+•	Conditional Independence & d-Separation
+•	Model Selection & Hyperparameters
+•	Nested Cross-Validation
+•	Occam's Razor
+•	Bayes Factor
+•	AIC / BIC (Akaike/Bayesian Information Criterion) 
+
+
+### Core Concepts
+
+* Data, Models, and Learning: Data is the information. Models are mathematical structures that try to find patterns in that data. Learning is the process of using the data to adjust the model's parameters to make it accurate.
+
+* Predictor (Function vs. Probabilistic): A function-based predictor gives a single, definite answer (e.g., "price = $150,000"). A probabilistic predictor gives a distribution of answers (e.g., "70% chance price is $140-160k").
+
+###  Model Training & Evaluation
+
+* Parameter Estimation (Training) vs. Prediction: Training is the "learning" phase where the model uses data to find its optimal internal settings (parameters). Prediction is using that trained model to make guesses on new, unseen data.
+
+* Loss Function: A function that measures how "wrong" a model's prediction is compared to the true answer. A high loss means a bad prediction; low loss means a good one.
+
+* Empirical Risk Minimization (ERM): The core idea of training. It means finding the model parameters that minimize the average loss across all data in your training set.
+
+* Empirical Risk vs. Expected Risk: Empirical Risk is the average loss on the training data you have. Expected Risk is the theoretical average loss on all possible data (past, present, and future) from the true data distribution. We use empirical risk to estimate the expected risk.
+
+* Overfitting & Underfitting: Overfitting is when a model learns the training data too well (including its noise) and fails on new data. Underfitting is when a model is too simple and fails to capture the underlying pattern in any data.
+
+* Regularization (Regularizer, Regularization parameter): A technique to prevent overfitting. A Regularizer is a penalty added to the loss function for model complexity. The Regularization parameter (λ) controls how strong that penalty is.
+
+* Cross-Validation (Training, Test, Validation set): A method to reliably check model performance.
+
+    * Training Set: Data used to fit the model's parameters.
+
+    * Validation Set: Data used to tune model settings (Hyperparameters).
+
+    * Test Set: Data kept hidden until the very end to give a final, unbiased score of the model's real-world performance.
+
+### Probabilistic & Bayesian Methods
+
+* Maximum Likelihood Estimation (MLE): A method to find parameters by asking: "What parameters make the data I observed the most probable?"
+
+* Likelihood & Negative Log-Likelihood: Likelihood (P(data∣parameters)) is the probability of seeing the data, given a choice of parameters. Negative Log-Likelihood is a mathematical transformation (−log(likelihood)) that is often easier for computers to minimize.
+
+* Maximum A Posteriori (MAP) Estimation: Similar to MLE, but it also includes a Prior belief. It balances "What parameters make the data likely?" with "What parameters were likely to begin with?"
+
+* Prior & Posterior: A Prior is your belief about parameters before you see any data. A Posterior is your updated belief after seeing the data.
+
+* Probabilistic Modeling: An approach that builds models using probability distributions, allowing the model to represent and quantify uncertainty.
+
+* Bayesian Inference: A statistical framework that uses Bayes' Theorem to systematically update beliefs (from prior to posterior) as more evidence (data) is collected.
+
+* Joint Distribution: A single probability distribution that describes the probabilities of all variables in a system together.
+
+### Model Structure
+
+* Latent Variables: "Hidden" variables that are not directly observed in the data but are inferred by the model to help explain the observed data.
+
+* Directed Graphical Models (Bayesian Networks): Diagrams that show variables as nodes and dependencies (or "causal" links) as arrows. They visually represent a joint probability distribution.
+
+* Conditional Independence & d-Separation: Conditional Independence means variable A is independent of B, given that we know C. d-Separation is the graphical rule used on a Bayesian Network to determine which variables are conditionally independent.
+
+### Model Selection & Comparison
+Model Selection & Hyperparameters: Hyperparameters are the model's high-level settings that you must choose before training (e.g., the regularization parameter). Model Selection is the process of testing different models and hyperparameters to find the best one.
+
+* Nested Cross-Validation: A robust, two-level CV method. An "outer loop" estimates final model performance, and an "inner loop" performs hyperparameter tuning for each outer fold.
+
+* Occam's Razor: The principle that, all else being equal, the simplest model that explains the data well is the best one. It's a guiding philosophy against overfitting.
+
+* Marginal Likelihood (Model Evidence): The probability of the data given the model, P(data∣model), averaged over all possible parameters. A high value means the model is a good fit for the data.
+
+* Bayes Factor: A ratio of the marginal likelihoods of two different models. It's used to compare which model is better supported by the data.
+
+* AIC / BIC (Akaike/Bayesian Information Criterion): Scores used for model selection. Both reward models for good data fit (high likelihood) but penalize them for being too complex (having too many parameters)
