@@ -39,10 +39,6 @@ The example of **fitting a polynomial curve** to data illustrates key concepts:
 - **Regularization**:  
   Technique used to control model complexity and prevent overfitting.
 
-
-
-
-
 ---
 
 ## 4. The Curse of Dimensionality
@@ -84,61 +80,61 @@ Here are the summaries for Chapter 3 and Chapter 4.
 
 ## 📖 Summary of Chapter 3: Linear Models for Regression
 
-[cite_start]This chapter focuses on regression models that predict one or more continuous target variables $t$ based on an input vector $x$[cite: 2654]. [cite_start]The models are "linear models" because they are linear functions of their adjustable parameters (weights $w$), although they can be nonlinear with respect to the input variables $x$[cite: 2655].
+This chapter focuses on regression models that predict one or more continuous target variables $t$ based on an input vector $x$[cite: 2654]. The models are "linear models" because they are linear functions of their adjustable parameters (weights $w$), although they can be nonlinear with respect to the input variables $x$.
 
-[cite_start]This nonlinearity is achieved by using a set of fixed, nonlinear functions of the input, known as **basis functions** $\phi(x)$[cite: 2655]. [cite_start]The model is then a linear combination of these basis functions[cite: 2655].
+This nonlinearity is achieved by using a set of fixed, nonlinear functions of the input, known as **basis functions** $\phi(x)$[. The model is then a linear combination of these basis functions.
 
 ### Key Concepts:
 
-* [cite_start]**Maximum Likelihood and Least Squares:** The chapter first explores finding the parameters $w$ by minimizing a **sum-of-squares error function**[cite: 1770]. [cite_start]This approach is shown to be equivalent to the method of **maximum likelihood** under the assumption that the target variable $t$ has a Gaussian distribution given $x$[cite: 2657, 2658].
-* [cite_start]**Over-fitting and Regularization:** A key problem with maximum likelihood is **over-fitting**, where the model fits the training data noise rather than the underlying trend[cite: 1777, 2665]. [cite_start]This can be controlled by adding a penalty term to the error function, known as **regularization**[cite: 1832]. [cite_start]A common choice is a quadratic regularizer (sum-of-squares of the weights), also known as **ridge regression** or **weight decay**[cite: 1833, 1834].
-* [cite_start]**The Bias-Variance Decomposition:** This is a frequentist concept for understanding model complexity[cite: 2665]. [cite_start]The expected error of a model is decomposed into the sum of $(\text{bias})^2 + \text{variance} + \text{noise}$[cite: 2666].
+* **Maximum Likelihood and Least Squares:** The chapter first explores finding the parameters $w$ by minimizing a **sum-of-squares error function**. This approach is shown to be equivalent to the method of **maximum likelihood** under the assumption that the target variable $t$ has a Gaussian distribution given $x$.
+* **Over-fitting and Regularization:** A key problem with maximum likelihood is **over-fitting**, where the model fits the training data noise rather than the underlying trend. This can be controlled by adding a penalty term to the error function, known as **regularization**. A common choice is a quadratic regularizer (sum-of-squares of the weights), also known as **ridge regression** or **weight decay**.
+* **The Bias-Variance Decomposition:** This is a frequentist concept for understanding model complexity[cite: 2665]. The expected error of a model is decomposed into the sum of $(\text{bias})^2 + \text{variance} + \text{noise}$[cite: 2666].
     * **Bias** measures how much the average model prediction (over all possible data sets) differs from the true underlying function. Simple models (like low-order polynomials) have high bias.
     * **Variance** measures how much the model's prediction changes in response to different training data sets. Complex models (like high-order polynomials) have high variance.
-    * [cite_start]There is a **trade-off** between bias and variance; flexible models have low bias and high variance, while rigid models have high bias and low variance[cite: 2666].
-* [cite_start]**Bayesian Linear Regression:** The chapter presents a Bayesian approach to regression, which avoids the over-fitting problem of maximum likelihood[cite: 2669].
-    * [cite_start]A **prior distribution** (typically Gaussian) is introduced over the parameters $w$[cite: 2669].
-    * The posterior distribution $p(w|t)$ is then computed. [cite_start]Predictions are made by **marginalizing** (integrating) over this posterior distribution, rather than using a single point estimate of $w$[cite: 2036].
-    * [cite_start]The predictive distribution is a Gaussian, whose variance captures the uncertainty in the predictions[cite: 2038, 2039].
-    * [cite_start]The mean of the predictive distribution can be expressed in terms of an **"equivalent kernel"** or "smoother matrix," which shows that the prediction for a new input is a linear combination of the training set target values[cite: 2819, 2820].
-* [cite_start]**Bayesian Model Comparison:** The Bayesian framework provides a way to select the "best" model or set its complexity parameters (like the regularization coefficient) directly from the training data, without needing a separate validation set[cite: 2679].
-    * [cite_start]This is done by comparing models using the **model evidence** (also called marginal likelihood), which is the probability of the observed data given the model $p(D|\mathcal{M}_i)$[cite: 2679, 2680].
-    * [cite_start]The evidence framework naturally penalizes overly complex models and favors the model with the best balance of data fit and complexity[cite: 2681, 2682].
-    * [cite_start]A practical framework called the **"evidence approximation"** (or empirical Bayes) is presented, where the marginal likelihood is maximized to find optimal values for hyperparameters like $\alpha$ (the prior precision) and $\beta$ (the noise precision)[cite: 2683, 2684]. [cite_start]This gives rise to the concept of the **"effective number of parameters"** ($\gamma$), which is a measure of how many parameters in the model are actually determined by the data[cite: 2687, 2688].
-* [cite_start]**Limitations:** The chapter concludes by noting the main limitation of these models: the **"curse of dimensionality."** Because the basis functions are fixed and not adaptive, the number of basis functions required often grows exponentially with the dimensionality $D$ of the input space[cite: 2691].
+    * There is a **trade-off** between bias and variance; flexible models have low bias and high variance, while rigid models have high bias and low variance.
+* **Bayesian Linear Regression:** The chapter presents a Bayesian approach to regression, which avoids the over-fitting problem of maximum likelihood.
+    * A **prior distribution** (typically Gaussian) is introduced over the parameters $w$.
+    * The posterior distribution $p(w|t)$ is then computed. Predictions are made by **marginalizing** (integrating) over this posterior distribution, rather than using a single point estimate of $w$.
+    * The predictive distribution is a Gaussian, whose variance captures the uncertainty in the predictions.
+    * The mean of the predictive distribution can be expressed in terms of an **"equivalent kernel"** or "smoother matrix," which shows that the prediction for a new input is a linear combination of the training set target values.
+* **Bayesian Model Comparison:** The Bayesian framework provides a way to select the "best" model or set its complexity parameters (like the regularization coefficient) directly from the training data, without needing a separate validation set.
+    * This is done by comparing models using the **model evidence** (also called marginal likelihood), which is the probability of the observed data given the model $p(D|\mathcal{M}_i)$.
+    * The evidence framework naturally penalizes overly complex models and favors the model with the best balance of data fit and complexity.
+    * A practical framework called the **"evidence approximation"** (or empirical Bayes) is presented, where the marginal likelihood is maximized to find optimal values for hyperparameters like $\alpha$ (the prior precision) and $\beta$ (the noise precision). This gives rise to the concept of the **"effective number of parameters"** ($\gamma$), which is a measure of how many parameters in the model are actually determined by the data.
+* **Limitations:** The chapter concludes by noting the main limitation of these models: the **"curse of dimensionality."** Because the basis functions are fixed and not adaptive, the number of basis functions required often grows exponentially with the dimensionality $D$ of the input space.
 
----
+
 
 # Chapter 4: Linear Models for Classification
 
-[cite_start]This chapter applies the linear model framework to classification problems, where the goal is to assign an input vector $x$ to one of $K$ discrete classes[cite: 2696]. [cite_start]The models are linear in the parameters, and the decision boundaries they create are linear functions of the input $x$ (hyperplanes)[cite: 2696].
+This chapter applies the linear model framework to classification problems, where the goal is to assign an input vector $x$ to one of $K$ discrete classes. The models are linear in the parameters, and the decision boundaries they create are linear functions of the input $x$ (hyperplanes).
 
-[cite_start]The model is a **generalized linear model**, where a linear combination of features $a = w^T\phi(x)$ is transformed by a nonlinear **activation function** $y = f(a)$ to produce the model output (e.g., a posterior probability)[cite: 2697, 2726].
+The model is a **generalized linear model**, where a linear combination of features $a = w^T\phi(x)$ is transformed by a nonlinear **activation function** $y = f(a)$ to produce the model output (e.g., a posterior probability).
 
 The chapter explores three distinct approaches to classification.
 
 ### 1. Discriminant Functions
-[cite_start]This approach finds a function that maps $x$ directly to a class label[cite: 2699].
+This approach finds a function that maps $x$ directly to a class label.
 * **Methods:** The chapter discusses several discriminant functions:
-    * **Least Squares for Classification:** This involves fitting a linear regression model to target vectors (e.g., 1-of-K encoding). [cite_start]However, this method has "severe problems," as it is not robust to outliers and can produce very poor decision boundaries[cite: 2702, 2703, 2704].
-    * [cite_start]**Fisher's Linear Discriminant:** This is a dimensionality reduction technique that finds a projection $w$ that maximizes the separation between classes (maximizing between-class variance while minimizing within-class variance)[cite: 2705, 2706].
-    * [cite_start]**The Perceptron Algorithm:** An iterative algorithm that learns a separating hyperplane by minimizing the "perceptron criterion," an error function defined over misclassified training points[cite: 2710, 2712].
+    * **Least Squares for Classification:** This involves fitting a linear regression model to target vectors (e.g., 1-of-K encoding). However, this method has "severe problems," as it is not robust to outliers and can produce very poor decision boundaries.
+    * **Fisher's Linear Discriminant:** This is a dimensionality reduction technique that finds a projection $w$ that maximizes the separation between classes (maximizing between-class variance while minimizing within-class variance).
+    * **The Perceptron Algorithm:** An iterative algorithm that learns a separating hyperplane by minimizing the "perceptron criterion," an error function defined over misclassified training points.
 
 ### 2. Probabilistic Generative Models
-[cite_start]This approach models the class-conditional densities $p(x|C_k)$ and the class priors $p(C_k)$, and then uses Bayes' theorem to find the posterior $p(C_k|x)$[cite: 2716].
-* [cite_start]**Key Result:** The chapter shows that if the class-conditional densities $p(x|C_k)$ are assumed to be **multivariate Gaussian distributions with a shared covariance matrix**, the resulting posterior probability $p(C_k|x)$ is a **logistic sigmoid** (for $K=2$ classes) or a **softmax function** (for $K \ge 2$ classes) of a linear function of $x$[cite: 2717, 2718, 2719].
-* [cite_start]If the covariances are not shared, the discriminant is quadratic[cite: 2719].
-* [cite_start]The **"naive Bayes"** model, which assumes features are conditionally independent given the class, also results in a linear classifier[cite: 2723].
+This approach models the class-conditional densities $p(x|C_k)$ and the class priors $p(C_k)$, and then uses Bayes' theorem to find the posterior $p(C_k|x)$[cite: 2716].
+* **Key Result:** The chapter shows that if the class-conditional densities $p(x|C_k)$ are assumed to be **multivariate Gaussian distributions with a shared covariance matrix**, the resulting posterior probability $p(C_k|x)$ is a **logistic sigmoid** (for $K=2$ classes) or a **softmax function** (for $K \ge 2$ classes) of a linear function of $x$.
+* If the covariances are not shared, the discriminant is quadratic.
+* The **"naive Bayes"** model, which assumes features are conditionally independent given the class, also results in a linear classifier.
 
 ### 3. Probabilistic Discriminative Models
 This approach models the posterior $p(C_k|x)$ directly, avoiding the need to model the class-conditional densities.
-* **Logistic Regression:** This is the primary discriminative model for two-class classification. [cite_start]It models $p(C_1|x)$ directly using the **logistic sigmoid** function $\sigma(w^T\phi(x))$[cite: 2726].
-* [cite_start]**Training:** Because there is no closed-form solution, the model is trained by maximum likelihood, which is equivalent to minimizing a **cross-entropy error function**[cite: 2727]. [cite_start]This optimization is performed using an iterative algorithm called **iterative reweighted least squares (IRLS)**, which is based on the Newton-Raphson update[cite: 2728, 2729].
-* [cite_start]**Multiclass Logistic Regression:** For $K > 2$ classes, the logistic sigmoid is replaced by the **softmax function**, and the corresponding cross-entropy error is minimized, again using IRLS[cite: 2730, 2731].
-* [cite_start]**Probit Regression:** An alternative model that uses the **probit function** (the cumulative distribution function of a Gaussian) as its activation function instead of the logistic sigmoid[cite: 2732].
+* **Logistic Regression:** This is the primary discriminative model for two-class classification. It models $p(C_1|x)$ directly using the **logistic sigmoid** function $\sigma(w^T\phi(x))$.
+* **Training:** Because there is no closed-form solution, the model is trained by maximum likelihood, which is equivalent to minimizing a **cross-entropy error function**. This optimization is performed using an iterative algorithm called **iterative reweighted least squares (IRLS)**, which is based on the Newton-Raphson update.
+* **Multiclass Logistic Regression:** For $K > 2$ classes, the logistic sigmoid is replaced by the **softmax function**, and the corresponding cross-entropy error is minimized, again using IRLS.
+* **Probit Regression:** An alternative model that uses the **probit function** (the cumulative distribution function of a Gaussian) as its activation function instead of the logistic sigmoid.
 
 ### Bayesian Approach
-* **The Laplace Approximation:** Exact Bayesian inference for logistic regression is intractable. [cite_start]The chapter introduces the **Laplace approximation**, a general framework for approximating a probability distribution with a Gaussian centered at its mode (the maximum a posteriori, or MAP, solution)[cite: 2735, 2736, 2737].
-* [cite_start]**Bayesian Logistic Regression:** The Laplace approximation is applied to create a Bayesian logistic regression model[cite: 2738]. [cite_start]This provides a Gaussian approximation to the posterior distribution $p(w|t)$, which can then be used to make probabilistic predictions[cite: 2739].
+* **The Laplace Approximation:** Exact Bayesian inference for logistic regression is intractable. The chapter introduces the **Laplace approximation**, a general framework for approximating a probability distribution with a Gaussian centered at its mode (the maximum a posteriori, or MAP, solution).
+* **Bayesian Logistic Regression:** The Laplace approximation is applied to create a Bayesian logistic regression model[cite: 2738]. This provides a Gaussian approximation to the posterior distribution $p(w|t)$, which can then be used to make probabilistic predictions.
 
 
