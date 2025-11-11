@@ -1,5 +1,85 @@
 # PyTorch Learning Notes part 3
 
+### Key PyTorch Keywords
+
+Tensor Operations
+
+* torch.split()
+
+   * Purpose: Divides a tensor into chunks (the opposite of torch.cat()).
+
+   * Arguments:
+
+      * split_size (int): Splits into equal-sized chunks.
+
+      * sections (list): Splits into chunks with sizes defined by the list (e.g., [2, 5, 5]).
+
+      * dim: The dimension to split along (e.g., dim=0 for rows, dim=1 for columns).
+
+Key Data Handling Keywords
+Loading Data
+
+* NumPy: np.loadtxt(file, delimiter=',')
+
+* Pandas:
+
+   * pd.read_csv()
+
+   * pd.read_excel()
+
+   * pd.DataFrame(dictionary)
+
+* SciPy: scipy.io.loadmat(file.mat) (for MATLAB files)
+
+DataFrame Inspection
+
+* .head(), .tail() (view first/last rows)
+
+* .columns (list column names)
+
+* .shape (get (rows, cols))
+
+* .dtypes (check column data types)
+
+* .describe() (get stats)
+
+* .info() (get summary)
+
+Data Access & Modification (Pandas)
+
+* .loc[]: Select by label/name (e.g., df.loc[:, 'column_name']).
+
+* .iloc[]: Select by integer index (e.g., df.iloc[0, 1]).
+
+* Modify: df.iloc[3] = 20 (set an entire row).
+
+Data Conversion
+
+* Pandas -> NumPy: .to_numpy()
+
+* NumPy -> Tensor: torch.from_numpy()
+
+* Change Type: .type(torch.float32)
+
+* Saving: scipy.io.savemat()
+
+Data Preprocessing
+
+* Missing Values:
+
+   * Find: .isna().sum()
+
+   * Visualize: sns.heatmap()
+
+   * Fix: .fillna(df.mean())
+
+* Outliers:
+
+   * Find: sns.boxplot()
+
+   * Fix: Trimming, Capping, or Replacing (with mean/median).
+
+
 ## torch.split
 
 torch.split() is a powerful function in PyTorch that allows you to divide a single tensor into multiple, smaller tensors. This is essentially the reverse operation of torch.cat() and is incredibly useful when you need to process different parts of a tensor separately.
