@@ -1,5 +1,57 @@
 # PyTorch Learning Notes part 4
 
+### Key Sklearn Keywords
+
+Core API & Workflow
+
+* Core API: fit(), predict(), transform()
+
+* Workflow: Pipeline
+
+* Tasks: Classification, Regression, Clustering
+
+* Example Model: LogisticRegression
+
+Data Preprocessing
+
+* Splitting: train_test_split
+
+* Scaling: StandardScaler, MinMaxScaler
+
+* Encoding: OneHotEncoder
+
+* Imputing: SimpleImputer
+
+Model Evaluation
+
+* Metrics: accuracy_score
+
+* Tuning: GridSearchCV
+
+Datasets (sklearn.datasets)
+
+* Load (Toy): load_iris(), load_digits(), load_breast_cancer()
+
+* Generate (Synthetic): make_circles(), make_blobs(), make_regression()
+
+* Data Access: .data (features, X), .target (labels, y)
+
+Data Generation & Plotting
+
+* Params: n_samples, noise, factor, random_state
+
+* Plotting: plt.scatter()
+
+* Coloring: c=target (color points by class label)
+
+Integration
+
+* NumPy -> PyTorch: torch.from_numpy()
+
+* Type Casting: .float(), .long()
+
+
+
 ## work with sklearn library
 
 Scikit-learn (often abbreviated as sklearn) is a powerful and widely-used open-source machine learning library for Python. It provides a consistent and simple interface for a wide variety of machine learning tasks. Built on top of popular Python libraries like NumPy and SciPy, it's an essential tool for data scientists and machine learning practitioners.
