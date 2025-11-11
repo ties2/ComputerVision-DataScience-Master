@@ -198,3 +198,33 @@ Model Selection & Hyperparameters: Hyperparameters are the model's high-level se
 * Bayes Factor: A ratio of the marginal likelihoods of two different models. It's used to compare which model is better supported by the data.
 
 * AIC / BIC (Akaike/Bayesian Information Criterion): Scores used for model selection. Both reward models for good data fit (high likelihood) but penalize them for being too complex (having too many parameters)
+
+---
+
+### Training and Architectures
+
+* Batch Normalization: A technique that stabilizes and speeds up training. It normalizes the inputs to each layer within a mini-batch, which helps prevent issues like vanishing gradients and allows for higher learning rates. Think of it as re-calibrating the "signal" between each layer so the network learns more efficiently.
+
+* Transfer Learning: The practice of reusing a pre-trained model (like one trained on millions of internet images) as the starting point for a new, related task. This is extremely practical because it saves massive amounts of training time and data. For example, you can take a model trained on general objects and "fine-tune" it to only recognize different types of cats and dogs.
+
+* AlexNet: The groundbreaking CNN that won the 2012 ImageNet competition, proving that deep learning was highly effective for computer vision. Its practical importance is that it was one of the first to successfully use a deep architecture with GPUs, ReLU activation, and dropout.
+
+* VGG: A CNN architecture known for its simplicity and depth. Its key idea was using very small (3x3) convolutional filters stacked on top of each other. It's practical as a good "off-the-shelf" feature extractor and is often used in transfer learning.
+
+* ResNet (Residual Network): A revolutionary architecture that enabled training extremely deep networks (hundreds or even thousands of layers) without losing performance. It does this by using "skip connections" (or residual blocks) that allow the gradient to flow more easily during backpropagation, solving the vanishing gradient problem in very deep models.
+
+### sequential Data (RNNs)
+
+* Recurrent Neural Networks (RNNs): A type of neural network designed for sequential data (like text, speech, or time series). It has a "memory" in the form of a loop, allowing information from previous steps to influence the current step. A simple RNN's practical limit is its "short-term" memory—it struggles to remember things from many steps back.
+
+* LSTM (Long Short-Term Memory): A more advanced type of RNN. Its practical purpose is to solve the short-term memory problem of standard RNNs. It uses a series of "gates" (a forget gate, input gate, and output gate) to selectively remember or forget information over long sequences. This makes it perfect for tasks like machine translation or long-form text analysis.
+
+* GRU (Gated Recurrent Unit): A simpler, more efficient version of an LSTM. It combines the forget and input gates into a single "update gate." In practice, it often performs just as well as an LSTM but trains faster because it has fewer parameters. It's a great first choice when you need a model with long-term memory.
+
+### Applications
+
+* Language Modeling: The task of predicting the next word in a sequence. A language model learns the probability of word sequences from a large text dataset. This is the fundamental technology behind autocomplete, grammar checkers, and generative AI like ChatGPT.
+
+* Image Captioning: A task that combines computer vision and NLP to generate a natural language description for an image. Practically, it uses a CNN (like ResNet) to "see" the image and an RNN (like LSTM) to "describe" what it sees, word by word.
+
+* Sequence-to-Sequence (Seq2Seq): A model architecture that transforms an input sequence into an output sequence (and the lengths can be different). It consists of an "encoder" (which reads the input sequence and compresses it) and a "decoder" (which generates the new output sequence). This is the core technology for machine translation, text summarization, and chatbots.
