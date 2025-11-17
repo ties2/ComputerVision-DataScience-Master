@@ -76,9 +76,12 @@ Introduced as a final perspective for viewing machine learning. Provides tools t
 
 # Chapter 2: Probability Distribution
 
-Here are the summaries for Chapter 3 and Chapter 4.
 
-## 📖 Summary of Chapter 3: Linear Models for Regression
+---
+
+
+
+# Chapter 3: Linear Models for Regression
 
 This chapter focuses on regression models that predict one or more continuous target variables $t$ based on an input vector $x$[cite: 2654]. The models are "linear models" because they are linear functions of their adjustable parameters (weights $w$), although they can be nonlinear with respect to the input variables $x$.
 
