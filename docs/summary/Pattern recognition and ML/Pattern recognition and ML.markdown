@@ -202,7 +202,7 @@ Gaussian Processes (GPs) are the probabilistic, non-parametric heart of the chap
 * [cite_start]**Specification:** A GP is fully specified by a mean function $m(\mathbf{x})$ (often assumed to be zero) and a covariance function $k(\mathbf{x}_n, \mathbf{x}_m)$, which is the kernel[cite: 1149].
     [cite_start]$$E[y(\mathbf{x}_n)y(\mathbf{x}_m)] = k(\mathbf{x}_n, \mathbf{x}_m)$$ [cite: 1149]
 
-### 📈 GPs for Regression
+###  GPs for Regression
 
 [cite_start]For regression, we assume the observed targets $t_n$ are the function values $y(\mathbf{x}_n)$ plus some Gaussian noise $\epsilon_n \sim N(0, \beta^{-1})$[cite: 1150].
 
@@ -227,7 +227,7 @@ $$\ln p(\mathbf{t}|\mathbf{\theta}) = -\frac{1}{2}\ln |\mathbf{C}_N| - [cite_sta
 [cite_start]$$k(\mathbf{x}, \mathbf{x}') = \theta_0 \exp\left(-\frac{1}{2}\sum_i \eta_i(x_i - x'_i)^2\right)$$ [cite: 1158]
 [cite_start]When the marginal likelihood is maximized, if an input $\mathbf{x}_i$ is irrelevant to predicting the target, its corresponding $\eta_i$ will be driven to a very small value, effectively pruning that input from the model[cite: 1158].
 
-### 🎯 GPs for Classification
+###  GPs for Classification
 
 * [cite_start]For classification, the GP output $a(\mathbf{x})$ is passed through a **logistic sigmoid function** $y = \sigma(a(\mathbf{x}))$ to produce a probability $p(t=1|\mathbf{x}) = y$[cite: 1159].
 * [cite_start]This makes the model **analytically intractable** because the resulting distribution is not Gaussian[cite: 1159].
