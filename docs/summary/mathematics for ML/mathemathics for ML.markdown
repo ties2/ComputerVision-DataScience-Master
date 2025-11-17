@@ -162,3 +162,84 @@ $\hat{y} = \Phi\theta_{ML}$ is geometrically equivalent to the orthogonal projec
 
 * This means the "least squares" solution finds the vector y^ 
 in the feature subspace that is closest (in Euclidean distance) to the true observations y
+
+---
+
+# Chapter 12: Classification with SVM
+
+This chapter introduces the Support Vector Machine (SVM), a model used for **binary classification**. The goal is to take input data (represented as feature vectors) and predict a label from one of two discrete classes, such as $\{+1, -1\}$.
+The SVM is a powerful classifier based on finding an optimal separating boundary, or hyperplane, between the two classes.
+
+### 1. The Separating Hyperplane
+
+The core idea of the SVM is to find a **linear separator**. For data in a $D$-dimensional space, this separator is a $(D-1)$-dimensional **hyperplane**.
+
+* **Definition:** A hyperplane is defined by the function $f(x) = \langle w, x \rangle + b = 0$.
+    * $w$ is a vector normal (orthogonal) to the hyperplane, defining its orientation.
+    * $b$ is a scalar intercept (or bias) term that shifts the hyperplane off the origin.
+* **Classification Rule:** A new data point $x_{\text{test}}$ is classified based on which side of the hyperplane it falls on. The prediction is $\text{sign}(f(x_{\text{test}}))$.
+* **Correctness:** For a training point $x_n$ with label $y_n$, it is classified correctly if $y_n(\langle w, x_n \rangle + b) \ge 0$.
+
+---
+
+### 2. Finding the "Best" Hyperplane: The Margin
+
+For data that is linearly separable, there are infinitely many hyperplanes that can perfectly separate the two classes. The SVM finds the single "best" one by selecting the hyperplane that maximizes the **margin**.
+The margin is the distance from the separating hyperplane to the closest data point from either class. This "maximum margin" hyperplane is the one that is furthest from all training examples, which intuitively leads to better generalization.
+This goal can be formulated as a convex optimization problem. The "traditional" and most common formulation (known as the **hard margin SVM**) is:
+
+> **Minimize:** $\frac{1}{2}\|w\|^2$
+> **Subject to:** $y_n(\langle w, x_n \rangle + b) \ge 1$ for all $n=1, \dots, N$
+
+In this formulation, minimizing $\frac{1}{2}\|w\|^2$ is equivalent to maximizing the margin, which is $1/\|w\|$. The constraint ensures all points are correctly classified and are at least a "distance" of 1 from the hyperplane.
+
+---
+
+### 3. Handling Overlap: The Soft Margin SVM
+
+The hard margin SVM fails if the data is not perfectly linearly separable. To handle real-world data that may have overlapping classes, the **soft margin SVM** is used.
+This approach allows some examples to be misclassified or to fall inside the margin. It does this by introducing **slack variables** $\xi_n \ge 0$ for each data point.
+
+* $\xi_n = 0$ if the point is correctly classified and outside the margin.
+* $0 < \xi_n < 1$ if the point is correctly classified but *inside* the margin.
+* $\xi_n \ge 1$ if the point is *misclassified*.
+
+This changes the optimization problem to a trade-off: we want to maximize the margin (minimize $\|w\|^2$) while also minimizing the total amount of slack (minimize $\sum \xi_n$).
+
+> **Minimize:** $\frac{1}{2}\|w\|^2 + C \sum_{n=1}^N \xi_n$
+> **Subject to:** $y_n(\langle w, x_n \rangle + b) \ge 1 - \xi_n$ and $\xi_n \ge 0$
+
+The term $\frac{1}{2}\|w\|^2$ is the **regularizer**, and $C \sum \xi_n$ is the **loss term**. The **regularization parameter** $C$ controls the trade-off:
+
+* **Large $C$**: Penalizes slack heavily, leading to a narrower margin and fewer margin violations (similar to the hard margin SVM).
+* **Small $C$**: Penalizes slack less, allowing for more margin violations in exchange for a wider, "simpler" margin.
+
+This formulation is equivalent to an empirical risk minimization problem using the **hinge loss** function, $\ell(t) = \max\{0, 1 - t\}$.
+
+---
+
+### 4. The Dual SVM and Support Vectors
+
+The problem above is the **primal SVM**. Its number of parameters grows with the number of **features** $D$. By using Lagrange multipliers (a constrained optimization technique), we can derive the **dual SVM**, where the number of parameters grows with the number of **data points** $N$.
+This dual form is crucial because it reveals that the optimal $w$ is a linear combination of the **training examples**:
+$$w = \sum_{n=1}^N \alpha_n y_n x_n$$
+
+The $\alpha_n$ are the Lagrange multipliers found by the dual problem. Most $\alpha_n$ will be zero. The few data points $x_n$ for which $\alpha_n > 0$ are called **support vectors**. These are the only points that define the margin and the hyperplane; all other data points are irrelevant.
+
+---
+
+### 5. Nonlinear Classification: The Kernel Trick
+
+The most powerful part of the SVM comes from its dual formulation. The dual problem only ever uses the data in the form of inner products, $\langle x_i, x_j \rangle$.
+The **kernel trick** replaces this inner product with a **kernel function**, $k(x_i, x_j)$.
+$$k(x_i, x_j) = \langle \phi(x_i), \phi(x_j) \rangle$$
+
+* $\phi(x)$ is an implicit, nonlinear feature map that projects the data into a much higher-dimensional (even infinite-dimensional) space.
+* The SVM then finds a *linear* separator in this high-dimensional space.
+* When mapped back to the original data space, this linear hyperplane becomes a complex, *nonlinear* decision boundary.
+
+This allows SVMs to capture highly nonlinear patterns without ever explicitly computing the high-dimensional coordinates, making them incredibly flexible and efficient.
+
+### Summary of Solution
+
+Ultimately, solving an SVM (both primal and dual forms) is a **convex quadratic programming problem**, which is a well-understood class of optimization problem that can be solved efficiently.
