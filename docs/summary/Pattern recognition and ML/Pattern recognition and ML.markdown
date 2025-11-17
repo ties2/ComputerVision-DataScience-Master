@@ -121,7 +121,7 @@ This approach finds a function that maps $x$ directly to a class label.
     * **The Perceptron Algorithm:** An iterative algorithm that learns a separating hyperplane by minimizing the "perceptron criterion," an error function defined over misclassified training points.
 
 ### 2. Probabilistic Generative Models
-This approach models the class-conditional densities $p(x|C_k)$ and the class priors $p(C_k)$, and then uses Bayes' theorem to find the posterior $p(C_k|x)$[cite: 2716].
+This approach models the class-conditional densities $p(x|C_k)$ and the class priors $p(C_k)$, and then uses Bayes' theorem to find the posterior $p(C_k|x)$.
 * **Key Result:** The chapter shows that if the class-conditional densities $p(x|C_k)$ are assumed to be **multivariate Gaussian distributions with a shared covariance matrix**, the resulting posterior probability $p(C_k|x)$ is a **logistic sigmoid** (for $K=2$ classes) or a **softmax function** (for $K \ge 2$ classes) of a linear function of $x$.
 * If the covariances are not shared, the discriminant is quadratic.
 * The **"naive Bayes"** model, which assumes features are conditionally independent given the class, also results in a linear classifier.
@@ -135,6 +135,104 @@ This approach models the posterior $p(C_k|x)$ directly, avoiding the need to mod
 
 ### Bayesian Approach
 * **The Laplace Approximation:** Exact Bayesian inference for logistic regression is intractable. The chapter introduces the **Laplace approximation**, a general framework for approximating a probability distribution with a Gaussian centered at its mode (the maximum a posteriori, or MAP, solution).
-* **Bayesian Logistic Regression:** The Laplace approximation is applied to create a Bayesian logistic regression model[cite: 2738]. This provides a Gaussian approximation to the posterior distribution $p(w|t)$, which can then be used to make probabilistic predictions.
+* **Bayesian Logistic Regression:** The Laplace approximation is applied to create a Bayesian logistic regression model. This provides a Gaussian approximation to the posterior distribution $p(w|t)$, which can then be used to make probabilistic predictions.
+
+---
+
+# Chapter 6: Kernel Methods
+
+Here is a more complete summary of Chapter 6: Kernel Methods, including the key mathematical formulations in LaTeX.
+
+[cite_start]This chapter introduces a new class of "memory-based" models that use the training data points directly to make predictions[cite: 1136]. [cite_start]The central idea is to reformulate linear models (from Chapters 3 and 4) into an equivalent **dual representation** where predictions are based on combinations of **kernel functions** evaluated at the training data points[cite: 1137].
+
+---
+
+## 6.1 Dual Representations
+
+The chapter starts by showing how a linear model, like regularized least squares, can be re-cast. The original (primal) problem is to find the $M$-dimensional parameter vector $\mathbf{w}$ by minimizing:
+[cite_start]$$J(\mathbf{w}) = \frac{1}{2}\sum_{n=1}^{N} \{\mathbf{w}^T\phi(\mathbf{x}_n) - t_n\}^2 + \frac{\lambda}{2}\mathbf{w}^T\mathbf{w}$$ [cite: 1138]
+
+The solution for $\mathbf{w}$ can be shown to be a linear combination of the feature vectors $\phi(\mathbf{x}_n)$ from the training data:
+[cite_start]$$\mathbf{w} = \sum_{n=1}^{N} a_n \phi(\mathbf{x}_n) = \mathbf{\Phi}^T \mathbf{a}$$ [cite: 1138]
+
+[cite_start]By substituting this back into $J(\mathbf{w})$, we get a *dual representation* of the problem, which involves maximizing an objective $J(\mathbf{a})$ with respect to the $N$-dimensional vector $\mathbf{a}$[cite: 1138]. The final solution for $\mathbf{a}$ is:
+[cite_start]$$\mathbf{a} = (\mathbf{K} + \lambda \mathbf{I}_N)^{-1} \mathbf{t}$$ [cite: 1139]
+
+Here, $\mathbf{K}$ is the $N \times N$ **Gram matrix**, which is the core of the kernel method. Its elements are computed from the kernel function $k(\mathbf{x}, \mathbf{x}')$:
+[cite_start]$$K_{nm} = k(\mathbf{x}_n, \mathbf{x}_m) = \phi(\mathbf{x}_n)^T \phi(\mathbf{x}_m)$$ [cite: 1139]
+
+The prediction for a new input $\mathbf{x}$ is then given by:
+[cite_start]$$y(\mathbf{x}) = \mathbf{w}^T\phi(\mathbf{x}) = \mathbf{a}^T\mathbf{\Phi}\phi(\mathbf{x}) = \mathbf{k}(\mathbf{x})^T (\mathbf{K} + \lambda \mathbf{I}_N)^{-1} \mathbf{t}$$ [cite: 1139]
+[cite_start]where $\mathbf{k}(\mathbf{x})$ is a vector with elements $k(\mathbf{x}_n, \mathbf{x})$[cite: 1139].
+
+This is the **kernel trick**: the algorithm is now formulated entirely in terms of the kernel function $k(\mathbf{x}, \mathbf{x}')$. [cite_start]We never need to explicitly know the feature mapping $\phi(\mathbf{x})$, which could be infinite-dimensional[cite: 1139].
+
+---
+
+## 6.2 Constructing Kernels
+
+For a function to be a *valid* kernel, it must correspond to a dot product in some feature space. [cite_start]The necessary and sufficient condition for this is that the **Gram matrix** $\mathbf{K}$ must be **positive semidefinite** for any set of data points $\{\mathbf{x}_n\}$[cite: 1140].
+
+Valid kernels can be created by combining simpler ones:
+* [cite_start]$k(\mathbf{x}, \mathbf{x}') = k_1(\mathbf{x}, \mathbf{x}') + k_2(\mathbf{x}, \mathbf{x}')$ [cite: 1141]
+* [cite_start]$k(\mathbf{x}, \mathbf{x}') = k_1(\mathbf{x}, \mathbf{x}') k_2(\mathbf{x}, \mathbf{x}')$ [cite: 1141]
+* [cite_start]$k(\mathbf{x}, \mathbf{x}') = q(k_1(\mathbf{x}, \mathbf{x}'))$ (where $q$ is a polynomial with non-negative coefficients) [cite: 1141]
+* [cite_start]$k(\mathbf{x}, \mathbf{x}') = \exp(k_1(\mathbf{x}, \mathbf{x}'))$ [cite: 1141]
+
+A common example is the 'Gaussian' kernel (which corresponds to an infinite-dimensional feature space):
+[cite_start]$$k(\mathbf{x}, \mathbf{x}') = \exp\left(-\frac{\|\mathbf{x} - \mathbf{x}'\|^2}{2\sigma^2}\right)$$ [cite: 1142]
+
+The chapter also introduces **generative kernels**, which can be built from generative models. [cite_start]A key example is the **Fisher kernel**, which uses the gradient of the log likelihood of a generative model to define the feature space[cite: 1143].
+
+---
+
+## 6.3 Radial Basis Function (RBF) Networks
+
+[cite_start]This section connects kernels to **Radial Basis Function (RBF) networks**, which are linear models that use basis functions $\phi_j(\mathbf{x}) = h(\|\mathbf{x} - \mathbf{\mu}_j\|)$ that depend only on the radial distance from a set of "centers" $\mathbf{\mu}_j$[cite: 1145].
+
+A common RBF model is the **Nadaraya-Watson model** (or kernel regression). [cite_start]This is a non-parametric method that centers a kernel function (like a Gaussian) on *every* training data point[cite: 1147]. [cite_start]The prediction is a weighted average of the training targets $t_n$, where the weight for each point is its kernel similarity to the new input $\mathbf{x}$[cite: 1147].
+
+---
+
+## 6.4 Gaussian Processes
+
+Gaussian Processes (GPs) are the probabilistic, non-parametric heart of the chapter. [cite_start]A GP is a powerful Bayesian approach that avoids defining a parametric function $\mathbf{w}$ and instead defines a prior probability distribution *directly over the space of functions*[cite: 1148].
+
+* [cite_start]**Definition:** A Gaussian Process is a collection of random variables, any finite number of which have a joint Gaussian distribution[cite: 1149].
+* [cite_start]**Specification:** A GP is fully specified by a mean function $m(\mathbf{x})$ (often assumed to be zero) and a covariance function $k(\mathbf{x}_n, \mathbf{x}_m)$, which is the kernel[cite: 1149].
+    [cite_start]$$E[y(\mathbf{x}_n)y(\mathbf{x}_m)] = k(\mathbf{x}_n, \mathbf{x}_m)$$ [cite: 1149]
+
+### 📈 GPs for Regression
+
+[cite_start]For regression, we assume the observed targets $t_n$ are the function values $y(\mathbf{x}_n)$ plus some Gaussian noise $\epsilon_n \sim N(0, \beta^{-1})$[cite: 1150].
+
+* [cite_start]**Joint Distribution:** The joint distribution of the training targets $\mathbf{t}_N$ and the target $t_{N+1}$ for a new test point $\mathbf{x}_{N+1}$ is a Gaussian $p(\mathbf{t}_{N+1}) = N(\mathbf{t}_{N+1} | \mathbf{0}, \mathbf{C}_{N+1})$[cite: 1152].
+* **Covariance Matrix:** The covariance matrix $\mathbf{C}$ is built from the kernel $k$ and the noise $\beta^{-1}$:
+    [cite_start]$$C(\mathbf{x}_n, \mathbf{x}_m) = k(\mathbf{x}_n, \mathbf{x}_m) + \beta^{-1}\delta_{nm}$$ [cite: 1152]
+* [cite_start]**Predictive Distribution:** Because this is a joint Gaussian, the predictive distribution $p(t_{N+1} | \mathbf{t}_N)$ is also Gaussian[cite: 1152]. Its mean and variance are:
+    * [cite_start]**Mean:** $m(\mathbf{x}_{N+1}) = \mathbf{k}^T \mathbf{C}_N^{-1} \mathbf{t}$ [cite: 1153]
+    * [cite_start]**Variance:** $\sigma^2(\mathbf{x}_{N+1}) = c - \mathbf{k}^T \mathbf{C}_N^{-1} \mathbf{k}$ [cite: 1153]
+    (where $\mathbf{k}$ is the vector of kernel similarities between the test point and training points, and $c = k(\mathbf{x}_{N+1}, \mathbf{x}_{N+1}) [cite_start]+ \beta^{-1}$)[cite: 1152, 1153].
+    This explicitly gives a mean prediction (a weighted sum of training targets) and a measure of uncertainty for that prediction.
+
+### Learning Hyperparameters
+
+The kernel function $k$ depends on **hyperparameters** $\mathbf{\theta}$ (e.g., the width $\sigma^2$ of a Gaussian kernel, or the noise $\beta$). [cite_start]These are learned not by cross-validation, but by maximizing the **marginal likelihood** $p(\mathbf{t} | \mathbf{\theta})$[cite: 1156]. The log marginal likelihood is given by:
+$$\ln p(\mathbf{t}|\mathbf{\theta}) = -\frac{1}{2}\ln |\mathbf{C}_N| - [cite_start]\frac{1}{2}\mathbf{t}^T\mathbf{C}_N^{-1}\mathbf{t} - \frac{N}{2}\ln(2\pi)$$ [cite: 1157]
+[cite_start]This can be maximized using gradient-based optimization[cite: 1157].
+
+### Automatic Relevance Determination (ARD)
+
+[cite_start]ARD is a powerful feature of GPs where a separate length-scale parameter $\eta_i$ is used for each input dimension[cite: 1158]. For example:
+[cite_start]$$k(\mathbf{x}, \mathbf{x}') = \theta_0 \exp\left(-\frac{1}{2}\sum_i \eta_i(x_i - x'_i)^2\right)$$ [cite: 1158]
+[cite_start]When the marginal likelihood is maximized, if an input $\mathbf{x}_i$ is irrelevant to predicting the target, its corresponding $\eta_i$ will be driven to a very small value, effectively pruning that input from the model[cite: 1158].
+
+### 🎯 GPs for Classification
+
+* [cite_start]For classification, the GP output $a(\mathbf{x})$ is passed through a **logistic sigmoid function** $y = \sigma(a(\mathbf{x}))$ to produce a probability $p(t=1|\mathbf{x}) = y$[cite: 1159].
+* [cite_start]This makes the model **analytically intractable** because the resulting distribution is not Gaussian[cite: 1159].
+* [cite_start]The chapter uses the **Laplace approximation** (from Chapter 4) to find a Gaussian approximation to the posterior distribution, allowing for approximate Bayesian inference[cite: 1161, 1162].
+
+[cite_start]Finally, the chapter notes a deep connection: a Bayesian neural network (from Chapter 5) with a prior over its parameters becomes a Gaussian process in the limit of an infinite number of hidden units[cite: 1164].
 
 
