@@ -64,15 +64,24 @@ Manually tuning hyper-parameters often involves "reading the tea leaves" of trai
 
   * **Graph 2 (Page 11):**
 
-      * **What's happening?** Both the training and validation loss curves are extremely noisy and jumping around wildly.
-      * **Observation:** The training process is oscillating.
-      * **What to change?** This is a classic sign that the **learning rate is too high**. Lowering it would likely stabilize the training.
+<p align="center">
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/Graph2.png" alt="Graph2" width="300" />
+</p>
+
+
+* What's happening? Both the training and validation loss curves are extremely noisy and jumping around wildly.
+* bservation: The training process is oscillating.
+* What to change? This is a classic sign that the **learning rate is too high**. Lowering it would likely stabilize the training.
 
   * **Graph 3 (Page 12):**
 
-      * **What's happening?** The training loss (blue line) keeps decreasing, but the validation loss (orange line) has flattened out and started to rise.
-      * **Observation:** The model is **overfitting**. It's learning the training data too well but is losing its ability to generalize.
-      * **What to change?** This is a signal to stop training (i.e., use **early stopping** ). You could also introduce stronger regularization (like weight decay ) or increase model complexity if both losses are high (underfitting).
+<p align="center">
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/Graph3.png" alt="Graph3" width="300" />
+</p>
+
+* What's happening? The training loss (blue line) keeps decreasing, but the validation loss (orange line) has flattened out and started to rise.
+* Observation: The model is **overfitting**. It's learning the training data too well but is losing its ability to generalize.
+* What to change?This is a signal to stop training (i.e., use **early stopping** ). You could also introduce stronger regularization (like weight decay ) or increase model complexity if both losses are high (underfitting).
 
 -----
 
