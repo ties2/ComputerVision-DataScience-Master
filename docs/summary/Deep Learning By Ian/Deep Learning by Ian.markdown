@@ -19,7 +19,7 @@ The chapter covers four main topics:
 #### 1. Overflow and Underflow
 This is the most critical practical problem. It occurs when numbers become too large or too small for the computer to represent.
 
-* [cite_start]**Underflow:** This happens when numbers near zero are rounded to zero[cite: 3332]. This is a major problem for operations like `log(x)` (which becomes `-inf`) or division by `x` (which becomes `inf`). [cite_start]These `inf` values can quickly turn into `NaN` (Not-a-Number) during subsequent operations, causing the entire model to fail[cite: 3334].
+* **Underflow:** This happens when numbers near zero are rounded to zero[cite: 3332]. This is a major problem for operations like `log(x)` (which becomes `-inf`) or division by `x` (which becomes `inf`). [cite_start]These `inf` values can quickly turn into `NaN` (Not-a-Number) during subsequent operations, causing the entire model to fail.
 * [cite_start]**Overflow:** This happens when numbers with large magnitudes are rounded to `inf` or `-inf`, which also leads to `NaN` values[cite: 3335].
 * [cite_start]**Example: The Softmax Function:** The softmax function, $softmax(x)_i = \frac{e^{x_i}}{\sum_j e^{x_j}}$, is extremely prone to both[cite: 3335, 3336].
     * If `x` is very large, $e^x$ overflows.
