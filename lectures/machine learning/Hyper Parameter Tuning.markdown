@@ -52,9 +52,14 @@ Neural networks have many hyper-parameters that can be tuned. They generally fal
 
 Manually tuning hyper-parameters often involves "reading the tea leaves" of training and validation loss graphs.
 
-  * **Graph 1 (Page 10):**
+  * **Graph 1 :**
 
-      * **What's happening?** The validation loss is consistently much lower than the training loss[cite: 146, 147].
+<p align="center">
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/Graph1.png" alt="Graph 1" width="300" />
+</p>
+
+
+      * **What's happening?** The validation loss is consistently much lower than the training loss.
       * **Observation:** The validation set is likely unrepresentative or simply too easy to solve.
 
   * **Graph 2 (Page 11):**
