@@ -111,9 +111,9 @@ There are several strategies for finding the best hyper-parameters:
 
   * Hyper-parameter tuning is **crucial** for getting good performance from neural networks.
   * **Start simple** and try tuning one parameter at a time.
-  * Always use **cross-validation** to get a reliable estimate of your model's performance[cite: 356].
+  * Always use **cross-validation** to get a reliable estimate of your model's performance.
   * **Track your experiments\!** Use tools like TensorBoard to log your hyper-parameters and resulting metrics[cite: 357].
-  * There are many methods, from simple grid search to advanced automated techniques[cite: 359].
+  * There are many methods, from simple grid search to advanced automated techniques.
   *  **systematic approach** is essential for success.
 -----
 
@@ -124,7 +124,7 @@ This exercise involves finding the optimal hyper-parameters for a **Support Vect
   * **Goal:** Find the best values for the hyper-parameters `'C'` and `'gamma'`.
   * **Model:** SVC with a `'Radial Basis Function'` kernel[cite: 368].
   * **Scoring:** The best combination should be determined by `accuracy`.
-  * **Task:** Complete the Python function `find_hyper_parameters` on page 22[cite: 408].
+  * **Task:** Complete the Python function `find_hyper_parameters` on page 22.
   * **Reference:** For more understanding, see the scikit-learn example: `https://scikit-learn.org/stable/auto_examples/model_selection/plot_grid_search_digits.html`.
 
 The images on page 21 visualize how the decision boundary of the SVC changes with different values of $C$ and $gamma$.
