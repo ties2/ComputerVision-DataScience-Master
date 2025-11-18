@@ -55,12 +55,12 @@ Manually tuning hyper-parameters often involves "reading the tea leaves" of trai
   * **Graph 1 :**
 
 <p align="center">
-  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/Graph1.png" alt="Graph 1" width="300" />
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/Graph1.png" alt="Graph1" width="300" />
 </p>
 
 
-      * **What's happening?** The validation loss is consistently much lower than the training loss.
-      * **Observation:** The validation set is likely unrepresentative or simply too easy to solve.
+* What's happening? The validation loss is consistently much lower than the training loss.
+* Observation: The validation set is likely unrepresentative or simply too easy to solve.
 
   * **Graph 2 (Page 11):**
 
