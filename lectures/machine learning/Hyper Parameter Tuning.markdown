@@ -122,7 +122,7 @@ There are several strategies for finding the best hyper-parameters:
 This exercise involves finding the optimal hyper-parameters for a **Support Vector Classifier (SVC)**  using a **Grid Search**.
 
   * **Goal:** Find the best values for the hyper-parameters `'C'` and `'gamma'`.
-  * **Model:** SVC with a `'Radial Basis Function'` kernel[cite: 368].
+  * **Model:** SVC with a `'Radial Basis Function'` kernel.
   * **Scoring:** The best combination should be determined by `accuracy`.
   * **Task:** Complete the Python function `find_hyper_parameters` on page 22.
   * **Reference:** For more understanding, see the scikit-learn example: `https://scikit-learn.org/stable/auto_examples/model_selection/plot_grid_search_digits.html`.
