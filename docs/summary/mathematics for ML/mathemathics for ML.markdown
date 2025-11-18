@@ -207,6 +207,8 @@ This approach allows some examples to be misclassified or to fall inside the mar
 This changes the optimization problem to a trade-off: we want to maximize the margin (minimize $\|w\|^2$) while also minimizing the total amount of slack (minimize $\sum \xi_n$).
 
 > **Minimize:** $\frac{1}{2}\|w\|^2 + C \sum_{n=1}^N \xi_n$
+
+
 > **Subject to:** $y_n(\langle w, x_n \rangle + b) \ge 1 - \xi_n$ and $\xi_n \ge 0$
 
 The term $\frac{1}{2}\|w\|^2$ is the **regularizer**, and $C \sum \xi_n$ is the **loss term**. The **regularization parameter** $C$ controls the trade-off:
