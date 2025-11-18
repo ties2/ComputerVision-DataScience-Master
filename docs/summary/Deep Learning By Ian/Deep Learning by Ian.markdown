@@ -12,7 +12,7 @@ Based on the PDF you provided, here is a summary of Chapter 4: Numerical Computa
 
 ---
 
-This chapter explains why training deep learning models is a numerical challenge. Because we use digital computers, which have finite precision, we can only approximate real numbers. [cite_start]This limitation introduces errors that can derail the learning process if not handled correctly[cite: 3331, 3332].
+This chapter explains why training deep learning models is a numerical challenge. Because we use digital computers, which have finite precision, we can only approximate real numbers. This limitation introduces errors that can derail the learning process if not handled correctly.
 
 The chapter covers four main topics:
 
