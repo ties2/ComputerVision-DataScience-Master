@@ -90,9 +90,9 @@ Manually tuning hyper-parameters often involves "reading the tea leaves" of trai
 There are several strategies for finding the best hyper-parameters:
 
   * **Manual Tuning**: Using experience and the "manual tuning quiz" approach to guide the search.
-  * **Grid Search** : Define a grid of possible values for each hyper-parameter and train a model for *every single combination*[cite: 265]. This is exhaustive but can be very computationally expensive.
+  * **Grid Search** : Define a grid of possible values for each hyper-parameter and train a model for *every single combination*. This is exhaustive but can be very computationally expensive.
   * **Random Search**: Define a range or distribution for each hyper-parameter and randomly sample combinations from that space. It is often more efficient than Grid Search.
-  * **Bayesian Optimization**: An "optimization-based"  method that uses the results from previous runs to intelligently choose the next set of hyper-parameters to try[cite: 273]. It aims to find the optimum in fewer steps.
+  * **Bayesian Optimization**: An "optimization-based"  method that uses the results from previous runs to intelligently choose the next set of hyper-parameters to try. It aims to find the optimum in fewer steps.
   * **Other Optimization-Based Methods**:
       * Evolutionary algorithms (like Genetic Algorithms) 
       * Gradient-based methods 
@@ -132,11 +132,11 @@ The images on page 21 visualize how the decision boundary of the SVC changes wit
 
 ## Genetic Algorithms [cite: 15, 421]
 
-Genetic Algorithms (GAs) are a type of optimization-based method [cite: 278] that can be used for hyper-parameter tuning[cite: 611].
+Genetic Algorithms (GAs) are a type of optimization-based method that can be used for hyper-parameter tuning.
 
-  * **Concept:** A search heuristic inspired by Charles Darwin's theory of natural selection[cite: 422, 433].
-  * **Process:** It starts with an initial population of candidate solutions. The "best" (most fit) individuals are selected for reproduction (crossover) and mutation to create a new generation[cite: 422, 434, 445].
-  * **Limitation:** GAs **do not guarantee** finding the global optimal solution[cite: 423]. They can sometimes get stuck in a "local minimum".
+  * **Concept:** A search heuristic inspired by Charles Darwin's theory of natural selection.
+  * **Process:** It starts with an initial population of candidate solutions. The "best" (most fit) individuals are selected for reproduction (crossover) and mutation to create a new generation.
+  * **Limitation:** GAs **do not guarantee** finding the global optimal solution. They can sometimes get stuck in a "local minimum".
 
 ### GA Terminology [cite: 462]
 
@@ -148,13 +148,13 @@ Genetic Algorithms (GAs) are a type of optimization-based method [cite: 278] tha
 
 The process follows a loop:
 
-1.  **Start** & **Generate Initial Population**[cite: 449]: Create a set of random solutions.
+1.  **Start** & **Generate Initial Population**: Create a set of random solutions.
 2.  **Calculate Fitness**  Evaluate each solution (chromosome) to get a "fitness value" indicating how good it is.
 3. **Selection**: Choose which individuals will reproduce.
-      * **Elitism:** Automatically keep the top 'k' best individuals for the next generation[cite: 489, 504].
+      * **Elitism:** Automatically keep the top 'k' best individuals for the next generation.
       * **Roulette Wheel:** Give each individual a chance to be selected proportional to its fitness.
 4.  **Crossover** : Mix the genes of two "parent" individuals to create "offspring" (a new solution).
-      * **Ordered Crossover:** Swaps alternating segments between parents [cite: 527-534].
+      * **Ordered Crossover:** Swaps alternating segments between parents.
       * **Uniform Crossover:** Flips a coin for each gene to decide which parent it will come from .
 5.  **Mutation** : Apply small, random changes to an individual's genes to introduce new genetic material[cite: 551].
       * **Swap:** Randomly swap two genes.
@@ -168,7 +168,7 @@ The process follows a loop:
 The algorithm stops when one of these conditions is met:
 
   * A minimum solution criterion is reached (e.g., 95% accuracy).
-  * A maximum number of generations has passed[cite: 570].
+  * A maximum number of generations has passed.
   * A time/computation budget is exhausted, or a user manually stops it.
 
 ### Using GAs for HPO
