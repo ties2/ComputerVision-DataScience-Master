@@ -1025,9 +1025,27 @@ Activation Function|nn.ReLU() or F.relu()|layers.ReLU() or activation='relu'|Mak
 
 2. Data Handling (Loading Files)
 
-|Situation|PyTorch (Your Project)|TensorFlow|Description|
+|Situation|PyTorch |TensorFlow|Description|
 | ---- | ---- | ---- | ----- |
 |Data Container|torch.utils.data.Dataset|tf.data.Dataset|The class structure that holds your .npz files.
 Batching & Shuffling|torch.utils.data.DataLoader|dataset.batch().shuffle()|"Takes single items and groups them into batches (e.g., 64 images)."
 Image Augmentation|torchvision.transforms|tf.image or layers.Resizing|"Resizing, flipping, or normalizing images."
-Tensors (Data format)|torch.Tensor|tf.Tensor|The multi-dimensional arrays (matrices) the GPU understands.
+Tensors (Data format)|torch.Tensor|tf.Tensor|The multi-dimensional arrays (matrices) the GPU understands.|
+
+3. Training & Optimization
+
+|Situation|PyTorch |TensorFlow|
+| ---- | ---- | ---- |
+|Optimizer|torch.optim.Adam|tf.keras.optimizers.Adam|The algorithm that updates weights to reduce error.
+|Loss Function|nn.CrossEntropyLoss|tf.keras.losses.CategoricalCrossentropy|"Calculates how ""wrong"" the prediction is."
+|Learning Rate Decay|torch.optim.lr_scheduler|tf.keras.callbacks.LearningRateScheduler|Lowers learning rate as training improves (Plateau detection).
+|Training Loop|Manual for loop |model.fit() (Built-in magic function)
+
+4. The "Fusion" Specifics (Merging Networks)
+
+|Situation|PyTorch|TensorFlow|Description
+| ---- | ----- | ----- | -----|
+|Concatenation|"torch.cat([x1, x2], dim=1)"|"tf.concat([x1, x2], axis=1)"|Merging the U-Net and 1D-CNN features together.
+|Reshaping|x.view() or x.reshape()|"tf.reshape(x, ...)"|"Changing a tensor from (64, 64, 224) to (1, 224) etc."
+|Moving to GPU|model.to('cuda')|Automatic|PyTorch requires manual .to('cuda'). TensorFlow finds the GPU automatically.
+
