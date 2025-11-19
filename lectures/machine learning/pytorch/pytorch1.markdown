@@ -1006,3 +1006,28 @@ output:
 Original Tensor: tensor([ 4, -8,  5,  3, -2,  1])
 
 Flipped Tensor: tensor([ 1, -2,  3,  5, -8,  4])
+
+---
+
+# Comparison table mapping the specific PyTorch libraries you are using in your Fusion project to their equivalents in TensorFlow
+
+1. Core Building Blocks (The "Lego Bricks")
+
+
+|Situation |PyTorch |TensorFlow (Keras)|Description |
+| ---- | ---- | ---- | -----|
+The Main Library|import torch|import tensorflow as tf|The base library for math and tensors.
+|Neural Network Layers|torch.nn|tf.keras.layers|"Contains the layers like Conv2d, ReLU, Linear."
+2D Convolution|nn.Conv2d(...)|layers.Conv2D(...)|Used in your U-Net branch (Spatial).
+1D Convolution|nn.Conv1d(...)|layers.Conv1D(...)|Used in your 1D-CNN branch (Spectral).
+Fully Connected Layer|nn.Linear(...)|layers.Dense(...)|The final classification layers.
+Activation Function|nn.ReLU() or F.relu()|layers.ReLU() or activation='relu'|Makes the network non-linear.
+
+2. Data Handling (Loading Files)
+
+|Situation|PyTorch (Your Project)|TensorFlow|Description|
+| ---- | ---- | ---- | ----- |
+|Data Container|torch.utils.data.Dataset|tf.data.Dataset|The class structure that holds your .npz files.
+Batching & Shuffling|torch.utils.data.DataLoader|dataset.batch().shuffle()|"Takes single items and groups them into batches (e.g., 64 images)."
+Image Augmentation|torchvision.transforms|tf.image or layers.Resizing|"Resizing, flipping, or normalizing images."
+Tensors (Data format)|torch.Tensor|tf.Tensor|The multi-dimensional arrays (matrices) the GPU understands.

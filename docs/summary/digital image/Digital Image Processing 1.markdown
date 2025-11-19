@@ -1,6 +1,6 @@
 # Digital Image Processing Fundamentals and Techniques
 
-# chap 1 : (17- 46 page)
+# chapter 1 : (17- 46 page)
 
 - Understand the concept of a digital image.
 - Have a broad overview of the historical underpinnings of the field of digital image processing.
@@ -130,7 +130,7 @@ Two subsystems are required to acquire digital images. The first is a physical s
 - Image sensors
 
 ---
-# chap 2: digital image fundementals
+# chapter 2: digital image fundementals
 (47 -  page)
 
 * Have an understanding of some important
