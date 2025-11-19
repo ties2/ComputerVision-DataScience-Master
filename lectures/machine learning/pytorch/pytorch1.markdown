@@ -1049,3 +1049,21 @@ Tensors (Data format)|torch.Tensor|tf.Tensor|The multi-dimensional arrays (matri
 |Reshaping|x.view() or x.reshape()|"tf.reshape(x, ...)"|"Changing a tensor from (64, 64, 224) to (1, 224) etc."
 |Moving to GPU|model.to('cuda')|Automatic|PyTorch requires manual .to('cuda'). TensorFlow finds the GPU automatically.
 
+5. Deployment & Production
+
+|Situation|PyTorch|TensorFlow|Description
+| ---- | ---- | ---- | ---- |
+|Saving Model|torch.save(model.state_dict())|model.save('path/to/model')|Saving your trained weights to disk.
+|Serving API|TorchServe|TensorFlow Serving|The system that runs the model on a server.
+|Mobile (Phone)|PyTorch Mobile / ExecuTorch|TensorFlow Lite|Running the model on Android/iOS.
+|Web Browser|PyTorch Live (Limited)|TensorFlow.js|Running the model in Chrome/Edge.|
+
+Summary: The "Keras" Confusion
+
+You will often hear "Keras" when talking about TensorFlow.
+
+Keras used to be a separate library.
+
+Now, Keras IS the official high-level API for TensorFlow.
+
+When you see tf.keras.layers, it is the TensorFlow equivalent of torch.nn.
