@@ -230,5 +230,5 @@ Analysis: The relationship changes direction. y increases as x increases, but on
 Real-world example: Stress levels vs. Performance (performance improves with some stress, but crashes if stress gets too high).
 
 <p align="center">
-  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/Code_Generated_Image.png" alt="Practical Methodology" width="300" />
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/Code_Generated_Image.png" alt="Practical Methodology" width="500" />
 </p>
