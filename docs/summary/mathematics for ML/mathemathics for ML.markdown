@@ -168,7 +168,7 @@ Visualizing Overfitting vs. Underfitting (Concept from 8.3.3)
 Below is a Python visualization illustrating the core concept of model fitting discussed in the chapter.
 
 <p align="center">
-  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/docs/summary/mathematics%20for%20ML/Code_Generated_Image-2.png" alt="Practical Methodology" width="500" />
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/docs/summary/mathematics%20for%20ML/Code_Generated_Image-2.png" alt="Practical Methodology" width="800" />
 </p>
 
 
