@@ -323,7 +323,7 @@ Real-world Example: Test scores in a class containing students from three differ
 
 
 <p align="center">
-  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/Code_Generated_Image%20copy.png" alt="Practical Methodology" width="800" />
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/Code_Generated_Image%20copy.png" alt="Practical Methodology" width="500" />
 </p>
 
 
