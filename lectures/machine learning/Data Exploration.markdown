@@ -545,7 +545,7 @@ Clumped in the middle: The image has low contrast (mostly gray/midtones).
 ## Clipping
 
 <p align="center">
-  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/licensed-image%20copy.jpeg" width="600" />
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/licensed-image%20copy.jpeg" width="400" />
 </p>
 
 Clipping occurs when the brightness details of an image fall outside the camera's capture range, resulting in a loss of information.
