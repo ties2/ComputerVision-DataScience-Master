@@ -444,7 +444,7 @@ Automated checks might miss qualitative issues that human eyes catch instantly.
 
 ---
 
-What is an Outlier?
+## What is an Outlier?
 
 <p align="center">
   <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/outlier.png" alt="Practical Methodology" width="600" />
@@ -518,7 +518,30 @@ This method centers the data around a mean of **0** with a standard deviation of
 
 ----
 
+## Image Histogram
 
+
+<p align="center">
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/licensed-image.jpeg" alt="Practical Methodology" width="600" />
+</p>
+
+
+
+An Image Histogram is a graph that shows the distribution of brightness levels in an image.
+
+X-Axis (Horizontal): Represents brightness, usually from 0 (Black/Shadows) on the left to 255 (White/Highlights) on the right.
+
+Y-Axis (Vertical): Represents the number of pixels at that specific brightness level.
+
+How to read it:
+
+Peaks on the Left: The image is dark (underexposed).
+
+Peaks on the Right: The image is bright (overexposed).
+
+Spread across the width: The image has high contrast (good range of darks and lights).
+
+Clumped in the middle: The image has low contrast (mostly gray/midtones).
 
 
 
