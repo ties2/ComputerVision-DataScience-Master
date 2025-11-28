@@ -491,6 +491,32 @@ Low Outlier: <Q1−1.5×IQR
 
 High Outlier: >Q3+1.5×IQR
 
+---
+## Input feature normalization
+
+Input feature normalization is a data preprocessing technique used to scale numerical features into a standard range. This ensures that no single feature dominates the model due to having larger raw numbers.
+
+Here are the two most common methods:
+
+### 1. Min-Max Normalization
+This method scales all values to fit within a fixed range, usually **0 to 1**. It is useful when you need bounded values (e.g., for neural networks or image processing).
+
+* **Formula:**
+    $$X_{new} = \frac{X - X_{min}}{X_{max} - X_{min}}$$
+
+### 2. Standardization (Z-Score Normalization)
+This method centers the data around a mean of **0** with a standard deviation of **1**. It is robust to outliers and is preferred for algorithms that assume a Gaussian distribution (e.g., Logistic Regression, SVMs).
+
+* **Formula:**
+    $$X_{new} = \frac{X - \mu}{\sigma}$$
+    *(Where $\mu$ is the mean and $\sigma$ is the standard deviation)*
+
+### Why is it important?
+* **Faster Training:** Optimization algorithms (like Gradient Descent) converge much faster when features are on the same scale.
+* **Fairness:** It prevents features with large magnitudes (e.g., Salary = 100,000) from overpowering features with small magnitudes (e.g., Age = 30) purely due to their size.
+* **Distance Metrics:** Algorithms that calculate distance (like K-Nearest Neighbors or K-Means Clustering) require normalization to measure "closeness" accurately.
+
+----
 
 
 
