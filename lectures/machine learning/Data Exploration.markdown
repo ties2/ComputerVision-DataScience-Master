@@ -317,5 +317,54 @@ Analysis: Three or more distinct peaks. This indicates complex data with multipl
 
 Real-world Example: Test scores in a class containing students from three different grade levels
 
+---
+
+# Understanding Box Plots
+
+
+<p align="center">
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/Code_Generated_Image%20copy.png" alt="Practical Methodology" width="800" />
+</p>
+
+
+<p align="center">
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/Code_Generated_Image-2.png" alt="Practical Methodology" width="800" />
+</p>
+
+
+
+A Box Plot (or Box-and-Whisker Plot) is a standardized way of displaying the distribution of data based on a five-number summary. It is particularly useful for comparing distributions between different groups and identifying outliers.
+
+()
+
+The Five-Number Summary
+
+Minimum (Whisker end): The lowest data point excluding any outliers. It is calculated as Q1−1.5×IQR.
+
+First Quartile (Q1): The median of the lower half of the dataset (25th percentile). 25% of the data lies below this line.
+
+Median (Q2): The middle value of the dataset (50th percentile). It splits the data into two equal halves.
+
+Third Quartile (Q3): The median of the upper half of the dataset (75th percentile). 75% of the data lies below this line.
+
+Maximum (Whisker end): The highest data point excluding any outliers. It is calculated as Q3+1.5×IQR.
+
+Key Elements
+
+The Box (Interquartile Range - IQR): The central box represents the middle 50% of the data, from Q1 to Q3. The length of the box is the Interquartile Range (IQR=Q3−Q1). A wider box indicates more variability in the middle of the data.
+
+The Whiskers: These lines extend from the box to the Minimum and Maximum values. They show the range of the rest of the data.
+
+Outliers: Individual points plotted beyond the whiskers. These are data points that are statistically significantly different from the rest of the data (usually defined as being more than 1.5×IQR away from the quartiles).
+
+When to Use a Box Plot
+
+Comparisons: Ideally suited for comparing distributions across groups (e.g., test scores of Class A vs. Class B).
+
+Outlier Detection: Quickly highlights extreme values.
+
+Summary: Provides a quick visual summary of the data's central tendency and spread without the detail of a histogram.
+
+
 
 
