@@ -148,3 +148,83 @@ The purpose of the validation and test sets is to simulate real-world, unseen da
 1. Preventing Data Leakage: If you use techniques like RandomOverSampler on the test set, you are introducing artificial, duplicated, or synthetically generated samples into the data that will be used for final evaluation. This inflates the scores (like accuracy and recall) and gives you a false sense of security about your model's true capability. This is a severe form of Data Leakage.
 
 2. Maintaining Real-World Distribution: Your original dataset's imbalance (for validation and test sets) reflects the true distribution of Gamma rays (Class 1) and Hadrons (Class 0) in the real-world observations. The model should be tested on this natural imbalance to see how it performs in a realistic scenario.
+
+---
+
+# Data Exploration: Reading Plots
+
+When exploring a new dataset, we visualize variables to understand their relationships (Scatter Plots) and their distributions (Histograms).
+
+1. Scatter Plots: Relationship Between Two Variables
+
+Scatter plots compare two continuous variables (e.g., Height vs. Weight, Price vs. Square Footage). When analyzing them, look for three specific characteristics:
+
+A. Direction (The Trend)
+
+Positive Correlation: As variable X increases, variable Y increases. The dots go "uphill" from left to right.
+
+Negative Correlation: As variable X increases, variable Y decreases. The dots go "downhill."
+
+No Correlation: There is no visible pattern. Knowing X gives you no clue about Y.
+
+B. Strength (The Spread)
+
+Strong: The data points are tightly clustered around the trend line or curve.
+
+Weak: The data points are loosely scattered, like a diffuse cloud, making the trend harder to see.
+
+C. Shape (The Form)
+
+Linear: The points roughly form a straight line.
+
+Non-Linear: The points form a curve (e.g., U-shape, exponential curve).
+
+2. Histograms: Distribution of One Variable
+
+While scatter plots show relationships, histograms show the frequency of data points for a single variable.
+
+Normal Distribution (Bell Curve): Symmetrical with a peak in the middle. Most data is average; extremes are rare.
+
+Skewed Left/Right: The "tail" stretches out to one side.
+
+Right Skewed: Tail is on the right (e.g., Income data—most earn average, a few earn billions).
+
+Left Skewed: Tail is on the left (e.g., Age at death—most are older, fewer are very young).
+
+Bimodal: Two distinct peaks. This suggests there might be two different groups mixed together in your data (e.g., plotting heights of both men and women on one graph).
+
+3. Analysis of Typical Plot Patterns
+
+Below is an analysis of the four most common scatter plot types you will encounter (similar to your upload), which I have recreated in the visual below.
+
+Plot A: Strong Positive Linear
+
+Observation: The dots form a tight, upward-sloping line.
+
+Analysis: There is a strong direct relationship. If you know x, you can predict y with high accuracy.
+
+Real-world example: Years of experience vs. Salary.
+
+Plot B: Weak Negative Linear
+
+Observation: The dots generally drift downwards, but they are spread out like a swarm.
+
+Analysis: As x increases, y tends to decrease, but other factors (noise) are clearly affecting the data. Predictions will be less accurate here.
+
+Real-world example: Hours of video games played vs. Exam grades (a trend exists, but it's not the only factor).
+
+Plot C: No Correlation (Null)
+
+Observation: A random "cloud" or "blob" of dots.
+
+Analysis: The variables are independent. Changing x has no effect on y.
+
+Real-world example: Shoe size vs. IQ score.
+
+Plot D: Strong Non-Linear (Curvilinear)
+
+Observation: The dots form an inverted "U" shape (parabola).
+
+Analysis: The relationship changes direction. y increases as x increases, but only up to a certain point, after which y drops. A standard linear regression would fail here.
+
+Real-world example: Stress levels vs. Performance (performance improves with some stress, but crashes if stress gets too high).
