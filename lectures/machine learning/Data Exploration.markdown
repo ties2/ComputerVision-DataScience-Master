@@ -107,6 +107,35 @@ Here is a summary of the key problems and solutions discussed in the essay:
 
 The majority of machine learning model failures stem from neglecting critical issues during the initial steps of Data Exploration (EDA) and Preprocessing. Mastering these steps is essential for building trustworthy models.
 
+
+1. Check for Numerical Representation
+
+Machine learning algorithms require data to be in a numerical format that a computer program can read.
+
+Action: Ensure all data is converted into vectors of real numbers.
+
+What to look for: Identify non-numerical data (like text strings or categories) that need encoding. For example, a categorical column like "Gender" (Male/Female) should be converted into numbers (e.g., 0 and 1, or −1 and +1).
+
+2. Check Tabular Structure
+
+Data is generally assumed to be in a table (matrix) format.
+
+Rows (N): Each row should represent a single example or data point (e.g., one employee).
+
+Columns (D): Each column should represent a specific feature or attribute (e.g., Age, Salary).
+
+Consistency: Ensure that every example has the same number of features (dimensions) so it forms a valid N×D matrix.
+
+3. Check Units and Scaling
+
+Even if data is numerical, the values might have vastly different scales or units, which can affect the model.
+
+Action: Check the empirical mean and variance of your columns.
+
+Standardization: It is often recommended to shift and scale columns so they have a mean of 0 and a variance of 1.
+
+
+
 I. Challenges in Data Exploration (EDA)
 
 1. Misinterpreting Skew and Distribution: Many models assume data is normally distributed.
@@ -555,3 +584,31 @@ Shadow Clipping (Crushed Blacks): A tall spike pressed against the far left (0).
 Highlight Clipping (Blown Highlights): A tall spike pressed against the far right (255). This means bright areas have become pure white, losing all detail (e.g., a white sky with no clouds visible).
 
 Why it matters: Once data is clipped, that detail is permanently lost and usually cannot be recovered by editing software
+
+---
+
+Based on the provided text, selecting the best model involves balancing model complexity with how well it fits the data (a concept known as Occam's razor) to ensure it performs well on unseen data. Here are the primary methods discussed:
+
+### 1. Nested Cross-Validation
+This approach is used to estimate the generalization error of a model. It involves a two-level process:
+
+* **Inner Loop:** Used to tune hyperparameters and choose the best model on a validation set.
+* **Outer Loop:** Used to estimate the final performance of the chosen model on a separate test set.
+
+This method approximates the expected generalization error by averaging the risks calculated across different data splits.
+
+### 2. Bayesian Model Selection
+This probabilistic approach treats the model choice as a hierarchical inference problem.
+* **Model Evidence:** It uses the **marginal likelihood** (also called evidence), which is the probability of the data given the model ($p(\mathcal{D} | M_k)$), to evaluate models.
+* **Automatic Occam's Razor:** Bayesian inference naturally penalizes overly complex models. Complex models spread their probability mass over many possible datasets, resulting in lower evidence for any single specific dataset compared to a simpler model that concentrates its mass.
+* **Bayes Factors:** You can compare two models, $M_1$ and $M_2$, by computing the ratio of their marginal likelihoods, known as the Bayes factor. If the ratio is greater than 1, $M_1$ is preferred.
+
+### 3. Information Criteria (Heuristics)
+If you are using maximum likelihood estimation, you can use specific criteria that add a penalty for model complexity to prevent overfitting:
+* **Akaike Information Criterion (AIC):** Corrects the bias of the maximum likelihood estimate by penalizing the number of model parameters.
+* **Bayesian Information Criterion (BIC):** Similar to AIC but imposes a heavier penalty for model complexity. It is often used for models in the exponential family.
+
+### Summary of Trade-offs
+* **Simple Models:** May underfit the data (high bias), failing to capture underlying patterns.
+* **Complex Models:** May overfit the data (high variance), modeling noise instead of the signal
+* **Goal:** The objective is to find a model that is rich enough to describe the dataset but simple enough to generalize.
