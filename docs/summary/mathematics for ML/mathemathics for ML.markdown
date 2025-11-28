@@ -176,6 +176,12 @@ Below is a Python visualization illustrating the core concept of model fitting d
 
 When you analyze a histogram, you are essentially describing the "personality" of the data. You generally look for four main characteristics, often remembered by the acronym SOCS:
 
+
+<p align="center">
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/docs/summary/mathematics%20for%20ML/Code_Generated_Image.png" alt="Practical Methodology" width="800" />
+</p>
+
+
 1. Shape (The Pattern)
 
 Modality (Peaks): How many "humps" does the graph have?
