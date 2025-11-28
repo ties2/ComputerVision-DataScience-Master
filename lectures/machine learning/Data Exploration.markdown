@@ -520,12 +520,9 @@ This method centers the data around a mean of **0** with a standard deviation of
 
 ## Image Histogram
 
-
 <p align="center">
   <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/licensed-image.jpeg" alt="Practical Methodology" width="600" />
 </p>
-
-
 
 An Image Histogram is a graph that shows the distribution of brightness levels in an image.
 
@@ -543,5 +540,16 @@ Spread across the width: The image has high contrast (good range of darks and li
 
 Clumped in the middle: The image has low contrast (mostly gray/midtones).
 
+---
+
+## Clipping
 
 
+
+Clipping occurs when the brightness details of an image fall outside the camera's capture range, resulting in a loss of information.
+
+Shadow Clipping (Crushed Blacks): A tall spike pressed against the far left (0). This means the dark areas have become pure black with no texture or detail.
+
+Highlight Clipping (Blown Highlights): A tall spike pressed against the far right (255). This means bright areas have become pure white, losing all detail (e.g., a white sky with no clouds visible).
+
+Why it matters: Once data is clipped, that detail is permanently lost and usually cannot be recovered by editing software
