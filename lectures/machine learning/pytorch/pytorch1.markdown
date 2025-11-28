@@ -1104,26 +1104,26 @@ Used to predict continuous numerical values (e.g., House Prices).
 
 Used to group similar unlabelled data points.
 
-KMeans: The most popular algorithm; partitions data into k distinct clusters based on distance to centroids.
+* KMeans: The most popular algorithm; partitions data into k distinct clusters based on distance to centroids.
 
-DBSCAN: Density-based clustering; great for finding irregularly shaped clusters and identifying outliers/noise.
+* DBSCAN: Density-based clustering; great for finding irregularly shaped clusters and identifying outliers/noise.
 
-AgglomerativeClustering: Hierarchical clustering that merges similar pairs of clusters.
+* AgglomerativeClustering: Hierarchical clustering that merges similar pairs of clusters.
 
 4. Dimensionality Reduction
 
 Used to reduce the number of features (variables) while keeping essential information.
 
-PCA (Principal Component Analysis): Projects data onto orthogonal axes (principal components) to maximize variance; widely used for visualization and compression.
+* PCA (Principal Component Analysis): Projects data onto orthogonal axes (principal components) to maximize variance; widely used for visualization and compression.
 
-t-SNE: A non-linear technique specifically designed for visualizing high-dimensional data in 2D or 3D.
+* t-SNE: A non-linear technique specifically designed for visualizing high-dimensional data in 2D or 3D.
 
 5. Essential Utilities (Model Selection & Preprocessing)
 
-train_test_split: Critical for splitting data into training and testing sets to evaluate performance.
+* train_test_split: Critical for splitting data into training and testing sets to evaluate performance.
 
-GridSearchCV / RandomizedSearchCV: Automates the process of tuning hyperparameters to find the best model settings.
+* GridSearchCV / RandomizedSearchCV: Automates the process of tuning hyperparameters to find the best model settings.
 
-StandardScaler / MinMaxScaler: Normalizes features so they are on the same scale (crucial for algorithms like SVM and k-NN).
+* StandardScaler / MinMaxScaler: Normalizes features so they are on the same scale (crucial for algorithms like SVM and k-NN).
 
-Pipeline: Chains together multiple steps (preprocessing → modeling) into a single object for cleaner, leak-proof code.
+* Pipeline: Chains together multiple steps (preprocessing → modeling) into a single object for cleaner, leak-proof code.
