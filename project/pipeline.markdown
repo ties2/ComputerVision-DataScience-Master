@@ -179,3 +179,105 @@ Here is a list of common issues that can occur at each stage of a machine learni
 * **Distribution Shift (or Covariate Shift):** The data in the "real world" (i.e., your test set or production data) has different properties (e.g., different mean, variance) than your training data. For example, you trained a model on data from one country and are testing it on data from another
 
 * **Concept Drift:** This is a problem over *time*. The underlying *relationship* between the features and the target variable changes. For example, a spam filter trained in 2020 won't know how to handle new spam tactics from 2025. The model's performance will degrade in production.
+
+---
+
+# Debugging
+
+1. The Core Problem: "What to do next?"
+
+The Scenario: You have built a regularized linear regression or logistic regression model (e.g., an anti-spam filter) and achieved 80% accuracy, but you need 95%.
+
+The Trap: Most people rely on "gut feeling" to improve the model (e.g., "Let's get more data" or "Let's remove stop-words").
+
+The Solution: Use Diagnostics. A diagnostic is a test you run to gain insight into what is working and what isn't, saving you months of wasted time pursuing the wrong "fix."
+
+2. Bias vs. Variance Diagnostics
+
+To fix a model, you must first identify if it suffers from High Bias (Underfitting) or High Variance (Overfitting).
+
+High Bias (Underfitting):
+
+Symptoms: Training error is high; Test error is also high (similar to training error).
+
+Fixes:
+
+Add more features (make the model more complex).
+
+Add polynomial features (x 
+1
+2
+​	
+ ,x 
+2
+2
+​	
+ ,x 
+1
+​	
+ x 
+2
+​	
+ , etc.).
+
+Decrease regularization (λ).
+
+What NOT to do: Getting more training data will not help.
+
+High Variance (Overfitting):
+
+Symptoms: Training error is very low; Test error is much higher (large gap between the two).
+
+Fixes:
+
+Get more training data (the most reliable fix).
+
+Select a smaller set of features (Feature Selection).
+
+Increase regularization (λ).
+
+3. Learning Curves
+
+This is the visual tool used to diagnose Bias vs. Variance. You plot Error (Y-axis) vs. Training Set Size (X-axis).
+
+High Bias Curve: The training error and test error converge quickly and flatten out at a high error rate. Adding more data (m) does not lower the line.
+
+High Variance Curve: The training error is low, but the test error is high. There is a large "gap" between the two lines. The lines look like they might meet if you keep adding data.
+
+4. Error Analysis (Ceiling Analysis)
+
+Before designing complex algorithms to fix errors, you should mathematically prove how much value that fix could potentially offer.
+
+The Method: Manually examine ~100 examples that your model got wrong (misclassified).
+
+Categorization: Group these errors by type (e.g., for spam: "Pharma emails," "Fake Header," "Spelling Errors").
+
+The Ceiling: Calculate the percentage of total errors caused by each category.
+
+Example: If "Spelling Errors" account for only 3% of your total errors, building a complex Spell Checker will improve your accuracy by at most 3%. This is the "ceiling" on performance for that component.
+
+Action: Only work on components with a high ceiling (large potential gain).
+
+5. Ablative Analysis (Ablation Study)
+
+While Error Analysis helps you decide what to add, Ablative Analysis helps you understand what components of your current system actually matter.
+
+The Method: Start with your complex, high-performing system. Remove one component at a time (e.g., remove the Stemming algorithm, remove the extra features).
+
+The Measurement: Observe how much performance drops.
+
+If performance drops by 10%, that feature is crucial.
+
+If performance drops by 0.1%, that feature is useless complexity and can be discarded.
+
+6. The Recommended Workflow
+
+Andrew Ng recommends this specific lifecycle for building a new ML application:
+
+Start Simple: Implement a quick, dirty algorithm that you can implement in a day. Do not over-engineer.
+
+Plot Learning Curves: Determine if you have a Bias or Variance problem.
+
+Perform Error Analysis: Manually inspect the errors to decide on the next step (e.g., need more features, need to handle specific edge cases).
+
+Iterate: Use the evidence from steps 2 and 3 to guide your next improvement.
