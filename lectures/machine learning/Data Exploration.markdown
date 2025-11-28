@@ -660,3 +660,55 @@ Brightness/Contrast: Adjusting the pixel intensity values. This relates to the H
 Summary
 
 Data Augmentation essentially applies Linear/Affine Mappings (Chapter 2 & 3) and Probabilistic Noise (Chapter 6) to your input vectors x to create a larger, more diverse dataset, helping the model find parameters θ that generalize better.
+
+---
+## Training and Test Split
+
+splitting data for training and evaluation is a critical step to ensure that a machine learning model generalizes well to unseen data. Here are the key methods discussed:
+
+1. Training and Test Split
+
+The fundamental approach is to partition the available dataset into two distinct sets:
+
+Training Set: This subset is used to fit the model parameters.
+
+Test Set (Hold-out Set): This subset is kept aside and is strictly not used during the training process. It is used only after training is complete to evaluate the model's generalization performance.
+
+Goal: The objective is to ensure the model performs well on this unseen data, minimizing the expected risk.
+
+Caution: It is crucial not to cycle back and retrain the model based on the test set results, as this would leak information and invalidate the evaluation.
+
+2. Validation Set
+
+When you need to make high-level modeling decisions (like choosing hyperparameters or model structures), you cannot use the test set, as that would "burn" it for the final evaluation. Instead, you create a third split:
+
+Validation Set: A subset of the training data held back to evaluate the model during the tuning phase.
+
+Trade-off: A challenge with a single validation set is that if the original dataset is small, you might have to choose between a small training set (leading to poor learning) or a small validation set (leading to noisy performance estimates).
+
+3. K-Fold Cross-Validation
+
+To address the limitations of a single validation split, especially with limited data, cross-validation is used:
+
+Procedure: The data is partitioned into K non-overlapping chunks (folds).
+
+Iterative Splitting: The process iterates K times. In each iteration, one chunk is reserved as the validation set V, and the remaining K−1 chunks form the training set R.
+
+
+Average Performance: The model is trained on R and evaluated on V for all K combinations. The final performance estimate is the average of the risks calculated in each run. 
+
+$\mathbb{E}_V [\mathcal{R}(f, V)] \approx \frac{1}{K} \sum_{k=1}^K \mathcal{R}(f^{(k)}, V^{(k)})$
+
+This provides an approximation of the expected generalization error.
+
+4. Nested Cross-Validation
+
+For rigorous model selection and hyperparameter tuning, a nested approach is recommended:
+
+Structure: It involves two loops of cross-validation.
+
+Inner Loop: Used to tune hyperparameters and select the best model using an internal validation set.
+
+Outer Loop: Used to estimate the generalization performance of the chosen model on a separate test set.
+
+Terminology: In this context, the set used for the inner loop is typically called the validation set, and the set for the outer loop is called the test set.
