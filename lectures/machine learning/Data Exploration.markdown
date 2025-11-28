@@ -444,7 +444,48 @@ Automated checks might miss qualitative issues that human eyes catch instantly.
 
 ---
 
+What is an Outlier?
 
+An outlier is a data point that differs significantly from other observations. It lies far away from the main group of data points. Think of it as a "rebel" in your dataset that doesn't follow the general trend.
+
+()
+
+Why do Outliers Matter?
+
+As shown in the graph above, even a single outlier (the red 'x') can drastically change the results of your analysis.
+
+The Green Line: Represents the relationship (trend) of the normal data.
+
+The Red Line: Shows how the model gets "pulled" down by the outlier. The model tries to minimize error for all points, so it sacrifices accuracy on the majority to accommodate the one anomaly.
+
+This sensitivity is why detecting and handling outliers is a critical step in data cleaning.
+
+1. Causes: Where do they come from?
+
+Data Entry Errors: Human error (e.g., typing "1000" instead of "10.00").
+
+Measurement Errors: Sensor malfunction or experimental error.
+
+Natural Variation: Sometimes extreme values are real and valid (e.g., Jeff Bezos' income in a dataset of average salaries). These are often the most interesting points for "Anomaly Detection."
+
+2. Detection: How to find them?
+
+Method A: The Z-Score (Standard Deviation)
+
+This method assumes your data follows a normal (bell curve) distribution. It measures how many standard deviations (σ) a data point is from the mean (μ).
+
+Rule of Thumb: If a data point has a Z-score greater than 3 or less than -3, it is widely considered an outlier.
+
+$Z = \frac{x - \mu}{\sigma}$
+​	
+
+Method B: The IQR Method (Box Plot)
+
+This method is robust (less sensitive) to extreme values and is what Box Plots use. It relies on the Interquartile Range (IQR=Q3−Q1).
+
+Low Outlier: <Q1−1.5×IQR
+
+High Outlier: >Q3+1.5×IQR
 
 
 
