@@ -1067,3 +1067,63 @@ Keras used to be a separate library.
 Now, Keras IS the official high-level API for TensorFlow.
 
 When you see tf.keras.layers, it is the TensorFlow equivalent of torch.nn.
+
+
+---
+# Scikit-learn
+
+Scikit-learn (sklearn) is the industry standard for classic machine learning in Python. Here are the most important tools and algorithms categorized by task:
+
+1. Classification
+
+Used to predict categorical labels (e.g., Spam vs. Not Spam).
+
+* LogisticRegression: The fundamental linear classifier; fast and interpretable.
+
+* SVC (Support Vector Classification): Effective for high-dimensional spaces; finds the best boundary (hyperplane) to separate classes.
+
+* RandomForestClassifier: An ensemble of decision trees; highly accurate and robust against overfitting.
+
+* KNeighborsClassifier (k-NN): Classifies based on the majority class of the nearest data points.
+
+* GradientBoostingClassifier: Builds models sequentially to correct errors of previous models (often provides state-of-the-art results for tabular data).
+
+2. Regression
+
+Used to predict continuous numerical values (e.g., House Prices).
+
+* LinearRegression: The standard approach for modeling linear relationships.
+
+* Ridge / Lasso: Linear regression with regularization (L2/L1) to prevent overfitting and handle feature selection.
+
+* RandomForestRegressor: Applies the random forest ensemble technique to continuous target variables.
+
+* SVR (Support Vector Regression): Adapts SVM principles for regression tasks.
+
+3. Clustering
+
+Used to group similar unlabelled data points.
+
+KMeans: The most popular algorithm; partitions data into k distinct clusters based on distance to centroids.
+
+DBSCAN: Density-based clustering; great for finding irregularly shaped clusters and identifying outliers/noise.
+
+AgglomerativeClustering: Hierarchical clustering that merges similar pairs of clusters.
+
+4. Dimensionality Reduction
+
+Used to reduce the number of features (variables) while keeping essential information.
+
+PCA (Principal Component Analysis): Projects data onto orthogonal axes (principal components) to maximize variance; widely used for visualization and compression.
+
+t-SNE: A non-linear technique specifically designed for visualizing high-dimensional data in 2D or 3D.
+
+5. Essential Utilities (Model Selection & Preprocessing)
+
+train_test_split: Critical for splitting data into training and testing sets to evaluate performance.
+
+GridSearchCV / RandomizedSearchCV: Automates the process of tuning hyperparameters to find the best model settings.
+
+StandardScaler / MinMaxScaler: Normalizes features so they are on the same scale (crucial for algorithms like SVM and k-NN).
+
+Pipeline: Chains together multiple steps (preprocessing → modeling) into a single object for cleaner, leak-proof code.
