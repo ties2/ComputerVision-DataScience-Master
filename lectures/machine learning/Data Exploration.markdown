@@ -327,11 +327,6 @@ Real-world Example: Test scores in a class containing students from three differ
 </p>
 
 
-<p align="center">
-  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/Code_Generated_Image-2.png" alt="Practical Methodology" width="800" />
-</p>
-
-
 
 A Box Plot (or Box-and-Whisker Plot) is a standardized way of displaying the distribution of data based on a five-number summary. It is particularly useful for comparing distributions between different groups and identifying outliers.
 
@@ -364,6 +359,44 @@ Comparisons: Ideally suited for comparing distributions across groups (e.g., tes
 Outlier Detection: Quickly highlights extreme values.
 
 Summary: Provides a quick visual summary of the data's central tendency and spread without the detail of a histogram.
+
+<p align="center">
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/Code_Generated_Image-2.png" alt="Practical Methodology" width="800" />
+</p>
+
+Here is a detailed visualization that connects the Box Plot to the actual Distribution of the data. This provides a "better" picture by showing why the box plot looks the way it does.
+
+()
+
+How to Read This Detailed View
+
+This image reveals what a box plot simplifies.
+
+The Box (The Middle 50%):
+
+Look at the Orange Box at the bottom. The left edge aligns with Q1 (25%) and the right edge aligns with Q3 (75%).
+
+Comparing it to the blue graph above, you can see that the "Box" captures the bulk of the data (the highest part of the histogram curve).
+
+The Median (The Center Line):
+
+The Blue Dashed Line cuts through the exact middle of the data.
+
+Notice how the Median is not in the center of the "peaks" (modes). Because this data is "bimodal" (has two humps), the median sits in the valley between them. A simple box plot hides this "two-hump" shape, which is why seeing it with a histogram is powerful.
+
+The Whiskers (The Spread):
+
+The horizontal lines extending from the box cover the rest of the data. They stretch out to cover the "tails" of the blue distribution curve.
+
+Summary Table: When to use which?
+
+Feature	Histogram / Density Plot	Box Plot
+Detail Level	High (Shows every bump and valley)	Low (Summarizes into 5 numbers)
+Best For	Seeing the "shape" (e.g., bimodal, skew)	Comparing many groups side-by-side
+Weakness	Can look cluttered with many groups	Hides distinct peaks (modes)
+
+
+
 
 
 
