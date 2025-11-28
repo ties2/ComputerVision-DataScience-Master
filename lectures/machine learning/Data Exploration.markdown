@@ -447,7 +447,7 @@ Automated checks might miss qualitative issues that human eyes catch instantly.
 What is an Outlier?
 
 <p align="center">
-  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/outlier.png" alt="Practical Methodology" width="400" />
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/outlier.png" alt="Practical Methodology" width="600" />
 </p>
 
 An outlier is a data point that differs significantly from other observations. It lies far away from the main group of data points. Think of it as a "rebel" in your dataset that doesn't follow the general trend.
