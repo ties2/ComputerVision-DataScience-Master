@@ -163,6 +163,15 @@ This final section discusses how to choose between different models (e.g., polyn
 This integral inherently penalizes overly complex models, acting as an "automatic Occam's razor". Models are compared using the Bayes factor, which is the ratio of their marginal likelihoods, $p(D|M_1) / p(D|M_2)$
 
 
+Visualizing Overfitting vs. Underfitting (Concept from 8.3.3)
+
+Below is a Python visualization illustrating the core concept of model fitting discussed in the chapter.
+
+<p align="center">
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/docs/summary/mathematics%20for%20ML/Code_Generated_Image-2.png" alt="Practical Methodology" width="500" />
+</p>
+
+
 ---
 
 # Chapter 9: Linear Regression
