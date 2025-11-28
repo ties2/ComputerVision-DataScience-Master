@@ -228,3 +228,7 @@ Observation: The dots form an inverted "U" shape (parabola).
 Analysis: The relationship changes direction. y increases as x increases, but only up to a certain point, after which y drops. A standard linear regression would fail here.
 
 Real-world example: Stress levels vs. Performance (performance improves with some stress, but crashes if stress gets too high).
+
+<p align="center">
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/Code_Generated_Image.png" alt="Practical Methodology" width="300" />
+</p>
