@@ -58,10 +58,112 @@ The book structures the mathematical foundations (Part I) to support four major 
 
 # Chapter 2: Linear Algebra 
 
+Here is a comprehensive summary of **Chapter 2: Linear Algebra**, which establishes the fundamental language used to describe and manipulate data in machine learning.
+
+### **Overview**
+Linear algebra provides the formal language to handle high-dimensional data. In machine learning, data is represented as **vectors**, and operations on that data are represented as **matrices** and **linear mappings**. This chapter builds the algebraic structures necessary to solve systems of linear equations and understand the geometry of vector spaces.
+
+---
+
+### **1. Systems of Linear Equations & Matrices**
+The central practical problem in linear algebra is solving systems of linear equations.
+* **Representation:** A system of linear equations is compactly represented as $Ax = b$, where $A$ is a matrix of coefficients, $x$ is the vector of unknowns, and $b$ is the result vector.
+* **Geometric Interpretation:** Each linear equation represents a line (in 2D) or a hyperplane (in higher dimensions). The solution to the system is the intersection of these geometric objects.
+* **Matrices:** A matrix is a rectangular array of numbers. The chapter defines key operations:
+    * **Matrix Multiplication:** This is **non-commutative**, meaning $AB \neq BA$.
+    * **Inverse ($A^{-1}$):** A square matrix $A$ is invertible (regular) if $AB = I_n = BA$. If no inverse exists, the matrix is singular.
+    * **Transpose ($A^\top$):** Created by swapping rows and columns. A matrix is **symmetric** if $A = A^\top$.
+
+
+
+---
+
+### **2. Solving Systems via Gaussian Elimination**
+Gaussian elimination is the constructive algorithm used to solve systems of linear equations and find matrix inverses.
+* **Elementary Transformations:** To solve a system, we manipulate the **augmented matrix** $[A|b]$ using three operations that do not change the solution set: swapping rows, multiplying a row by a non-zero scalar, and adding multiples of rows to one another.
+* **Row-Echelon Form (REF):** The goal is to transform the matrix into a "staircase" structure where leading coefficients (pivots) move to the right as you go down the rows.
+* **The Solution Structure:**
+    * **Particular Solution:** A specific vector that solves the inhomogeneous system $Ax=b$.
+    * **General Solution:** To capture *all* solutions, we add the particular solution to the solution of the homogeneous system $Ax=0$ (the kernel).
+    * **The Minus-1 Trick:** A practical shorthand for reading the kernel (null space) directly from a matrix in reduced row-echelon form by extending the matrix with rows of $-1$ on the diagonal.
+
+---
+
+### **3. Vector Spaces and Independence**
+This section formalizes the environment in which vectors "live."
+* **Groups:** A set with an operation (like addition) that satisfies closure, associativity, has a neutral element, and inverse elements. An **Abelian group** is one where the operation is also commutative.
+* **Vector Space:** A set $V$ is a vector space if it allows for vector addition (inner operation) and scalar multiplication (outer operation), satisfying specific distributivity and associativity rules.
+* **Subspaces:** A subset $U \subseteq V$ is a subspace if it is non-empty (contains the zero vector) and is closed under addition and scalar multiplication. Intuitively, if you stay within a subspace and perform linear operations, you never leave that subspace.
+* **Linear Independence:** A set of vectors is linearly independent if none of them can be written as a linear combination of the others. If $\sum \lambda_i x_i = 0$ implies that all $\lambda_i = 0$, the vectors are independent.
+
+
+
+---
+
+### **4. Basis and Rank**
+These concepts quantify the "size" and structure of vector spaces.
+* **Generating Set and Span:** A set of vectors is a generating set if their linear combinations can create (span) every vector in the space.
+* **Basis:** A **minimal** generating set and a **maximal** linearly independent set. Every vector in the space has a unique coordinate representation with respect to a specific basis.
+* **Dimension:** The number of vectors in a basis of a vector space.
+* **Rank:** The number of linearly independent columns (or rows) in a matrix. A matrix has full rank if its rank equals the smaller of its row/column count. Key properties include:
+    * $rk(A) = rk(A^\top)$.
+    * A square matrix is invertible if and only if it has full rank.
+
+---
+
+### **5. Linear Mappings**
+Mappings preserve the structure of the vector space.
+* **Definition:** A mapping $\Phi: V \rightarrow W$ is linear if $\Phi(x+y) = \Phi(x) + \Phi(y)$ and $\Phi(\lambda x) = \lambda \Phi(x)$.
+* **Matrix Representation:** Any linear mapping between finite-dimensional vector spaces can be represented by a matrix. The coefficients of this matrix depend on the chosen **ordered bases** of the input and output spaces.
+* **Basis Change:** If we change the basis of the vector space (e.g., to a new coordinate system), the transformation matrix changes via the relationship $\tilde{A} = T^{-1}AS$, where $S$ and $T$ are the transformation matrices of the basis change.
+* **Image and Kernel:**
+    * **Kernel (Null Space):** The subspace of vectors mapped to 0 ($Ax=0$).
+    * **Image (Range):** The subspace of vectors that can be "reached" by the mapping.
+    * **Rank-Nullity Theorem:** For a matrix $A \in \mathbb{R}^{m \times n}$, the dimension of the kernel plus the dimension of the image equals $n$.
+
+
+
+---
+
+### **6. Affine Spaces**
+* **Affine Subspace:** A linear subspace that is offset from the origin (shifted by a vector $x_0$). It typically represents lines or planes that do not pass through the origin.
+* **Affine Mapping:** A composition of a linear mapping and a translation: $\phi(x) = Ax + a$.
 
 ---
 
 # Chapter 3: Analytic Geometry 
+
+### Chapter 3: Analytic Geometry
+
+Chapter 3 bridges the gap between the algebraic manipulations of vectors (Linear Algebra) and geometric intuition. It establishes the mathematical frameworks required to quantify similarity, distance, and orientation between vectors, which are fundamental for machine learning algorithms like Support Vector Machines, Linear Regression, and Principal Component Analysis (PCA).
+
+Here is a summary of the core concepts covered in the chapter:
+
+**1. Norms (Measuring Length)**
+The chapter begins by defining the **norm**, a function that assigns a "length" to a vector. While the Euclidean norm ($l_2$) is the most common (representing physical distance), the text also introduces the Manhattan norm ($l_1$). A valid norm must satisfy specific properties: it must be non-negative, homogeneous (scaling the vector scales the norm), and satisfy the triangle inequality.
+
+**2. Inner Products (Measuring Angles and Similarity)**
+The inner product is introduced as a more general concept than the standard dot product. It allows for the rigorous definition of geometric properties in vector spaces. Key takeaways include:
+* **Angles:** The inner product allows the calculation of the angle between two vectors using the Cauchy-Schwarz inequality.
+* **Similarity:** Intuitively, the inner product measures how aligned (similar) two vectors are.
+* **Induced Norms:** An inner product naturally induces a norm, linking the concepts of length and angle.
+
+**3. Orthogonality**
+Using the inner product, the chapter defines **orthogonality**. Two vectors are orthogonal if their inner product is zero. This generalizes the concept of perpendicularity to high-dimensional spaces.
+* **Orthonormal Basis (ONB):** A basis where all vectors are orthogonal to one another and have unit length. The **Gram-Schmidt process** is introduced as a method to iteratively construct an ONB from a set of linearly independent vectors.
+* **Orthogonal Complement:** This describes the set of all vectors that are orthogonal to a specific subspace, used essentially to define hyperplanes (which separate data in classification tasks).
+
+**4. Distances and Metrics**
+Building on norms, the text defines **metrics**, which measure the distance between two vectors. While norms measure the length of a single vector, metrics measure the distance between two points ($x$ and $y$). The most common metric in machine learning is the Euclidean distance.
+
+**5. Orthogonal Projections**
+This is a critical section for later machine learning applications. An orthogonal projection finds the vector within a specific subspace that is "closest" to the original vector.
+* **Projection onto Lines and Subspaces:** The text derives the formulas for projecting a vector onto a line (1D subspace) and general $M$-dimensional subspaces.
+* **Projection Matrix:** A matrix $P_\pi$ can be constructed to perform this projection via linear transformation.
+* **Application:** Minimizing the distance between a vector and a subspace is the mathematical foundation of **Linear Regression** (minimizing squares) and **PCA** (finding the subspace that retains the most variance).
+
+**6. Rotations**
+The chapter concludes by discussing rotations. Rotations are linear transformations that preserve both the lengths of vectors and the angles between them. They are defined by orthogonal matrices with a determinant of 1. The text details how to construct rotation matrices for 2D and 3D spaces (e.g., rotating around a specific axis).
 
 
 ---
