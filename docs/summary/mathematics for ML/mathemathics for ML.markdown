@@ -170,6 +170,81 @@ The chapter concludes by discussing rotations. Rotations are linear transformati
 
 # Chapter 4: Matrix Decompositions 
 
+### Chapter 3: Analytic Geometry
+
+This chapter establishes the geometric intuition required to understand vectors and matrices, moving beyond algebraic manipulation to defining similarity, distance, and orientation. These concepts are the bedrock of algorithms like Support Vector Machines (SVMs) and Principal Component Analysis (PCA).
+
+**1. Norms (Measuring Length)**
+The norm is a function that assigns a length to a vector.
+* **Euclidean Norm ($l_2$):** The standard physical distance.
+* **Manhattan Norm ($l_1$):** The sum of absolute differences.
+* **Properties:** A valid norm must be non-negative, homogeneous (scaling the vector scales the norm), and satisfy the triangle inequality.
+
+**2. Inner Products (Measuring Angles and Similarity)**
+The inner product generalizes the dot product to define geometric relationships in vector spaces.
+* **Angles:** Using the Cauchy-Schwarz inequality, the inner product allows the calculation of angles between vectors.
+* **Geometric Interpretation:** It measures alignment; if the inner product is large, vectors are similar (pointing in the same direction).
+* **Induced Norms:** Every inner product induces a norm, linking length and angle.
+
+**3. Orthogonality**
+Two vectors are orthogonal if their inner product is zero. This concept is crucial for separating signals and dimensions.
+* **Orthonormal Basis (ONB):** A set of basis vectors that are all orthogonal to each other and have a unit length of 1.
+* **Gram-Schmidt Process:** A method to iteratively construct an orthonormal basis from a set of linearly independent vectors.
+* **Orthogonal Complement:** The set of vectors orthogonal to a specific subspace, used to define hyperplanes in high-dimensional space.
+
+**4. Distances and Metrics**
+While norms measure the length of a single vector, metrics measure the distance between two distinct vectors ($x$ and $y$). The Euclidean distance is the most common metric used in machine learning.
+
+**5. Orthogonal Projections**
+This section details how to project a vector onto a lower-dimensional subspace (e.g., projecting a 3D point onto a 2D plane) such that the "error" or distance is minimized.
+* **Optimization:** The orthogonal projection finds the vector in the subspace closest to the original vector.
+* **Applications:** This minimizes squared error, serving as the mathematical basis for **Linear Regression** and **PCA**.
+
+**6. Rotations**
+Rotations are linear transformations that preserve lengths and angles (distances between points remain constant). They are represented by orthogonal matrices with a determinant of 1.
+
+---
+
+### Chapter 4: Matrix Decompositions
+
+This chapter focuses on breaking matrices down into interpretable constituent parts. These decompositions are primary tools for data compression, dimensionality reduction, and solving linear systems efficiently.
+
+**1. Determinant and Trace**
+These functions map square matrices to real numbers to characterize their properties.
+* **Determinant:** Represents the signed volume of the region spanned by the matrix's column vectors. It indicates invertibility; if the determinant is non-zero, the matrix can be inverted.
+* **Trace:** The sum of the diagonal elements. It is an invariant property, meaning $\text{tr}(ABC) = \text{tr}(BCA)$.
+
+**2. Eigenvalues and Eigenvectors**
+These characterize a linear mapping by identifying axes that do not rotate during transformation.
+* **Concept:** An eigenvector $x$ is a vector that, when transformed by $A$, is only scaled by a scalar $\lambda$ (the eigenvalue): $Ax = \lambda x$.
+* **Characteristic Polynomial:** Eigenvalues are found by finding the roots of $p_A(\lambda) = \det(A - \lambda I)$.
+* **Interpretation:** The eigenvector indicates the direction of stretching or shrinking, while the eigenvalue indicates the magnitude of that stretch.
+
+**3. Cholesky Decomposition**
+A specific decomposition for symmetric, positive definite matrices (like covariance matrices).
+* **The Factorization:** $A = LL^\top$, where $L$ is a lower-triangular matrix.
+* **Utility:** It is roughly twice as efficient as other methods for solving linear systems involving symmetric matrices and is heavily used in optimization and simulation.
+
+**4. Eigendecomposition and Diagonalization**
+This decomposes a square matrix into a canonical form using its eigenvalues.
+* **Diagonalization:** A matrix $A$ can be written as $A = PDP^{-1}$, where $D$ is a diagonal matrix of eigenvalues and $P$ is a matrix of eigenvectors.
+* **Spectral Theorem:** Symmetric matrices can always be diagonalized, and their eigenvectors are orthogonal (form an orthonormal basis).
+
+**5. Singular Value Decomposition (SVD)**
+Often called the "fundamental theorem of linear algebra," SVD applies to **all** matrices, not just square ones.
+* **The Factorization:** $A = U\Sigma V^\top$.
+    * $U$: Orthogonal matrix (Left-singular vectors).
+    * $\Sigma$: Diagonal matrix containing singular values (non-negative).
+    * $V$: Orthogonal matrix (Right-singular vectors).
+* **Geometric Meaning:** Every linear mapping consists of a rotation ($V^\top$), followed by a scaling ($\Sigma$), followed by another rotation ($U$).
+
+**6. Matrix Approximation**
+SVD allows for the "lossy compression" of matrices.
+* **Low-Rank Approximation:** By keeping only the largest singular values in $\Sigma$ and setting the small ones to zero, one creates a lower-rank matrix that is the "best" approximation of the original matrix (minimizing the Frobenius norm difference). This is the math behind image compression and denoising.
+* **Eckart-Young Theorem:** Provides the theoretical guarantee that the truncated SVD is the optimal low-rank approximation.
+
+**7. Matrix Phylogeny**
+The chapter closes by organizing matrices into a hierarchy based on properties (Symmetric, Orthogonal, PSD) and linking them to the specific decompositions available for each type.
 
 ---
 
