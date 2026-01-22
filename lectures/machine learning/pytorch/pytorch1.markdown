@@ -123,8 +123,13 @@ An Autoencoder is a type of Neural Network.
 
 ## Key Tasks in Machine Learning
 
-![classification and regression](https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/regression.png)
+<!-- ![classification and regression](https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/regression.png) -->
 
+<p style="text-align: center;">
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/regression.png?raw=true" 
+       alt="learning method" 
+       style="width: 50%; height: auto;">
+</p>
 
 ---
 ## Neural Networks
