@@ -37,6 +37,10 @@ The network is trained to make the final output identical to the original input.
 * Reinforcement Learning: An agent learns by interacting with an environment, receiving rewards or penalties based on actions, aiming to maximize cumulative rewards.
 Examples: Game playing, Robotics
 
+* Semi-supervised (Semi-supervised Learning)
+
+This is a combination of the first two. We have a small amount of labeled data and a large amount of unlabeled data. This method is used to label all the expensive or time-consuming data.
+
 ---
 ## When to Use Each Model Type
 
