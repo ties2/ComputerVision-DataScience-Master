@@ -42,7 +42,7 @@ Examples: Game playing, Robotics
 <p style="text-align: center;">
   <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/learning%20methods.jpeg?raw=true" 
        alt="learning method" 
-       style="width: 60%; height: auto;">
+       style="width: 30%; height: auto;">
 </p>
 
 ---
