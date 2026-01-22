@@ -108,7 +108,7 @@ This is an architecture or tool, not a problem type.
 
 You use a Neural Network to perform other tasks.
 
-When to Use It: When your problem is very complex (e.g., non-linear) and you have a lot of data.
+* When to Use It: When your problem is very complex (e.g., non-linear) and you have a lot of data.
 
 Examples:
 
@@ -316,7 +316,7 @@ When to use: For regression (when you're predicting a number, like a house price
 
 What it does: You simply don't apply any activation function. The raw number from the last layer is your answer.
 
-
+---
 
 ### Scores or Logits
 These two terms, scores and logits, are often used interchangeably. They are the raw, final numerical outputs of the network before they are converted into probabilities.
@@ -331,7 +331,57 @@ They aren't probabilities (they don't add up to 1). They just show the model's "
 
 Later, you would pass these logits to a Softmax function to turn them into probabilities (e.g., [0.90, 0.10]) or directly into a Cross-Entropy Loss function (which has Softmax built-in) to calculate the error.
 
+----
+### Loss Functions
 
+**What is a Loss Function?**
+
+The Loss Function is like a **strict teacher** for the AI.
+
+**1. What is its job?**
+This function calculates how far the model's prediction is from the actual answer (how much error exists).
+
+**2. How does it work?**
+
+* If the model gives the correct answer, the cost (Loss) becomes **low** (close to zero).
+* If the model gives the wrong answer, the cost becomes **high**.
+
+**3. What is the goal?**
+The ultimate goal of the neural network is to **reduce** this number (Loss) as much as possible during training. Using this number, the network figures out which weights to change so that it provides a more accurate answer next time.
+
+**Example:**
+
+* **Reality:** House price is 10 million Tomans.
+* **Model Prediction:** 8 million Tomans.
+* **Loss:** The difference between 10 and 8 (which is a 2 million Toman error).
+
+---
+
+**Would you like to know how "Gradient Descent" uses this Loss to correct the network?**
+
+**What is Gradient Descent?**
+
+If we consider the Loss Function as a **valley or a pit**, our goal is to reach the **bottom of this valley** (where the error is zero).
+
+Gradient Descent is the method that tells the model how to move down the valley step-by-step.
+
+**How it works (Steps):**
+
+**1. Calculate Slope (Gradient):**
+The system checks which direction the ground slopes beneath its feet (by taking derivatives).
+
+* If the slope is steep, it means we are far from the answer.
+* If the slope is zero, it means we have reached the bottom of the valley (the answer).
+
+**2. Move (Step):**
+It takes a step in the opposite direction of the slope to reduce the height (error).
+
+* The size of this step is determined by the **Learning Rate**. (If the step is too big, it might overshoot and go up the other side of the valley! If it is too small, reaching the destination will take ages).
+
+**3. Repeat:**
+This process is repeated thousands of times until we finally reach the lowest possible point and the network is "trained."
+
+---
 
 ### The forward Method (and its automatic call)
 This is a key concept of how nn.Module works.
