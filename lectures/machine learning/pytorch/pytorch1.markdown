@@ -381,6 +381,60 @@ It takes a step in the opposite direction of the slope to reduce the height (err
 **3. Repeat:**
 This process is repeated thousands of times until we finally reach the lowest possible point and the network is "trained."
 
+
+Here is the clean **Markdown** version of the tables you provided. You can copy and paste this directly into a README file, Jupyter Notebook, or any Markdown editor.
+
+### 1. Classification Loss Functions
+
+*Used when the output is a discrete category (e.g., Cat, Dog, Spam, Not Spam).*
+
+| Loss Function | Use Case | Expected Input | Notes |
+| --- | --- | --- | --- |
+| **`nn.CrossEntropyLoss`** | Multi-Class Classification | **Logits** (Raw scores) | **Standard choice.** Combines `LogSoftmax` and `NLLLoss`. |
+| **`nn.BCEWithLogitsLoss`** | Binary Classification | **Logits** (Raw scores) | **Standard choice.** Combines Sigmoid and BCELoss. More numerically stable. |
+| **`nn.NLLLoss`** | Multi-Class Classification | **Log-Probabilities** | Requires `LogSoftmax` applied to input first. |
+| **`nn.BCELoss`** | Binary Classification | **Probabilities** (0 to 1) | Requires `Sigmoid` applied to input first. Unstable with inputs close to 0 or 1. |
+| **`nn.MultiLabelSoftMarginLoss`** | Multi-Label Classification | **Logits** | Used when an image can belong to multiple classes at once (e.g., "Person" AND "Hat"). |
+| **`nn.SoftMarginLoss`** | Binary Classification | **Logits** | Optimizes a two-class classification logistic loss. |
+
+---
+
+### 2. Regression Loss Functions
+
+*Used when the output is a continuous number (e.g., Price, Height, Coordinates).*
+
+| Loss Function | Use Case | Sensitivity to Outliers | Notes |
+| --- | --- | --- | --- |
+| **`nn.MSELoss`** | General Regression | **High** | Mean Squared Error. Penalizes large errors heavily. |
+| **`nn.L1Loss`** | General Regression | **Low** | Mean Absolute Error. Better if your data has many outliers (noise). |
+| **`nn.SmoothL1Loss`** | Robust Regression | **Medium** | Behaves like MSE near zero, but like L1 for larger errors. Prevents exploding gradients. |
+| **`nn.HuberLoss`** | Robust Regression | **Medium** | Similar to SmoothL1 but with a tunable `delta` parameter. |
+| **`nn.PoissonNLLLoss`** | Count Regression | N/A | Used when predicting count data (Poisson distribution). |
+
+---
+
+### 3. Embedding & Ranking Loss Functions (Metric Learning)
+
+*Used for checking similarity between two inputs (e.g., Face Verification, Siamese Networks).*
+
+| Loss Function | Use Case | Description |
+| --- | --- | --- |
+| **`nn.TripletMarginLoss`** | Face Rec / Similarity | Uses an **Anchor**, **Positive**, and **Negative**. Tries to pull positive closer to anchor and push negative away. |
+| **`nn.CosineEmbeddingLoss`** | Semantic Similarity | Measures if two inputs are similar using Cosine Similarity (angle between vectors). |
+| **`nn.MarginRankingLoss`** | Ranking | Predicts which of two inputs should be ranked higher. |
+| **`nn.HingeEmbeddingLoss`** | Non-linear Embeddings | Used for learning nonlinear embeddings or semi-supervised learning. |
+
+---
+
+### 4. Sequence & Distribution Loss Functions
+
+*Used for specialized tasks like text generation or comparing probability distributions.*
+
+| Loss Function | Use Case | Description |
+| --- | --- | --- |
+| **`nn.CTCLoss`** | Audio/Text (Seq2Seq) | Connectionist Temporal Classification. Used when input length (audio) doesn't match output length (text). |
+| **`nn.KLDivLoss`** | Distillation / VAEs | Kullback-Leibler Divergence. Measures how much one probability distribution differs from another. |
+
 ---
 
 ### The forward Method (and its automatic call)
