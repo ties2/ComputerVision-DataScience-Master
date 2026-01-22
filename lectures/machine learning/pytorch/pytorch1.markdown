@@ -39,9 +39,12 @@ Examples: Game playing, Robotics
 
 * Semi-supervised (Semi-supervised Learning): This is a combination of the first two. We have a small amount of labeled data and a large amount of unlabeled data. This method is used to label all the expensive or time-consuming data.
 
+<p style="text-align: center;">
+  <img src="https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/learning%20methods.jpeg?raw=true" 
+       alt="learning method" 
+       style="width: 60%; height: auto;">
+</p>
 
-
-![learning method](https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/learning%20methods.jpeg)
 ---
 ## When to Use Each Model Type
 
