@@ -50,7 +50,7 @@ Examples: Game playing, Robotics
 
 ### Classification
 
-When: You need to predict a category or class.
+* When: You need to predict a category or class.
 
 Question it Answers: "Which group does this belong to?"
 
@@ -64,7 +64,7 @@ Is this transaction fraudulent? (Yes/No)
 
 ### Regression
 
-When: You need to predict a continuous numerical value.
+* When: You need to predict a continuous numerical value.
 
 Question it Answers: "How much?" or "How many?"
 
@@ -78,7 +78,7 @@ How many sales will we have next month?
 
 ### Clustering
 
-When: You have unlabeled data and want to find natural groups based on similarity.
+* When: You have unlabeled data and want to find natural groups based on similarity.
 
 Question it Answers: "What are the hidden groups in my data?"
 
@@ -88,9 +88,9 @@ Segmenting customers based on purchasing habits.
 
 Grouping similar news articles together.
 
-###vAutoencoder
+### Autoencoder
 
-When: You want to compress data (dimensionality reduction) or find anomalies.
+* When: You want to compress data (dimensionality reduction) or find anomalies.
 
 Question it Answers: "What is a compressed summary of this data?" or "Is this data point 'normal'?"
 
@@ -123,18 +123,8 @@ An Autoencoder is a type of Neural Network.
 
 ## Key Tasks in Machine Learning
 
-![classification and regression](https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/lectures/machine%20learning/regression.png)
+![classification and regression](https://github.com/ties2/ComputerVision-DataScience-Master/blob/main/images/regression.png)
 
-Classification: Predicting discrete labels or categories for input data.
-Example: Identifying whether an email is spam or not.
-
-
-Regression: Predicting continuous numerical values.
-Example: Forecasting house prices based on features like size and location.
-
-Note: Both of them use supervised learning method
-
-**Classification** predicts discrete categories (e.g., spam vs. not spam), while **regression** predicts continuous values (e.g., house prices).
 
 ---
 ## Neural Networks
