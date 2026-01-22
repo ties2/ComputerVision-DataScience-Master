@@ -165,17 +165,19 @@ This imports PyTorch's neural network library and gives it the common alias nn. 
 
 Class Definition
 
-Python
+```
 class SimpleNN(nn.Module):
+```
 
 This starts defining your model as a Python class named SimpleNN.
 
 It inherits from nn.Module, which is the base class for all neural network models in PyTorch. This gives your class a lot of built-in functionality, like tracking parameters.
 
 The Constructor
-Python
+```
     def __init__(self):
         super(SimpleNN, self).__init__()
+```        
 def __init__(self): is the constructor for the class. This code runs only once when you first create an object from this class (e.g., model = SimpleNN()).
 
 Its job is to define and initialize all the layers the network will use.
@@ -184,25 +186,29 @@ super(...) is a required line that calls the constructor of the parent class (nn
 
 Defining the Layers
 
-Python
+```
         self.fc1 = nn.Linear(10, 5)
+```
 This creates the first layer, a fully connected (or "linear") layer, and assigns it to the attribute self.fc1.
 
 nn.Linear(10, 5) means this layer expects an input with 10 features and will output 5 features.
 
-Python
+```
         self.relu = nn.ReLU()
+```
 This creates a ReLU activation function. This is a non-linear function (it simply changes all negative numbers to 0) that is applied after a layer. This non-linearity is what allows the network to learn complex patterns.
 
-Python
+```
         self.fc2 = nn.Linear(5, 2)
+```
 This creates the second and final linear layer, self.fc2.
 
 It takes the 5 features from the previous layer as input and outputs 2 features. These 2 features are the final "scores" (or "logits") of the network.
 
 The Forward Pass
-Python
+```
     def forward(self, x):
+```
 The forward method is the most important part. It defines how data flows through the layers you just defined.
 
 This method is called automatically whenever you pass input data to your model (e.g., output = model(input_data)).
@@ -211,20 +217,23 @@ x represents the batch of input data.
 
 The Data Flow Logic
 
-Python
+```
         x = self.relu(self.fc1(x))
+```
 This is the first step of the data flow.
 
 self.fc1(x): The input x is passed through the first linear layer (fc1).
 
 self.relu(...): The result is then passed through the ReLU activation function.
 
-Python
+```
         x = self.fc2(x)
+```
 The activated output from the previous step is now passed through the second linear layer (fc2).
 
-Python
+```
         return x
+```
 Finally, the network returns the result of the last layer. This x is now a tensor with 2 features, representing the model's final output.
 
 Summary of the Model's Structure:
